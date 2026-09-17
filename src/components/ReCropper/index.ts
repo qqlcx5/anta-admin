@@ -1,7 +1,5 @@
-import reCropper from "./src";
-import { withInstall } from "@/utils";
+import ReCropper from "./src";
 
 /** 图片裁剪组件 */
-export const ReCropper = withInstall(reCropper);
-
+export { ReCropper };
 export default ReCropper;

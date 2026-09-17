@@ -28,10 +28,16 @@ export function useGlobal<T = Record<string, any>>(): T {
 import { useDark as _useDark } from "@vueuse/core";
 
 /**
- * 暗黑模式 Hook（复用 @vueuse/core）
+ * 暗黑模式 Hook（复用 @vueuse/core，纯粹监听 HTML class，不写独立 localStorage 以免冲突）
  */
-export function useDark(options?: any) {
-  const isDark = _useDark(options);
+export function useDark(options?: { selector?: "html" | "body"; className?: string }) {
+  const isDark = _useDark({
+    selector: options?.selector || "html",
+    attribute: "class",
+    valueDark: options?.className || "dark",
+    valueLight: "",
+    storageKey: null
+  });
   return {
     isDark,
     toggleDark: () => {

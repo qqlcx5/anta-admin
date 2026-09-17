@@ -1,7 +1,5 @@
-import reQrcode from "./src/index";
-import { withInstall } from "@/utils";
+import ReQrcode from "./src/index";
 
 /** 二维码组件 */
-export const ReQrcode = withInstall(reQrcode);
-
+export { ReQrcode };
 export default ReQrcode;

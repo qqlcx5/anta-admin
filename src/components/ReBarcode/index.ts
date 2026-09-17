@@ -1,7 +1,5 @@
-import { withInstall } from "@/utils";
-import reBarcode from "./src/index.vue";
+import ReBarcode from "./src/index.vue";
 
 /** 条形码组件 */
-export const ReBarcode = withInstall(reBarcode);
-
+export { ReBarcode };
 export default ReBarcode;

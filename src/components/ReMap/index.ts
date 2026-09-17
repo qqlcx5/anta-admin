@@ -1,7 +1,5 @@
-import amap from "./src/Amap.vue";
-import { withInstall } from "@/utils";
+import Amap from "./src/Amap.vue";
 
 /** 高德地图组件 */
-export const Amap = withInstall(amap);
-
+export { Amap };
 export default Amap;

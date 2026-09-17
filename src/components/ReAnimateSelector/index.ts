@@ -1,7 +1,5 @@
-import { withInstall } from "@/utils";
-import reAnimateSelector from "./src/index.vue";
+import ReAnimateSelector from "./src/index.vue";
 
 /** [animate.css](https://animate.style/) 选择器组件 */
-export const ReAnimateSelector = withInstall(reAnimateSelector);
-
+export { ReAnimateSelector };
 export default ReAnimateSelector;

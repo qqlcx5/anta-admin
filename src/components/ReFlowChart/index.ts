@@ -1,16 +1,6 @@
-import control from "./src/Control.vue";
-import nodePanel from "./src/NodePanel.vue";
-import dataDialog from "./src/DataDialog.vue";
-import { withInstall } from "@/utils";
-
-/** LogicFlow流程图-控制面板 */
-const Control = withInstall(control);
-
-/** LogicFlow流程图-拖拽面板 */
-const NodePanel = withInstall(nodePanel);
-
-/** LogicFlow流程图-查看数据 */
-const DataDialog = withInstall(dataDialog);
+import Control from "./src/Control.vue";
+import NodePanel from "./src/NodePanel.vue";
+import DataDialog from "./src/DataDialog.vue";
 
 export { Control, NodePanel, DataDialog };
 

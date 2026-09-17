@@ -1,7 +1,5 @@
-import reImageVerify from "./src/index.vue";
-import { withInstall } from "@/utils";
+import ReImageVerify from "./src/index.vue";
 
 /** 图形验证码组件 */
-export const ReImageVerify = withInstall(reImageVerify);
-
+export { ReImageVerify };
 export default ReImageVerify;

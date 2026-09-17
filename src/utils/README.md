@@ -11,7 +11,6 @@
 - **`storage.ts`**: 本地与会话存储封装（`storageLocal`, `storageSession`）
 - **`tools.ts`**: 常用开发与格式化工具（`debounce`, `throttle`, `delay`, `deviceDetection`, `formatBytes`, `sum`, `getKeyList`, `delObjectProperty`, `extractFields`, `intersection`, `createFormData`, `getQueryMap`, `getSvgInfo`, `getTime`, `hideTextAtIndex`, `subBefore`, `subAfter`）
 - **`download.ts`**: 文件下载（`downloadByBase64`, `downloadByData`, `downloadByOnlineUrl`, `downloadByUrl`）
-- **`withInstall.ts`**: Vue 组件快速安装（`withInstall`, `withInstallFunction`, `withNoopInstall`）
 - **`hooks.ts`**: Vue 常用组合式 API（`useDark`, `useGlobal`, `useECharts`, `useLoader`）
 - **`auth.ts`**: Token 与权限认证工具
 - **`message.ts`**: 消息提示封装

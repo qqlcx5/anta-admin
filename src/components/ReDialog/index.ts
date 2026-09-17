@@ -1,7 +1,6 @@
 import { ref } from "vue";
 import reDialog from "./index.vue";
 import { useTimeoutFn } from "@vueuse/core";
-import { withInstall } from "@/utils";
 import type {
   EventType,
   ArgsType,
@@ -56,7 +55,7 @@ const closeAllDialog = () => {
  * https://github.com/pure-admin/vue-pure-admin/blob/main/src/App.vue#L12
  * https://github.com/pure-admin/vue-pure-admin/blob/main/src/App.vue#L22
  */
-const ReDialog = withInstall(reDialog);
+const ReDialog = reDialog;
 
 export type { EventType, ArgsType, DialogProps, ButtonProps, DialogOptions };
 export {

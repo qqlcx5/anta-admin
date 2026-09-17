@@ -1,7 +1,5 @@
-import reCropperPreview from "./src/index.vue";
-import { withInstall } from "@/utils";
+import ReCropperPreview from "./src/index.vue";
 
 /** 图片裁剪预览组件 */
-export const ReCropperPreview = withInstall(reCropperPreview);
-
+export { ReCropperPreview };
 export default ReCropperPreview;

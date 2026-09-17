@@ -1,7 +1,5 @@
-import reSeamlessScroll from "./src/index.vue";
-import { withInstall } from "@/utils";
+import ReSeamlessScroll from "./src/index.vue";
 
 /** 无缝滚动组件 */
-export const ReSeamlessScroll = withInstall(reSeamlessScroll);
-
+export { ReSeamlessScroll };
 export default ReSeamlessScroll;

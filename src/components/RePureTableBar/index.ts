@@ -1,5 +1,5 @@
-import pureTableBar from "./src/bar";
-import { withInstall } from "@/utils";
+import PureTableBar from "./src/bar";
 
-/** 配合 `@pureadmin/table` 实现快速便捷的表格操作 https://github.com/pure-admin/pure-admin-table */
-export const PureTableBar = withInstall(pureTableBar);
+/** 配合表格实现快速便捷的表格操作 */
+export { PureTableBar };
+export default PureTableBar;

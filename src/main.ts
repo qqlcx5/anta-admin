@@ -65,7 +65,8 @@ getPlatformConfig(app).then(async config => {
     .use(useElementPlus)
     .use(Table)
     .use(useVxeTable)
-    .use(PureDescriptions)
-    .use(useEcharts);
+    .use(useEcharts)
+    .component("PureDescriptions", PureDescriptions)
+    .component("AntaDescriptions", PureDescriptions);
   app.mount("#app");
 });

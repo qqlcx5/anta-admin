@@ -44,7 +44,6 @@ Anta Admin 是一款开箱即用的通用企业级中后台管理系统脚手架
 │   │   ├── storage.ts     # 本地与会话存储 (storageLocal, storageSession)
 │   │   ├── tools.ts       # 防抖、节流、延时、设备检测、字节格式化等
 │   │   ├── download.ts    # 文件下载
-│   │   ├── withInstall.ts # Vue 组件安装器
 │   │   ├── hooks.ts       # useGlobal, useDark, useECharts, useLoader
 │   │   └── index.ts       # 统一导出入口
 │   ├── views/             # 页面视图

@@ -1,7 +1,5 @@
-import reFlop from "./src/index.vue";
-import { withInstall } from "@/utils";
+import ReFlop from "./src/index.vue";
 
 /** 时间翻牌组件 */
-export const ReFlop = withInstall(reFlop);
-
+export { ReFlop };
 export default ReFlop;

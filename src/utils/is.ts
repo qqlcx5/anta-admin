@@ -65,11 +65,21 @@ export const isUrl = (val: string): boolean =>
  * 判断参数是否为空
  * null / undefined / 空数组 / 空对象 / 空字符串 / 空Map / 空Set 返回 true
  * 关键点：0 和 false 为有效数据，不视为空（避免 lodash.isEmpty(0) === true 破坏路由序号等数值逻辑）
+ * 支持传单个值或多个值（多个值时全部为空才返回 true）
  */
-export const isAllEmpty = (val: any): boolean =>
-  val === null ||
-  val === undefined ||
-  (typeof val === "number" || typeof val === "boolean" ? false : isEmpty(val));
+export const isAllEmpty = (...vals: any[]): boolean => {
+  if (vals.length === 0) return true;
+  return vals.every(
+    val =>
+      val === null ||
+      val === undefined ||
+      (typeof val === "number"
+        ? Number.isNaN(val)
+        : typeof val === "boolean"
+          ? false
+          : isEmpty(val))
+  );
+};
 
 export const isIncludeAllChildren = (child: any[], parent: any[]): boolean => {
   if (!Array.isArray(child) || !Array.isArray(parent)) return false;

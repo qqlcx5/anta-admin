@@ -1,7 +1,6 @@
 import { ref } from "vue";
 import reDrawer from "./index.vue";
 import { useTimeoutFn } from "@vueuse/core";
-import { withInstall } from "@/utils";
 import type {
   EventType,
   ArgsType,
@@ -51,7 +50,7 @@ const closeAllDrawer = () => {
   drawerStore.value = [];
 };
 
-const ReDrawer = withInstall(reDrawer);
+const ReDrawer = reDrawer;
 
 export type { EventType, ArgsType, DrawerOptions, DrawerProps, ButtonProps };
 export {

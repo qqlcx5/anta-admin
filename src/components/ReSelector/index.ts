@@ -1,7 +1,5 @@
-import reSelector from "./src";
-import { withInstall } from "@/utils";
+import ReSelector from "./src";
 
 /** 选择器组件 */
-export const ReSelector = withInstall(reSelector);
-
+export { ReSelector };
 export default ReSelector;
