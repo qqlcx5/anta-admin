@@ -12,6 +12,7 @@ import { injectResponsiveStorage } from "@/utils/responsive";
 
 import Table from "@pureadmin/table";
 import PureDescriptions from "@/components/ReDescriptions";
+import { AtIcon } from "@/components/ReIcon";
 
 // 引入重置样式
 import "./style/reset.scss";
@@ -67,6 +68,7 @@ getPlatformConfig(app).then(async config => {
     .use(useVxeTable)
     .use(useEcharts)
     .component("PureDescriptions", PureDescriptions)
-    .component("AntaDescriptions", PureDescriptions);
+    .component("AntaDescriptions", PureDescriptions)
+    .component("AtIcon", AtIcon)
   app.mount("#app");
 });

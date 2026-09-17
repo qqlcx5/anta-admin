@@ -2,6 +2,11 @@ import iconifyIconOffline from "./src/iconifyIconOffline";
 import iconifyIconOnline from "./src/iconifyIconOnline";
 import iconSelect from "./src/Select.vue";
 import fontIcon from "./src/iconfont";
+import AtIcon from "./src/AtIcon.vue";
+
+/** 全局图标组件 */
+export { AtIcon };
+export const atIcon = AtIcon;
 
 /** 本地图标组件 */
 const IconifyIconOffline = iconifyIconOffline;
@@ -13,3 +18,4 @@ const IconSelect = iconSelect;
 const FontIcon = fontIcon;
 
 export { IconifyIconOffline, IconifyIconOnline, IconSelect, FontIcon };
+export default AtIcon;
