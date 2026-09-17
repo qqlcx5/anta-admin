@@ -169,8 +169,13 @@ export function useWatermark(
 ) {
   const id = "anta-watermark-dom";
   const watermarkEl = shallowRef<HTMLElement | null>(null);
+  let observer: MutationObserver | null = null;
 
   const clear = () => {
+    if (observer) {
+      observer.disconnect();
+      observer = null;
+    }
     const dom = unref(watermarkEl);
     const parent = unref(appendEl) || (isClient ? document.body : null);
     if (dom && parent && parent.contains(dom)) {
@@ -185,6 +190,10 @@ export function useWatermark(
 
     const parent = unref(appendEl) || document.body;
     if (!parent) return;
+
+    if (parent !== document.body && getComputedStyle(parent).position === "static") {
+      parent.style.position = "relative";
+    }
 
     const {
       width = 240,
@@ -227,6 +236,18 @@ export function useWatermark(
 
     parent.appendChild(div);
     watermarkEl.value = div;
+
+    if (options.forever && typeof MutationObserver !== "undefined") {
+      observer = new MutationObserver(mutations => {
+        const isRemoved = !parent.contains(div);
+        if (isRemoved) {
+          observer?.disconnect();
+          observer = null;
+          setWatermark(str, options);
+        }
+      });
+      observer.observe(parent, { childList: true, subtree: true });
+    }
   };
 
   onBeforeUnmount(clear);

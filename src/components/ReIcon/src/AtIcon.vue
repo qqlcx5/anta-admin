@@ -62,7 +62,7 @@ const iconStyle = computed<CSSProperties>(() => {
 
 // 动态解析图标组件
 const iconComponent = computed<Component | null>(() => {
-  if (!props.icon) return null;
+  if (!props.icon || (typeof props.icon === "string" && !props.icon.trim())) return null;
   return useRenderIcon(props.icon);
 });
 </script>

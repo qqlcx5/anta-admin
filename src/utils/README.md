@@ -43,16 +43,22 @@ import {
   isClient
 } from "@/utils";
 
-// 关键防御：isAllEmpty 保护数值与布尔值（避免 0 或 false 被误判为空破坏路由排序或状态筛选）
-isAllEmpty(0);             // false
-isAllEmpty(false);         // false
-isAllEmpty(NaN);           // true
-isAllEmpty("");            // true
-isAllEmpty([], {});        // true (支持多参数，全部为空返回 true)
-isAllEmpty(null, 0);       // false
+// 关键防御：isEmpty / isAllEmpty 严格保护数值、布尔值、日期、函数与空白字符串
+isEmpty(0);                 // false (0 为有效数值，非空)
+isEmpty(false);             // false (false 为有效布尔值，非空)
+isEmpty(new Date());        // false (有效日期，非空)
+isEmpty(() => {});          // false (函数组件/回调，非空)
+isEmpty("   ");             // true  (空白字符视为空)
+isAllEmpty(0);              // false
+isAllEmpty(false);          // false
+isAllEmpty(NaN);            // true
+isAllEmpty("");             // true
+isAllEmpty([], {});         // true (支持多参数，全部为空返回 true)
+isAllEmpty(null, 0);        // false
 
-// 格式校验
+// 格式与外链校验（isUrl 严格要求 http/https/ftp 协议，避免把 user.profile 等路由名识别为外链）
 isUrl("https://github.com"); // true
+isUrl("user.profile");       // false
 isPhone("13800138000");      // true
 isEmail("test@anta.com");    // true
 ```

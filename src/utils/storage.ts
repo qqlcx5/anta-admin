@@ -47,8 +47,19 @@ class StorageProxy implements ProxyStorage {
   }
 }
 
-export const storageLocal = (): ProxyStorage =>
-  isClient ? new StorageProxy(window.localStorage) : new StorageProxy(null);
+let _localProxy: ProxyStorage | null = null;
+let _sessionProxy: ProxyStorage | null = null;
 
-export const storageSession = (): ProxyStorage =>
-  isClient ? new StorageProxy(window.sessionStorage) : new StorageProxy(null);
+export const storageLocal = (): ProxyStorage => {
+  if (!_localProxy) {
+    _localProxy = new StorageProxy(isClient ? window.localStorage : null);
+  }
+  return _localProxy;
+};
+
+export const storageSession = (): ProxyStorage => {
+  if (!_sessionProxy) {
+    _sessionProxy = new StorageProxy(isClient ? window.sessionStorage : null);
+  }
+  return _sessionProxy;
+};

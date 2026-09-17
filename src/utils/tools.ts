@@ -169,13 +169,14 @@ export function getTime(
   seconds: number,
   padZero = true
 ): { h: string | number; m: string | number; s: string | number } {
+  const sec = Number.isNaN(seconds) || seconds < 0 ? 0 : seconds;
   const pad = (n: number) => {
     const floor = Math.floor(n);
     return floor < 10 && padZero ? `0${floor}` : floor;
   };
-  const h = pad(seconds / 3600);
-  const m = pad((seconds % 3600) / 60);
-  const s = pad(seconds % 60);
+  const h = pad(sec / 3600);
+  const m = pad((sec % 3600) / 60);
+  const s = pad(sec % 60);
   return { h, m, s };
 }
 
