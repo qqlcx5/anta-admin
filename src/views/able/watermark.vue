@@ -9,7 +9,7 @@ defineOptions({
 const local = ref();
 const preventLocal = ref();
 const color = ref("#409EFF");
-const value = ref("vue-pure-admin");
+const value = ref("anta-admin");
 const { setWatermark, clear } = useWatermark();
 const { setWatermark: setLocalWatermark, clear: clearLocal } =
   useWatermark(local);
@@ -47,7 +47,7 @@ onBeforeUnmount(() => {
       </div>
       <el-link
         class="mt-2"
-        href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/able/watermark.vue"
+        href="https://github.com/qqlcx5/anta-admin/blob/main/src/views/able/watermark.vue"
         target="_blank"
       >
         代码位置 src/views/able/watermark.vue

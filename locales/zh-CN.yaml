@@ -154,8 +154,8 @@ menus:
   pureExternalPage: 外部页面
   pureExternalDoc: 文档外链
   pureEmbeddedDoc: 文档内嵌
-  pureExternalLink: vue-pure-admin
-  pureUtilsLink: pure-admin-utils
+  pureExternalLink: anta-admin
+  pureUtilsLink: 本地工具库文档
   pureColorHuntDoc: 调色板
   pureUiGradients: 渐变色
   pureEpDoc: element-plus

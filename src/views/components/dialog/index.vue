@@ -499,7 +499,7 @@ function onTransitionClick(title, transition) {
         </span>
       </div>
       <el-link
-        href="https://github.com/pure-admin/vue-pure-admin/tree/main/src/views/components/dialog"
+        href="https://github.com/qqlcx5/anta-admin/tree/main/src/views/components/dialog"
         target="_blank"
       >
         代码位置 src/views/components/dialog

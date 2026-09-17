@@ -47,55 +47,31 @@ export function useColumns() {
       }
     },
     {
-      label: "完整版代码地址",
+      label: "代码仓库地址",
       minWidth: 140,
       className: "pure-version",
       cellRenderer: () => {
         return (
           <a
-            href="https://github.com/pure-admin/vue-pure-admin"
+            href="https://github.com/qqlcx5/anta-admin"
             target="_blank"
           >
-            <span style="color: var(--el-color-primary)">完整版代码链接</span>
+            <span style="color: var(--el-color-primary)">Anta Admin 仓库</span>
           </a>
         );
       }
     },
     {
-      label: "精简版代码地址",
+      label: "Issue 反馈",
       minWidth: 140,
       className: "pure-version",
       cellRenderer: () => {
         return (
           <a
-            href="https://github.com/pure-admin/pure-admin-thin"
+            href="https://github.com/qqlcx5/anta-admin/issues"
             target="_blank"
           >
-            <span style="color: var(--el-color-primary)">精简版代码链接</span>
-          </a>
-        );
-      }
-    },
-    {
-      label: "文档地址",
-      minWidth: 100,
-      className: "pure-version",
-      cellRenderer: () => {
-        return (
-          <a href="https://pure-admin.cn/" target="_blank">
-            <span style="color: var(--el-color-primary)">文档链接</span>
-          </a>
-        );
-      }
-    },
-    {
-      label: "预览地址",
-      minWidth: 100,
-      className: "pure-version",
-      cellRenderer: () => {
-        return (
-          <a href="https://pure-admin.github.io/vue-pure-admin" target="_blank">
-            <span style="color: var(--el-color-primary)">预览链接</span>
+            <span style="color: var(--el-color-primary)">问题反馈与建议</span>
           </a>
         );
       }

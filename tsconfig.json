@@ -21,9 +21,7 @@
     "lib": ["ESNext", "DOM"],
     "paths": {
       "@/*": ["./src/*"],
-      "@build/*": ["./build/*"],
-      "@pureadmin/utils": ["./src/utils"],
-      "@pureadmin/descriptions": ["./src/components/ReDescriptions"]
+      "@build/*": ["./build/*"]
     },
     "types": [
       "node",

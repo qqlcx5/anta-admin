@@ -154,8 +154,8 @@ menus:
   pureExternalPage: External Page
   pureExternalDoc: Docs External
   pureEmbeddedDoc: Docs Embedded
-  pureExternalLink: Vue-Pure-Admin
-  pureUtilsLink: Pure-Admin-Utils
+  pureExternalLink: Anta-Admin
+  pureUtilsLink: Local-Utils-Docs
   pureColorHuntDoc: ColorHunt
   pureUiGradients: UiGradients
   pureEpDoc: Element-Plus

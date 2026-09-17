@@ -32,19 +32,19 @@
     "vite",
     "esm"
   ],
-  "homepage": "https://github.com/pure-admin/vue-pure-admin",
+  "homepage": "https://github.com/qqlcx5/anta-admin",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pure-admin/vue-pure-admin.git"
+    "url": "git+https://github.com/qqlcx5/anta-admin.git"
   },
   "bugs": {
-    "url": "https://github.com/pure-admin/vue-pure-admin/issues"
+    "url": "https://github.com/qqlcx5/anta-admin/issues"
   },
   "license": "MIT",
   "author": {
-    "name": "xiaoxian521",
-    "email": "pureadmin@163.com",
-    "url": "https://github.com/xiaoxian521"
+    "name": "qqlcx5",
+    "email": "qqlcx5@163.com",
+    "url": "https://github.com/qqlcx5"
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",

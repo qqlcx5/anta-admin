@@ -31,7 +31,7 @@ function tabClick({ index }) {
       </div>
       <el-link
         class="mt-2"
-        href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/table/high"
+        href="https://github.com/qqlcx5/anta-admin/blob/main/src/views/table/high"
         target="_blank"
       >
         代码位置 src/views/table/high
