@@ -11,7 +11,7 @@ Anta Admin 是一款开箱即用的通用企业级中后台管理系统脚手架
 - **最新技术栈**：Vue 3.5+、Vite 8+、Element-Plus、TypeScript、Pinia、Tailwindcss
 - **零外部私有工具库锁定**：彻底去除 `@pureadmin/utils` 与 `@pureadmin/descriptions`，全部工具函数与描述列表组件本地化至 `src/utils` 和 `src/components/ReDescriptions`，可自由根据企业规范魔改与扩展
 - **开箱即用通用脚手架**：动态路由、多标签页缓存、权限控制、国际化多语言、暗黑/明亮主题切换、全屏/水印、全局状态管理等
-- **完善的本地工具库**：包含类型校验、深浅拷贝、DOM 与剪贴板、颜色计算、本地存储、防抖节流、文件下载、ECharts 响应式封装等 50+ 实用函数与 Hooks
+- **完善的本地工具库**：直接基于行业标配成熟工具库 `lodash-es`、`@vueuse/core` 及现代原生 Web API 封装，杜绝重复手写底层代码，提供 50+ 实用函数与 Hooks
 - **高性能构建与优化**：基于 Vite 原生 ESM 极速热更新，按需引入组件与图标，生产环境支持 gzip/brotli 压缩
 
 ---
@@ -36,16 +36,15 @@ Anta Admin 是一款开箱即用的通用企业级中后台管理系统脚手架
 │   ├── router/            # 路由配置与动态鉴权
 │   ├── store/             # Pinia 状态管理
 │   ├── style/             # 全局样式与 Tailwind 配置
-│   ├── utils/             # 本地通用工具函数库 (替代 @pureadmin/utils)
-│   │   ├── is.ts          # 类型与数据判断
-│   │   ├── clone.ts       # 深浅拷贝
+│   ├── utils/             # 本地通用工具函数库 (复用 lodash-es 与 @vueuse/core)
+│   │   ├── is.ts          # 类型与数据判断 (基于 lodash-es 与 @vueuse/core)
+│   │   ├── clone.ts       # 深浅拷贝 (基于 lodash-es)
 │   │   ├── dom.ts         # DOM、剪贴板、ResizeObserver、水印
 │   │   ├── color.ts       # 颜色加深/变浅/渐变/随机色
 │   │   ├── storage.ts     # 本地与会话存储 (storageLocal, storageSession)
-│   │   ├── tools.ts       # 防抖、节流、延时、设备检测、字节格式化等
+│   │   ├── tools.ts       # 防抖、节流、延时、设备检测、字节格式化等 (基于 lodash-es)
 │   │   ├── download.ts    # 文件下载
-│   │   ├── withInstall.ts # Vue 组件安装器
-│   │   ├── hooks.ts       # useGlobal, useDark, useECharts, useLoader
+│   │   ├── hooks.ts       # useGlobal, useDark (基于 @vueuse/core), useECharts, useLoader
 │   │   └── index.ts       # 统一导出入口
 │   ├── views/             # 页面视图
 │   ├── App.vue            # 根组件
