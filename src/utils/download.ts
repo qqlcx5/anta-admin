@@ -1,4 +1,5 @@
 import { isClient } from "./is";
+import { openLink } from "./dom";
 
 /**
  * 通过 Base64 下载文件
@@ -75,25 +76,40 @@ export function downloadByOnlineUrl(
 /**
  * 通过 a 标签触发链接下载
  */
-export function downloadByUrl({
-  url,
-  target = "_self",
-  fileName
-}: {
-  url: string;
-  target?: string;
-  fileName?: string;
-}): boolean {
+export function downloadByUrl(
+  optionsOrUrl:
+    | string
+    | {
+        url: string;
+        target?: string;
+        fileName?: string;
+      },
+  fileName?: string,
+  target = "_self"
+): boolean {
   if (!isClient) return false;
+  let url = "";
+  let finalFileName = fileName;
+  let finalTarget = target;
+
+  if (typeof optionsOrUrl === "string") {
+    url = optionsOrUrl;
+  } else if (optionsOrUrl && typeof optionsOrUrl === "object") {
+    url = optionsOrUrl.url;
+    finalFileName = optionsOrUrl.fileName ?? fileName;
+    finalTarget = optionsOrUrl.target ?? target;
+  }
+
+  if (!url) return false;
   const isChrome = window.navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
   const isSafari = window.navigator.userAgent.toLowerCase().indexOf("safari") > -1;
 
   if (isChrome || isSafari) {
     const link = document.createElement("a");
     link.href = url;
-    link.target = target;
+    link.target = finalTarget;
     if (link.download !== undefined) {
-      link.download = fileName || url.substring(url.lastIndexOf("/") + 1, url.length);
+      link.download = finalFileName || url.substring(url.lastIndexOf("/") + 1, url.length);
     }
     document.body.appendChild(link);
     link.click();
@@ -104,6 +120,6 @@ export function downloadByUrl({
   if (url.indexOf("?") === -1) {
     url += "?download";
   }
-  window.open(url, target);
+  openLink(url, finalTarget);
   return true;
 }

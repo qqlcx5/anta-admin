@@ -1,72 +1,104 @@
 import { shallowRef, unref, onBeforeUnmount, type Ref } from "vue";
-import { isClient } from "./is";
+import { isClient, useResizeObserver as _useResizeObserver, type UseResizeObserverOptions } from "@vueuse/core";
 
-export function hasClass(el: Element, cls: string): boolean {
-  if (!el || !cls) return false;
-  if (cls.indexOf(" ") !== -1)
-    throw new Error("className should not contain spaces.");
-  return el.classList
-    ? el.classList.contains(cls)
-    : (" " + el.className + " ").indexOf(" " + cls + " ") > -1;
+/**
+ * 监听 DOM 尺寸变化（复用 @vueuse/core，支持 ElementRef、DOM 元素或选择器字符串）
+ */
+export function useResizeObserver(
+  target: any,
+  callback: ResizeObserverCallback,
+  options?: UseResizeObserverOptions
+) {
+  const el = typeof target === "string"
+    ? () => (isClient ? (document.querySelector(target) as HTMLElement | null) : null)
+    : target;
+  return _useResizeObserver(el, callback, options);
 }
 
-export function addClass(el: Element, cls: string) {
-  if (!el || !cls) return;
-  const curClass = el.className || "";
-  const classes = (cls || "").split(" ");
-  for (let i = 0, j = classes.length; i < j; i++) {
-    const clsName = classes[i];
-    if (!clsName) continue;
-    if (el.classList) {
-      el.classList.add(clsName);
-    } else if (!hasClass(el, clsName)) {
-      el.className = `${curClass} ${clsName}`;
+/**
+ * 原生 classList 操作：判断元素是否存在指定类名
+ */
+export function hasClass(element: HTMLElement | Element, name: string): boolean {
+  if (!element || !name) return false;
+  return element.classList ? element.classList.contains(name) : false;
+}
+
+/**
+ * 原生 classList 操作：添加类名
+ */
+export function addClass(
+  element: HTMLElement | Element,
+  name: string,
+  extraName?: string
+): void {
+  if (!element || !name) return;
+  if (element.classList) {
+    name.split(" ").filter(Boolean).forEach(cls => element.classList.add(cls));
+    if (extraName) {
+      extraName.split(" ").filter(Boolean).forEach(cls => element.classList.add(cls));
     }
   }
 }
 
-export function removeClass(el: Element, cls: string) {
-  if (!el || !cls) return;
-  const classes = cls.split(" ");
-  let curClass = " " + (el.className || "") + " ";
-  for (let i = 0, j = classes.length; i < j; i++) {
-    const clsName = classes[i];
-    if (!clsName) continue;
-    if (el.classList) {
-      el.classList.remove(clsName);
-    } else if (hasClass(el, clsName)) {
-      curClass = curClass.replace(" " + clsName + " ", " ");
+/**
+ * 原生 classList 操作：删除类名
+ */
+export function removeClass(
+  element: HTMLElement | Element,
+  name: string,
+  extraName?: string
+): void {
+  if (!element || !name) return;
+  if (element.classList) {
+    name.split(" ").filter(Boolean).forEach(cls => element.classList.remove(cls));
+    if (extraName) {
+      extraName.split(" ").filter(Boolean).forEach(cls => element.classList.remove(cls));
     }
-  }
-  if (!el.classList) {
-    el.className = curClass.trim();
   }
 }
 
-export function toggleClass(el: Element, cls: string) {
-  if (!el || !cls) return;
-  if (hasClass(el, cls)) {
-    removeClass(el, cls);
+/**
+ * 原生 classList 操作：切换类名
+ * @param bool 为 true 添加，为 false 移除
+ * @param name 类名
+ * @param element 目标元素，默认 document.body
+ */
+export function toggleClass(
+  bool: boolean,
+  name: string,
+  element?: HTMLElement | Element
+): void {
+  if (!isClient) return;
+  const target = element || document.body;
+  if (!target || !name) return;
+  if (bool) {
+    addClass(target, name);
   } else {
-    addClass(el, cls);
+    removeClass(target, name);
   }
 }
 
+/**
+ * 原生 classList 操作：获取所有类名
+ */
+export function getClass(element: HTMLElement | Element): string | string[] {
+  if (!element) return "";
+  const classList = Array.from(element.classList || []);
+  return classList.length === 1 ? classList[0] : classList;
+}
+
+/**
+ * 打开外部链接
+ */
 export function openLink(href: string, target = "_blank") {
   if (!isClient) return;
-  const a = document.createElement("a");
-  a.setAttribute("href", href);
-  a.setAttribute("target", target);
-  a.setAttribute("rel", "noopener noreferrer");
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  window.open(href, target);
 }
 
-export function copyTextToClipboard(
-  text: string,
-  { target = isClient ? document.body : undefined } = {}
-): boolean {
+/**
+ * 文本复制到剪贴板
+ */
+export function copyTextToClipboard(text: string): boolean {
   if (!isClient) return false;
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(text);
@@ -74,35 +106,15 @@ export function copyTextToClipboard(
   }
   const textArea = document.createElement("textarea");
   textArea.value = text;
-  textArea.setAttribute("readonly", "");
-  textArea.style.contain = "strict";
-  textArea.style.position = "absolute";
+  textArea.style.position = "fixed";
   textArea.style.left = "-9999px";
-  textArea.style.fontSize = "12pt";
-
-  const selection = document.getSelection();
-  let originalRange: Range | null = null;
-  if (selection && selection.rangeCount > 0) {
-    originalRange = selection.getRangeAt(0);
-  }
-
-  (target || document.body).appendChild(textArea);
+  document.body.appendChild(textArea);
   textArea.select();
-  textArea.selectionStart = 0;
-  textArea.selectionEnd = text.length;
-
   let success = false;
   try {
     success = document.execCommand("copy");
-  } catch (err) {
-    console.error("copyTextToClipboard error: ", err);
-  }
-
+  } catch {}
   textArea.remove();
-  if (originalRange && selection) {
-    selection.removeAllRanges();
-    selection.addRange(originalRange);
-  }
   return success;
 }
 
@@ -123,41 +135,9 @@ export function useCopyToClipboard(initial = "") {
   return { clipboardValue, copied, update };
 }
 
-export interface UseResizeObserverOptions {
-  box?: ResizeObserverBoxOptions;
-  immediate?: boolean;
-}
-
-export function useResizeObserver(
-  target: any,
-  callback: ResizeObserverCallback,
-  options: UseResizeObserverOptions = {}
-) {
-  if (!isClient || typeof ResizeObserver === "undefined") {
-    return { stop: () => {} };
-  }
-
-  const { box = "content-box" } = options;
-  const observer = new ResizeObserver(callback);
-
-  const getElement = () => {
-    const el = unref(target);
-    if (!el) return null;
-    return (el as any).$el || el;
-  };
-
-  const el = getElement();
-  if (el && el instanceof Element) {
-    observer.observe(el, { box });
-  }
-
-  const stop = () => {
-    observer.disconnect();
-  };
-
-  onBeforeUnmount(stop);
-
-  return { stop };
+export interface gradientType {
+  value: number;
+  color: string;
 }
 
 export interface WatermarkOptions {
@@ -165,9 +145,21 @@ export interface WatermarkOptions {
   height?: number;
   rotate?: number;
   font?: string;
+  color?: string;
   fillStyle?: string;
-  content?: string;
-  zIndex?: number;
+  zIndex?: number | string;
+  gradient?: Array<gradientType>;
+  shadowConfig?: Array<any>;
+  globalAlpha?: number;
+  lineHeight?: number;
+  wrap?: string;
+  textAlign?: CanvasTextAlign;
+  image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  forever?: boolean;
+  verticalOffset?: number;
+  [key: string]: any;
 }
 
 export function useWatermark(
@@ -175,7 +167,7 @@ export function useWatermark(
     isClient ? document.body : undefined
   )
 ) {
-  const id = "watermark-dom-id";
+  const id = "anta-watermark-dom";
   const watermarkEl = shallowRef<HTMLElement | null>(null);
 
   const clear = () => {
@@ -199,7 +191,7 @@ export function useWatermark(
       height = 120,
       rotate = -20,
       font = "16px sans-serif",
-      fillStyle = "rgba(0, 0, 0, 0.12)",
+      fillStyle = options.color || "rgba(0, 0, 0, 0.12)",
       zIndex = 9999
     } = options;
 
@@ -210,10 +202,14 @@ export function useWatermark(
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    if (options.globalAlpha !== undefined) {
+      ctx.globalAlpha = options.globalAlpha;
+    }
+
     ctx.rotate((rotate * Math.PI) / 180);
     ctx.font = font;
     ctx.fillStyle = fillStyle;
-    ctx.textAlign = "left";
+    ctx.textAlign = options.textAlign || "left";
     ctx.textBaseline = "middle";
     ctx.fillText(str, 20, height / 2);
 

@@ -1,79 +1,57 @@
-import { isClient, isNumber, isObject, isUrl } from "./is";
+import {
+  debounce as _debounce,
+  throttle as _throttle,
+  sum,
+  omit,
+  pick,
+  intersection
+} from "lodash-es";
+import { isClient } from "@vueuse/core";
+
+export { sum, omit, pick, intersection };
 
 /**
- * 防抖函数
+ * 防抖函数（复用 lodash-es，兼容 immediate: boolean）
  */
-export function debounce<T extends (...args: any[]) => any>(
-  fn: T,
+export const debounce = (
+  func: (...args: any[]) => any,
   wait = 200,
-  immediate = false
-): (...args: Parameters<T>) => void {
-  let timeout: ReturnType<typeof setTimeout> | null = null;
-  return function (this: any, ...args: Parameters<T>) {
-    const context = this;
-    if (timeout) clearTimeout(timeout);
-    if (immediate) {
-      const callNow = !timeout;
-      timeout = setTimeout(() => {
-        timeout = null;
-      }, wait);
-      if (callNow) fn.apply(context, args);
-    } else {
-      timeout = setTimeout(() => {
-        fn.apply(context, args);
-      }, wait);
-    }
-  };
-}
+  immediate: boolean | { leading?: boolean; trailing?: boolean } = false
+) => {
+  const options =
+    typeof immediate === "boolean"
+      ? { leading: immediate, trailing: !immediate }
+      : immediate;
+  return _debounce(func, wait, options);
+};
 
 /**
- * 节流函数
+ * 节流函数（复用 lodash-es）
  */
-export function throttle<T extends (...args: any[]) => any>(
-  fn: T,
-  wait = 200
-): (...args: Parameters<T>) => void {
-  let inThrottle = false;
-  return function (this: any, ...args: Parameters<T>) {
-    const context = this;
-    if (!inThrottle) {
-      fn.apply(context, args);
-      inThrottle = true;
-      setTimeout(() => {
-        inThrottle = false;
-      }, wait);
-    }
-  };
-}
+export const throttle = (
+  func: (...args: any[]) => any,
+  wait = 1000,
+  options?: any
+) => _throttle(func, wait, options);
 
 /**
  * 延迟等待 Promise
  */
-export function delay(ms = 20): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+export const delay = (ms = 20): Promise<void> =>
+  new Promise(resolve => setTimeout(resolve, ms));
 
 /**
- * 设备类型检测（是否为移动设备）
+ * 移动设备检测
  */
 export function deviceDetection(): boolean {
   if (!isClient) return false;
-  const ua = window.navigator.userAgent.toLowerCase();
-  const isIpad = ua.match(/ipad/i)?.[0] === "ipad";
-  const isIphone = ua.match(/iphone os/i)?.[0] === "iphone os";
-  const isMidp = ua.match(/midp/i)?.[0] === "midp";
-  const isUc7 = ua.match(/rv:1.2.3.4/i)?.[0] === "rv:1.2.3.4";
-  const isUc = ua.match(/ucweb/i)?.[0] === "ucweb";
-  const isAndroid = ua.match(/android/i)?.[0] === "android";
-  const isCe = ua.match(/windows ce/i)?.[0] === "windows ce";
-  const isWm = ua.match(/windows mobile/i)?.[0] === "windows mobile";
-  return (
-    isIpad || isIphone || isMidp || isUc7 || isUc || isAndroid || isCe || isWm
+  return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+    window.navigator.userAgent
   );
 }
 
 /**
- * 格式化字节数
+ * 格式化字节大小
  */
 export function formatBytes(bytes: number, decimals = 2): string {
   if (bytes === 0) return "0 Bytes";
@@ -85,43 +63,22 @@ export function formatBytes(bytes: number, decimals = 2): string {
 }
 
 /**
- * 数组求和
- */
-export function sum(arr: number[]): number {
-  return (arr || []).reduce((acc, cur) => acc + (Number(cur) || 0), 0);
-}
-
-/**
  * 获取对象数组中某一字段的所有值
  */
-export function getKeyList<T = any>(
-  arr: any[],
-  key: string,
-  unique = true
-): T[] {
+export function getKeyList<T = any>(arr: any[], key: string, unique = true): T[] {
   if (!Array.isArray(arr)) return [];
-  const list: any[] = [];
-  for (const item of arr) {
-    if (item && item[key] !== undefined && item[key] !== null) {
-      list.push(item[key]);
-    }
-  }
+  const list = arr.map(item => item?.[key]).filter(v => v !== undefined && v !== null);
   return unique ? Array.from(new Set(list)) : list;
 }
 
 /**
- * 从对象中删除指定属性并返回新对象
+ * 从对象中删除指定属性
  */
 export function delObjectProperty<T extends Record<string, any>>(
   obj: T,
   props: string | string[]
-): Partial<T> {
-  const result: any = { ...obj };
-  const keys = Array.isArray(props) ? props : [props];
-  for (const key of keys) {
-    delete result[key];
-  }
-  return result;
+): any {
+  return omit(obj, props);
 }
 
 /**
@@ -129,21 +86,7 @@ export function delObjectProperty<T extends Record<string, any>>(
  */
 export function extractFields<T = any>(list: any[], ...fields: string[]): T[] {
   if (!Array.isArray(list)) return [];
-  return list.map(item => {
-    const obj: any = {};
-    for (const f of fields) {
-      obj[f] = item?.[f];
-    }
-    return obj;
-  });
-}
-
-/**
- * 数组求交集
- */
-export function intersection<T = any>(...arrays: T[][]): T[] {
-  if (arrays.length === 0) return [];
-  return arrays.reduce((acc, cur) => acc.filter(item => cur.includes(item)));
+  return list.map(item => pick(item, fields) as unknown as T);
 }
 
 export interface FormDataOptions {
@@ -170,7 +113,7 @@ export function createFormData(data: Record<string, any>, options: FormDataOptio
       value.forEach((v, index) => {
         append(`${key}[${index}]`, v);
       });
-    } else if (isObject(value)) {
+    } else if (typeof value === "object" && value !== null) {
       Object.keys(value).forEach(k => {
         append(`${key}[${k}]`, value[k]);
       });
@@ -187,21 +130,17 @@ export function createFormData(data: Record<string, any>, options: FormDataOptio
 }
 
 /**
- * 解析 URL query 字符串为键值对象
+ * 解析 URL query 字符串
  */
 export function getQueryMap(url?: string): Record<string, string> {
   const targetUrl = url || (isClient ? window.location.href : "");
   if (!targetUrl || targetUrl.indexOf("?") === -1) return {};
   const queryPart = targetUrl.slice(targetUrl.indexOf("?") + 1);
-  const pairs = queryPart.split("&");
+  const searchParams = new URLSearchParams(queryPart);
   const result: Record<string, string> = {};
-  for (const pair of pairs) {
-    if (!pair) continue;
-    const [key, value] = pair.split("=");
-    if (key) {
-      result[decodeURIComponent(key)] = decodeURIComponent(value || "");
-    }
-  }
+  searchParams.forEach((value, key) => {
+    result[key] = value;
+  });
   return result;
 }
 
@@ -226,7 +165,10 @@ export function getSvgInfo(svgString: string): { width: number; height: number; 
 /**
  * 转换时间秒数为 { h, m, s }
  */
-export function getTime(seconds: number, padZero = true): { h: string | number; m: string | number; s: string | number } {
+export function getTime(
+  seconds: number,
+  padZero = true
+): { h: string | number; m: string | number; s: string | number } {
   const pad = (n: number) => {
     const floor = Math.floor(n);
     return floor < 10 && padZero ? `0${floor}` : floor;
@@ -238,26 +180,24 @@ export function getTime(seconds: number, padZero = true): { h: string | number; 
 }
 
 /**
- * 在指定下标隐藏文字（例如敏感信息脱敏）
+ * 在指定下标脱敏文字
  */
 export function hideTextAtIndex(
   str: string | number,
   index: number | number[] | { start: number; end: number },
   symbol = "*"
 ): string {
-  let text = String(str);
+  const text = String(str);
   const chars = text.split("");
 
-  if (isNumber(index)) {
-    if (index >= 0 && index < chars.length) {
-      chars[index] = symbol;
-    }
+  if (typeof index === "number") {
+    if (index >= 0 && index < chars.length) chars[index] = symbol;
   } else if (Array.isArray(index)) {
     index.forEach(i => {
       if (i >= 0 && i < chars.length) chars[i] = symbol;
     });
-  } else if (isObject(index)) {
-    const { start, end } = index as { start: number; end: number };
+  } else if (index && typeof index === "object") {
+    const { start, end } = index;
     for (let i = start; i <= end && i < chars.length; i++) {
       if (i >= 0) chars[i] = symbol;
     }
@@ -271,7 +211,7 @@ export function hideTextAtIndex(
 export function subBefore(str: string, separator: string): string {
   if (typeof separator !== "string" || typeof str !== "string") return "";
   const index = str.indexOf(separator);
-  return index === -1 ? str : str.substring(0, index);
+  return index === -1 ? str : str.slice(0, index);
 }
 
 /**
@@ -280,5 +220,5 @@ export function subBefore(str: string, separator: string): string {
 export function subAfter(str: string, separator: string): string {
   if (typeof separator !== "string" || typeof str !== "string") return "";
   const index = str.indexOf(separator);
-  return index === -1 ? "" : str.substring(index + separator.length);
+  return index === -1 ? "" : str.slice(index + separator.length);
 }

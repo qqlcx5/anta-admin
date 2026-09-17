@@ -1,5 +1,5 @@
 import type { VNode } from "vue";
-import type { IDescriptionsProps } from "element-plus";
+import type { DescriptionProps as IDescriptionsProps } from "element-plus";
 
 export interface Loading {
   load?: boolean;
@@ -31,13 +31,13 @@ export interface DescriptionsColumns {
     attrs?: any;
     index?: number;
     value?: any;
-  }) => VNode | JSX.Element | any;
+  }) => VNode | any;
   labelRenderer?: (params: {
     props?: any;
     attrs?: any;
     index?: number;
     value?: any;
-  }) => VNode | JSX.Element | any;
+  }) => VNode | any;
 }
 
 export interface PureDescriptionsProps extends Partial<IDescriptionsProps> {

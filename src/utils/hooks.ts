@@ -25,54 +25,19 @@ export function useGlobal<T = Record<string, any>>(): T {
   return instance.appContext.config.globalProperties as T;
 }
 
+import { useDark as _useDark } from "@vueuse/core";
+
 /**
- * 暗黑模式 Hook
+ * 暗黑模式 Hook（复用 @vueuse/core）
  */
-export function useDark(options?: { className?: string; selector?: string }) {
-  const className = options?.className ?? "dark";
-  const isDark = shallowRef(false);
-  let observer: MutationObserver | null = null;
-
-  const getTarget = () => {
-    if (!isClient) return null;
-    return options?.selector === "body"
-      ? document.body
-      : document.documentElement;
-  };
-
-  const update = () => {
-    const target = getTarget();
-    if (!target) return;
-    isDark.value = target.classList.contains(className);
-  };
-
-  const toggleDark = () => {
-    const target = getTarget();
-    if (!target) return;
-    target.classList.toggle(className);
-    update();
-  };
-
-  onBeforeMount(() => {
-    update();
-    const target = getTarget();
-    if (target && typeof MutationObserver !== "undefined") {
-      observer = new MutationObserver(update);
-      observer.observe(target, {
-        attributes: true,
-        attributeFilter: ["class"]
-      });
+export function useDark(options?: any) {
+  const isDark = _useDark(options);
+  return {
+    isDark,
+    toggleDark: () => {
+      isDark.value = !isDark.value;
     }
-  });
-
-  onBeforeUnmount(() => {
-    if (observer) {
-      observer.disconnect();
-      observer = null;
-    }
-  });
-
-  return { isDark, toggleDark };
+  };
 }
 
 export interface UseEchartsOptions {
@@ -104,13 +69,13 @@ export function useECharts(
     chartInstance = echartsInstance.init(el, currentTheme, options);
   }
 
-  function setOptions(opt: EChartsOption, clear = true) {
+  function setOptions(opt: EChartsOption, ...params: any[]) {
     chartOptions.value = opt;
     const el = unref(elRef);
     if (!el) return;
 
     if (el.offsetHeight === 0) {
-      delay(30).then(() => setOptions(opt, clear));
+      delay(30).then(() => setOptions(opt, ...params));
       return;
     }
 
@@ -119,10 +84,16 @@ export function useECharts(
         if (!chartInstance) {
           initChart(theme.value);
         }
-        if (clear) {
+        const hasClear = typeof params[0] === "boolean" ? params[0] : true;
+        if (hasClear) {
           chartInstance?.clear();
         }
         chartInstance?.setOption(opt);
+        params.forEach(param => {
+          if (param && typeof param === "object" && param.name && typeof param.callback === "function") {
+            chartInstance?.on(param.name, param.query, param.callback);
+          }
+        });
       });
     });
   }
@@ -199,16 +170,22 @@ export function useECharts(
  * 动态加载脚本与样式资源 Hook
  */
 export function useLoader() {
-  const loadScript = (src: string | string[]) => {
+  const loadScript = (
+    optionsOrSrc: string | string[] | { src: string | string[] }
+  ): Promise<Array<{ src: string; message: string }>> => {
     if (!isClient) return Promise.resolve([]);
-    const srcs = Array.isArray(src) ? src : [src];
+    const raw =
+      typeof optionsOrSrc === "object" && !Array.isArray(optionsOrSrc)
+        ? optionsOrSrc.src
+        : optionsOrSrc;
+    const srcs = Array.isArray(raw) ? raw : [raw];
     return Promise.all(
       srcs.map(
         s =>
-          new Promise((resolve, reject) => {
+          new Promise<{ src: string; message: string }>((resolve, reject) => {
             const existing = document.querySelector(`script[src="${s}"]`);
             if (existing) {
-              resolve({ src: s, message: "已加载" });
+              resolve({ src: s, message: "加载成功" });
               return;
             }
             const script = document.createElement("script");
