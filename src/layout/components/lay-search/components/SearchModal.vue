@@ -304,7 +304,7 @@ onKeyStroke("ArrowDown", handleDown);
       @input="handleSearch"
     >
       <template #prefix>
-        <IconifyIconOffline :icon="SearchIcon" class="text-primary size-6" />
+        <AtIcon :icon="SearchIcon" class="text-primary size-6" />
       </template>
     </el-input>
     <div class="search-content">

@@ -43,7 +43,7 @@ const toggleClick = () => {
 
 <template>
   <div class="left-collapse">
-    <IconifyIconOffline
+    <AtIcon
       v-tippy="{
         content: isActive
           ? t('buttons.antaClickCollapse')

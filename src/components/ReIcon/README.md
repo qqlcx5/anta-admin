@@ -1,17 +1,16 @@
 # Anta Admin 图标系统 (Icon System)
 
-Anta Admin 内置了一套**全能混合图标体系**，融合了 **Iconify 海量在线图标、编译期离线提取、本地 SVG 组件化、Element Plus 官方图标以及 iconfont 阿里矢量库**，并通过统一的全局组件 `<AtIcon />` 与核心渲染函数 `useRenderIcon` 实现了统一规范化调用。
+Anta Admin 提供了现代化的**统一图标系统**，彻底收敛为单一心智模型：以全局组件 `<AtIcon />`（或 `<at-icon />`）和高性能渲染 Hook `useRenderIcon` 为核心，融合了 **Iconify 海量在线/离线图标、unplugin-icons 编译期按需抽取、本地 SVG 组件化以及 Element Plus 官方图标**，消灭历史冗余与双重标准。
 
 ---
 
 ## 🌟 核心特性
 
+- **单一心智模型**：模板排版统一使用 `<AtIcon />`，JS/TS/Element 属性统一使用 `useRenderIcon()`。
 - **全局免引入**：已在入口全局注册 `<AtIcon />` 与 `<at-icon />`，在任何 `.vue` 页面中直接使用，零 import。
-- **类似 UnoCSS 的极致体验**：在模板中通过 `icon="集合:图标名"` 自由指定图标，天然支持 Tailwind CSS 工具类。
-- **双轨制架构**：
-  - **外网环境**：在线按需加载（20万+ 图标免下载，初始打包增量为 **0 KB**）。
-  - **内网/专网环境**：通过 `offlineIcon.ts` 结合 `unplugin-icons` 进行编译期抽取，离线打包单个仅需 300 字节。
-- **全场景兼容**：无论是模板排版、Element Plus 按钮/表单属性（`:icon`），还是后端动态返回的路由菜单，均可 100% 渲染。
+- **语法彻底归一**：统一遵循标准 Iconify 格式（如 `ep:edit`、`ri:search-line`），底层自动兼容旧格式（如 `ep/menu`）。
+- **组件级缓存加速**：`useRenderIcon` 内置组件缓存池，消除菜单与列表渲染时频繁创建组件导致的 Virtual DOM 重绘与抖动。
+- **纯净轻量**：彻底剥离传统 iconfont 字体包，告别首屏字体阻塞与冗余打包。
 
 ---
 
@@ -23,24 +22,29 @@ Anta Admin 内置了一套**全能混合图标体系**，融合了 **Iconify 海
 ```vue
 <template>
   <div class="flex items-center gap-4">
-    <!-- Iconify 在线图标（格式："集合:名称"） -->
+    <!-- 1. Iconify 标准图标（格式："集合:名称"） -->
     <AtIcon icon="ep:edit" />
     <AtIcon icon="ri:search-line" />
     <AtIcon icon="mdi:github" />
 
-    <!-- 离线本地注册图标（格式："集合/名称"） -->
-    <AtIcon icon="ep/menu" />
+    <!-- 2. 离线/本地注册图标（自动兼容冒号与斜杠） -->
+    <AtIcon icon="ep:menu" />
 
-    <!-- iconfont 阿里矢量图标（前缀："IF-"） -->
-    <AtIcon icon="IF-anta-iconfont-wechat" />
+    <!-- 3. unplugin-icons 编译期抽取组件 -->
+    <AtIcon :icon="MenuFold" />
 
-    <!-- Element Plus 官方组件或本地 SVG 组件 -->
+    <!-- 4. 本地自定义 SVG 组件（vite-svg-loader） -->
+    <AtIcon :icon="GlobalizationIcon" />
+
+    <!-- 5. Element Plus 官方组件 -->
     <AtIcon :icon="Delete" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { Delete } from "@element-plus/icons-vue";
+import MenuFold from "~icons/ri/menu-fold-fill";
+import GlobalizationIcon from "@/assets/svg/globalization.svg?component";
 </script>
 ```
 
@@ -50,7 +54,7 @@ import { Delete } from "@element-plus/icons-vue";
 <template>
   <!-- 尺寸与颜色控制 -->
   <AtIcon icon="ri:heart-3-fill" class="size-6 text-red-500 hover:scale-125 transition-transform cursor-pointer" />
-  
+
   <!-- 随 Element Plus 主题色与暗黑模式联动 -->
   <AtIcon icon="ep:setting" class="size-5 text-primary" />
 </template>
@@ -60,7 +64,7 @@ import { Delete } from "@element-plus/icons-vue";
 
 | 属性名 | 类型 | 默认值 | 说明 |
 | :--- | :--- | :--- | :--- |
-| `icon` | `string \| Component \| Function \| object` | `-` | **必填**。图标标识或组件对象 |
+| `icon` | `string \| Component \| Function \| object` | `-` | **必填**。图标标识、组件对象、SVG 字符串或图片 URL |
 | `size` | `number \| string` | `-` | 图标尺寸（支持纯数值如 `20`，或带单位字串如 `"18px"`, `"1.5rem"`） |
 | `color` | `string` | `-` | 图标颜色（支持 CSS 颜色名、十六进制或 CSS 变量） |
 | `inline`| `boolean` | `false` | 是否内联居中对齐展示 |
@@ -70,7 +74,7 @@ import { Delete } from "@element-plus/icons-vue";
 
 ## 🎯 方式二：使用 `useRenderIcon` 函数
 
-适合需要将图标直接传递给 **Element Plus 组件的属性**（如 `<el-button :icon="...">`），或在 **路由配置（`route.meta.icon`）** 中使用。
+适合需要将图标直接传递给 **Element Plus 组件的属性**（如 `<el-button :icon="...">`），或在 **动态路由配置（`route.meta.icon`）** 中使用。
 
 ```vue
 <template>
@@ -87,32 +91,32 @@ import { Delete } from "@element-plus/icons-vue";
 
 <script setup lang="ts">
 import { Delete } from "@element-plus/icons-vue";
-import { useRenderIcon } from "@/components/ReIcon/src/hooks";
+import { useRenderIcon } from "@/components/ReIcon";
 </script>
 ```
 
 ---
 
-## 📦 五大图标来源与接入规范
+## 📦 图标来源与接入规范
 
-### 1. Iconify 在线图标（外网首选）
+### 1. Iconify 标准图标（开发首选）
 - **格式**：`[集合前缀]:[图标名]`（例如 `ep:plus`、`ri:user-line`、`mdi:bell-ring`）。
-- **挑选地址**：访问 [Iconify 图标中心](https://icon-sets.iconify.design/) 搜索获取。
+- **挑选地址**：访问 [Iconify 图标中心](https://icon-sets.iconify.design/) 检索 20 万+ 开源图标。
 - **优点**：无需安装或下载任何文件，直接在代码中输入名称即可使用。
 
-### 2. Iconify 离线本地图标（政企专网首选）
-- **格式**：`[集合前缀]/[图标名]`（例如 `ep/menu`、`ri/mind-map`）。
-- **离线注册步骤**：在 `src/components/ReIcon/src/offlineIcon.ts` 中添加：
-  ```ts
-  import EpDownload from "~icons/ep/download?raw";
+### 2. 静态离线图标（内网/专网首选）
+对于专网/内网环境，系统基础菜单图标已在 `src/components/ReIcon/src/offlineIcon.ts` 中通过 `unplugin-icons` 统一抽取。
+若需新增静态菜单图标：
+```ts
+// src/components/ReIcon/src/offlineIcon.ts
+import EpDownload from "~icons/ep/download?raw";
 
-  // 添加至 icons 数组中
-  const icons = [
-    // ...
-    ["ep/download", EpDownload]
-  ];
-  ```
-- **优点**：由 `unplugin-icons` 在打包时精准切出该 SVG 代码，内网离线环境 100% 正常显示。
+const icons = [
+  // ...
+  ["ep:download", EpDownload]
+];
+```
+系统会自动同时注册 `ep:download` 与 `ep/download`，无需区分语法。
 
 ### 3. 本地自定义 SVG（`vite-svg-loader`）
 - **存放路径**：`src/assets/svg/`
@@ -123,9 +127,7 @@ import { useRenderIcon } from "@/components/ReIcon/src/hooks";
   </script>
 
   <template>
-    <MyLogo class="w-8 h-8 text-primary" />
-    <!-- 或使用 AtIcon -->
-    <AtIcon :icon="MyLogo" />
+    <AtIcon :icon="MyLogo" class="size-8 text-primary" />
   </template>
   ```
 
@@ -133,14 +135,10 @@ import { useRenderIcon } from "@/components/ReIcon/src/hooks";
 - **依赖库**：`@element-plus/icons-vue`
 - **使用方式**：直接导入图标组件对象并传入 `:icon`。
 
-### 5. iconfont 阿里巴巴矢量库
-- **格式**：以 `IF-` 开头（例如 `IF-anta-iconfont-wechat`）。
-- **静态资源**：位于 `src/assets/iconfont/`（包含 `iconfont.js` 与 `iconfont.css`）。
-
 ---
 
-## 💡 最佳实践与避坑指南
+## 💡 最佳实践
 
-1. **写页面排版**：优先使用 `<AtIcon icon="ep:xxx" />`，配合 Tailwind CSS 控制布局与悬停特效，编码最迅速。
-2. **写 Element Plus 属性**：使用 `useRenderIcon('ep:xxx')` 绑定到 `:icon` 属性。
-3. **动态后台路由菜单**：在路由 meta 中声明 `icon: "ep:user"` 或 `icon: "ep/home-filled"`，框架侧边栏会自动完成解析渲染。
+1. **页面模板排版**：优先使用 `<AtIcon icon="ep:xxx" />`，配合 Tailwind CSS 类名控制大小和交互效果。
+2. **Element Plus 组件绑定**：使用 `useRenderIcon('ep:xxx')` 绑定到 `:icon` / `:prefix-icon`。
+3. **后台路由配置**：在路由 meta 中声明 `icon: "ep:user"` 或 `icon: "ri:dashboard-line"`。

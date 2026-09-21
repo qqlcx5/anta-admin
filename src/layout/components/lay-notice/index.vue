@@ -51,7 +51,7 @@ const onMarkAsRead = () => {
     >
       <el-badge is-dot :hidden="!hasAnyNoticeData">
         <span class="header-notice-icon">
-          <IconifyIconOffline :icon="BellIcon" />
+          <AtIcon :icon="BellIcon" />
         </span>
       </el-badge>
     </span>
@@ -87,7 +87,7 @@ const onMarkAsRead = () => {
           <div class="flex-bc m-1">
             <el-button type="primary" size="small" text @click="onWatchMore">
               {{ t("buttons.antaWatchMore") }}
-              <IconifyIconOffline :icon="ArrowRightIcon" />
+              <AtIcon :icon="ArrowRightIcon" />
             </el-button>
             <el-button type="primary" size="small" text @click="onMarkAsRead">
               {{ t("buttons.antaMarkAsRead") }}

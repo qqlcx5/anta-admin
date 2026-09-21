@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { toRaw } from "vue";
-import { useRenderIcon } from "@/components/ReIcon/src/hooks";
 
 defineProps({
   extraIcon: {
@@ -11,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <div v-if="extraIcon" class="flex-c">
-    <component :is="useRenderIcon(toRaw(extraIcon))" class="size-7.5" />
+  <div v-if="extraIcon" class="flex items-center justify-center text-amber-500">
+    <AtIcon :icon="toRaw(extraIcon)" class="size-3.5" />
   </div>
 </template>

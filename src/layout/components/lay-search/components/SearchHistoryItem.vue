@@ -31,13 +31,13 @@ function handleDelete(item) {
   <span class="history-item-title">
     {{ transformI18n(item.meta?.title) }}
   </span>
-  <IconifyIconOffline
+  <AtIcon
     v-show="item.type === 'history'"
     :icon="StarIcon"
     class="size-4.5 mr-2 hover:text-[#d7d5d4]"
     @click.stop="handleCollect(item)"
   />
-  <IconifyIconOffline
+  <AtIcon
     :icon="CloseIcon"
     class="size-4.5 hover:text-[#d7d5d4] cursor-pointer"
     @click.stop="handleDelete(item)"

@@ -569,7 +569,7 @@ onBeforeUnmount(() => {
 <template>
   <div v-if="!showTags" ref="containerDom" class="tags-view">
     <span v-show="isShowArrow" class="arrow-left">
-      <IconifyIconOffline :icon="ArrowLeftSLine" @click="handleScroll(200)" />
+      <AtIcon :icon="ArrowLeftSLine" @click="handleScroll(200)" />
     </span>
     <div
       ref="scrollbarDom"
@@ -609,7 +609,7 @@ onBeforeUnmount(() => {
               class="el-icon-close"
               @click.stop="deleteMenu(item)"
             >
-              <IconifyIconOffline :icon="Close" />
+              <AtIcon :icon="Close" />
             </span>
             <span
               v-if="tagsStyle !== 'card'"
@@ -633,14 +633,14 @@ onBeforeUnmount(() => {
               class="chrome-close-btn"
               @click.stop="deleteMenu(item)"
             >
-              <IconifyIconOffline :icon="Close" />
+              <AtIcon :icon="Close" />
             </span>
           </div>
         </div>
       </div>
     </div>
     <span v-show="isShowArrow" class="arrow-right">
-      <IconifyIconOffline :icon="ArrowRightSLine" @click="handleScroll(-200)" />
+      <AtIcon :icon="ArrowRightSLine" @click="handleScroll(-200)" />
     </span>
     <!-- 右键菜单按钮 -->
     <transition name="el-zoom-in-top">
@@ -657,7 +657,7 @@ onBeforeUnmount(() => {
           style="display: flex; align-items: center"
         >
           <li v-if="item.show" @click="selectTag(key, item)">
-            <IconifyIconOffline :icon="item.icon" />
+            <AtIcon :icon="item.icon" />
             {{ transformI18n(item.text) }}
           </li>
         </div>
@@ -670,7 +670,7 @@ onBeforeUnmount(() => {
       @command="handleCommand"
     >
       <span class="arrow-down">
-        <IconifyIconOffline :icon="ArrowDown" class="dark:text-white" />
+        <AtIcon :icon="ArrowDown" class="dark:text-white" />
       </span>
       <template #dropdown>
         <el-dropdown-menu>
@@ -681,7 +681,7 @@ onBeforeUnmount(() => {
             :divided="item.divided"
             :disabled="item.disabled"
           >
-            <IconifyIconOffline :icon="item.icon" />
+            <AtIcon :icon="item.icon" />
             {{ transformI18n(item.text) }}
           </el-dropdown-item>
         </el-dropdown-menu>

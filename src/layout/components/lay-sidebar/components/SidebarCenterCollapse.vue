@@ -46,7 +46,7 @@ const toggleClick = () => {
     class="center-collapse"
     @click="toggleClick"
   >
-    <IconifyIconOffline
+    <AtIcon
       :icon="ArrowLeft"
       :class="[iconClass, themeColor === 'light' ? '' : 'text-primary']"
       :style="{ transform: isActive ? 'none' : 'rotateY(180deg)' }"

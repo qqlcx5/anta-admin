@@ -56,8 +56,7 @@ const iconStyle = computed<CSSProperties>(() => {
     style.verticalAlign = "middle";
   }
 
-  // 合并外层传入的 style
-  return attrs.style ? Object.assign(style, attrs.style as CSSProperties) : style;
+  return style;
 });
 
 // 动态解析图标组件
@@ -72,6 +71,6 @@ const iconComponent = computed<Component | null>(() => {
     :is="iconComponent"
     v-if="iconComponent"
     v-bind="attrs"
-    :style="iconStyle"
+    :style="[iconStyle, attrs.style as any]"
   />
 </template>

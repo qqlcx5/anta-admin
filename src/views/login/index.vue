@@ -114,7 +114,7 @@ useEventListener(document, "keydown", ({ code }) => {
               :class="['dark:!text-white', getDropdownItemClass(locale, 'zh')]"
               @click="translationCh"
             >
-              <IconifyIconOffline
+              <AtIcon
                 v-show="locale === 'zh'"
                 class="check-zh"
                 :icon="Check"
@@ -127,7 +127,7 @@ useEventListener(document, "keydown", ({ code }) => {
               @click="translationEn"
             >
               <span v-show="locale === 'en'" class="check-en">
-                <IconifyIconOffline :icon="Check" />
+                <AtIcon :icon="Check" />
               </span>
               English
             </el-dropdown-item>

@@ -14,7 +14,7 @@ function handleSearch() {
       class="search-container w-10 h-12 flex-c cursor-pointer navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
       @click="handleSearch"
     >
-      <IconifyIconOffline icon="ri/search-line" />
+      <AtIcon icon="ri:search-line" />
     </div>
     <SearchModal v-model:value="show" />
   </div>

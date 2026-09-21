@@ -28,6 +28,6 @@ watch(
     class="fullscreen-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
     @click="toggle"
   >
-    <IconifyIconOffline :icon="screenIcon" />
+    <AtIcon :icon="screenIcon" />
   </span>
 </template>

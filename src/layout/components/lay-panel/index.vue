@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
           }"
           :class="iconClass"
         >
-          <IconifyIconOffline
+          <AtIcon
             class="dark:text-white"
             width="18px"
             height="18px"
