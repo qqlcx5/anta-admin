@@ -30,7 +30,7 @@ const toggleClick = () => {
     "
     @click="toggleClick"
   >
-    <IconifyIconOffline
+    <AtIcon
       :icon="isActive ? MenuFold : MenuUnfold"
       class="inline-block! align-middle hover:text-primary dark:hover:text-white!"
     />

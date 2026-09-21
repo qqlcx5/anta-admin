@@ -9,7 +9,7 @@ const { columns, filterTableData } = useColumns();
   <pure-table :data="filterTableData" :columns="columns">
     <template #nameHeader>
       <span class="flex items-center">
-        <IconifyIconOffline :icon="Calendar" />
+        <AtIcon :icon="Calendar" />
         日期
       </span>
     </template>

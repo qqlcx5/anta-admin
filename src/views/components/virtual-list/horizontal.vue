@@ -60,7 +60,7 @@ const filteredItems = computed(() => {
           class="message"
         >
           <div>
-            <IconifyIconOnline
+            <AtIcon
               icon="openmoji:beaming-face-with-smiling-eyes"
               width="40"
             />

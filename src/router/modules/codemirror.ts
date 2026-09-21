@@ -5,7 +5,7 @@ export default {
   path: "/codemirror",
   redirect: "/codemirror/index",
   meta: {
-    icon: "ri/code-box-line",
+    icon: "ri:code-box-line",
     title: $t("menus.antaCodeMirror"),
     rank: codemirror
   },
@@ -16,7 +16,7 @@ export default {
       component: () => import("@/views/codemirror/index.vue"),
       meta: {
         title: $t("menus.antaCodeMirror"),
-        extraIcon: "IF-anta-iconfont-new svg"
+        extraIcon: "ri:sparkling-fill"
       }
     }
   ]

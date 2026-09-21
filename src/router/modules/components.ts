@@ -5,7 +5,7 @@ export default {
   path: "/components",
   redirect: "/components/dialog",
   meta: {
-    icon: "ep/menu",
+    icon: "ep:menu",
     title: $t("menus.antaComponents"),
     rank: components
   },
@@ -200,7 +200,7 @@ export default {
       component: () => import("@/views/components/color-picker-panel.vue"),
       meta: {
         title: $t("menus.antaColorPickerPanel"),
-        extraIcon: "IF-anta-iconfont-new svg"
+        extraIcon: "ri:sparkling-fill"
       }
     },
     {

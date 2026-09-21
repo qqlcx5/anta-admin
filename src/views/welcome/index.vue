@@ -61,7 +61,7 @@ const optionsBasis: Array<OptionsType> = [
                 backgroundColor: isDark ? 'transparent' : item.bgColor
               }"
             >
-              <IconifyIconOffline
+              <AtIcon
                 :icon="item.icon"
                 :color="item.color"
                 width="18"

@@ -141,19 +141,19 @@ watch(size, val =>
     >
       <el-radio-button value="wait">
         <span class="flex">
-          <IconifyIconOnline icon="ri:progress-8-fill" class="mr-1" />
+          <AtIcon icon="ri:progress-8-fill" class="mr-1" />
           等待中
         </span>
       </el-radio-button>
       <el-radio-button value="progress">
         <span class="flex">
-          <IconifyIconOnline icon="ri:progress-6-line" class="mr-1" />
+          <AtIcon icon="ri:progress-6-line" class="mr-1" />
           进行中
         </span>
       </el-radio-button>
       <el-radio-button value="complete">
         <span class="flex">
-          <IconifyIconOnline icon="ri:progress-8-line" class="mr-1" />
+          <AtIcon icon="ri:progress-8-line" class="mr-1" />
           已完成
         </span>
       </el-radio-button>
@@ -193,13 +193,13 @@ watch(size, val =>
     >
       <el-checkbox-button value="tomato">
         <span class="flex">
-          <IconifyIconOnline icon="streamline-emojis:tomato" class="mr-1" />
+          <AtIcon icon="streamline-emojis:tomato" class="mr-1" />
           番茄
         </span>
       </el-checkbox-button>
       <el-checkbox-button value="watermelon">
         <span class="flex">
-          <IconifyIconOnline
+          <AtIcon
             icon="streamline-emojis:watermelon-1"
             class="mr-1"
           />
@@ -208,7 +208,7 @@ watch(size, val =>
       </el-checkbox-button>
       <el-checkbox-button value="strawberry">
         <span class="flex">
-          <IconifyIconOnline
+          <AtIcon
             icon="streamline-emojis:strawberry-1"
             class="mr-1"
           />

@@ -21,8 +21,8 @@ const { device } = useNav();
       {{ t("buttons.antaConfirm") }}
     </span>
     <span class="search-footer-item">
-      <IconifyIconOffline :icon="ArrowUpLine" class="icon" />
-      <IconifyIconOffline :icon="ArrowDownLine" class="icon" />
+      <AtIcon :icon="ArrowUpLine" class="icon" />
+      <AtIcon :icon="ArrowDownLine" class="icon" />
       {{ t("buttons.antaSwitch") }}
     </span>
     <span class="search-footer-item">

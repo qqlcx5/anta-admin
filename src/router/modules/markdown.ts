@@ -5,7 +5,7 @@ export default {
   path: "/markdown",
   redirect: "/markdown/index",
   meta: {
-    icon: "ri/markdown-line",
+    icon: "ri:markdown-line",
     title: $t("menus.antaMarkdown"),
     rank: markdown
   },
@@ -16,7 +16,7 @@ export default {
       component: () => import("@/views/markdown/index.vue"),
       meta: {
         title: $t("menus.antaMarkdown"),
-        extraIcon: "IF-anta-iconfont-new svg"
+        extraIcon: "ri:sparkling-fill"
       }
     }
   ]

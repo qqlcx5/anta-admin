@@ -81,7 +81,12 @@ const icons = [
   ["ri/bar-chart-horizontal-line", RiBarChartHorizontalLine]
 ];
 
-// 本地菜单图标，后端在路由的 icon 中返回对应的图标字符串并且前端在此处使用 addIcon 添加即可渲染菜单图标
+// 本地菜单图标，同时支持斜杠（ep/menu）与标准冒号（ep:menu）
 icons.forEach(([name, icon]) => {
-  addIcon(name as string, getSvgInfo(icon as string));
+  const iconInfo = getSvgInfo(icon as string);
+  const rawName = name as string;
+  addIcon(rawName, iconInfo);
+  if (rawName.includes("/")) {
+    addIcon(rawName.replace("/", ":"), iconInfo);
+  }
 });

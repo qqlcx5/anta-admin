@@ -127,7 +127,7 @@ onMounted(async () => {
           :on-change="onChange"
         >
           <el-button plain class="ml-4!">
-            <IconifyIconOffline :icon="uploadLine" />
+            <AtIcon :icon="uploadLine" />
             <span class="ml-2">更新头像</span>
           </el-button>
         </el-upload>

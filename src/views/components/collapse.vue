@@ -80,7 +80,7 @@ const handleChange = (val: string[]) => {
       <el-collapse-item name="5">
         <template #title>
           周五
-          <IconifyIconOnline
+          <AtIcon
             icon="streamline-emojis:beaming-face-with-smiling-eyes"
             class="ml-1"
             width="30"

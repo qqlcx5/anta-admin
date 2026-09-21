@@ -1,21 +1,14 @@
-import iconifyIconOffline from "./src/iconifyIconOffline";
-import iconifyIconOnline from "./src/iconifyIconOnline";
-import iconSelect from "./src/Select.vue";
-import fontIcon from "./src/iconfont";
 import AtIcon from "./src/AtIcon.vue";
+import IconSelect from "./src/Select.vue";
+import { useRenderIcon } from "./src/hooks";
 
-/** 全局图标组件 */
-export { AtIcon };
+/** 全局图标组件与渲染 Hook */
+export { AtIcon, useRenderIcon, IconSelect };
 export const atIcon = AtIcon;
 
-/** 本地图标组件 */
-const IconifyIconOffline = iconifyIconOffline;
-/** 在线图标组件 */
-const IconifyIconOnline = iconifyIconOnline;
-/** `IconSelect`图标选择器组件 */
-const IconSelect = iconSelect;
-/** `iconfont`组件 */
-const FontIcon = fontIcon;
+/** 向后兼容别名导出（直接映射到统一的 AtIcon） */
+export const IconifyIconOffline = AtIcon;
+export const IconifyIconOnline = AtIcon;
+export const FontIcon = AtIcon;
 
-export { IconifyIconOffline, IconifyIconOnline, IconSelect, FontIcon };
 export default AtIcon;

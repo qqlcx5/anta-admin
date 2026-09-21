@@ -140,7 +140,7 @@ function handleClose(
             }
           "
         >
-          <IconifyIconOffline
+          <AtIcon
             class="anta-dialog-svg"
             :icon="
               options?.fullscreen

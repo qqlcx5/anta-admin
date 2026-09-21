@@ -56,7 +56,7 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
         <div
           class="globalization-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
         >
-          <IconifyIconOffline :icon="GlobalizationIcon" />
+          <AtIcon :icon="GlobalizationIcon" />
         </div>
         <template #dropdown>
           <el-dropdown-menu class="translation">
@@ -65,7 +65,7 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
               :class="['dark:text-white!', getDropdownItemClass(locale, 'zh')]"
               @click="translationCh"
             >
-              <IconifyIconOffline
+              <AtIcon
                 v-show="locale === 'zh'"
                 class="check-zh"
                 :icon="Check"
@@ -78,7 +78,7 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
               @click="translationEn"
             >
               <span v-show="locale === 'en'" class="check-en">
-                <IconifyIconOffline :icon="Check" />
+                <AtIcon :icon="Check" />
               </span>
               English
             </el-dropdown-item>
@@ -98,14 +98,14 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
         <template #dropdown>
           <el-dropdown-menu class="logout">
             <el-dropdown-item @click="toAccountSettings">
-              <IconifyIconOffline
+              <AtIcon
                 :icon="AccountSettingsIcon"
                 style="margin: 5px"
               />
               {{ t("buttons.antaAccountSettings") }}
             </el-dropdown-item>
             <el-dropdown-item @click="logout">
-              <IconifyIconOffline
+              <AtIcon
                 :icon="LogoutCircleRLine"
                 style="margin: 5px"
               />
@@ -119,7 +119,7 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
         :title="t('buttons.antaOpenSystemSet')"
         @click="onPanel"
       >
-        <IconifyIconOffline :icon="Setting" />
+        <AtIcon :icon="Setting" />
       </span>
     </div>
   </div>

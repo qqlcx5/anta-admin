@@ -84,7 +84,7 @@ onMounted(async () => {
           <div
             class="h-full flex items-center px-(--el-menu-base-level-padding)"
           >
-            <IconifyIconOffline :icon="leftLine" />
+            <AtIcon :icon="leftLine" />
             <span class="ml-2">返回</span>
           </div>
         </div>
@@ -113,7 +113,7 @@ onMounted(async () => {
           "
         >
           <div class="flex items-center z-10">
-            <el-icon><IconifyIconOffline :icon="item.icon" /></el-icon>
+            <el-icon><AtIcon :icon="item.icon" /></el-icon>
             <span>{{ item.label }}</span>
           </div>
         </el-menu-item>

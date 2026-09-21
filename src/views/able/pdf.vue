@@ -78,7 +78,7 @@ const onPrint = () => {
           <el-checkbox v-model="showAllPages" @change="showAllPagesChange">
             显示所有页面
           </el-checkbox>
-          <IconifyIconOnline
+          <AtIcon
             v-tippy="{
               maxWidth: 'none',
               content: `翻转（当前角度${rotations[currentRotation]}度）`
@@ -91,7 +91,7 @@ const onPrint = () => {
                 : (currentRotation += 1)
             "
           />
-          <IconifyIconOnline
+          <AtIcon
             v-tippy="{
               maxWidth: 'none',
               content: '打印'

@@ -86,7 +86,7 @@ onMounted(() => {
         <div
           class="globalization-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
         >
-          <IconifyIconOffline :icon="GlobalizationIcon" />
+          <AtIcon :icon="GlobalizationIcon" />
         </div>
         <template #dropdown>
           <el-dropdown-menu class="translation">
@@ -96,7 +96,7 @@ onMounted(() => {
               @click="translationCh"
             >
               <span v-show="locale === 'zh'" class="check-zh">
-                <IconifyIconOffline :icon="Check" />
+                <AtIcon :icon="Check" />
               </span>
               简体中文
             </el-dropdown-item>
@@ -106,7 +106,7 @@ onMounted(() => {
               @click="translationEn"
             >
               <span v-show="locale === 'en'" class="check-en">
-                <IconifyIconOffline :icon="Check" />
+                <AtIcon :icon="Check" />
               </span>
               English
             </el-dropdown-item>
@@ -125,7 +125,7 @@ onMounted(() => {
         </span>
         <template #dropdown>
           <el-dropdown-item @click="toAccountSettings">
-            <IconifyIconOffline
+            <AtIcon
               :icon="AccountSettingsIcon"
               style="margin: 5px"
             />
@@ -133,7 +133,7 @@ onMounted(() => {
           </el-dropdown-item>
           <el-dropdown-menu class="logout">
             <el-dropdown-item @click="logout">
-              <IconifyIconOffline
+              <AtIcon
                 :icon="LogoutCircleRLine"
                 style="margin: 5px"
               />
@@ -147,7 +147,7 @@ onMounted(() => {
         :title="t('buttons.antaOpenSystemSet')"
         @click="onPanel"
       >
-        <IconifyIconOffline :icon="Setting" />
+        <AtIcon :icon="Setting" />
       </span>
     </div>
   </div>

@@ -142,7 +142,7 @@ watch(loginDay, value => {
               :class="['dark:text-white!', getDropdownItemClass(locale, 'zh')]"
               @click="translationCh"
             >
-              <IconifyIconOffline
+              <AtIcon
                 v-show="locale === 'zh'"
                 class="check-zh"
                 :icon="Check"
@@ -155,7 +155,7 @@ watch(loginDay, value => {
               @click="translationEn"
             >
               <span v-show="locale === 'en'" class="check-en">
-                <IconifyIconOffline :icon="Check" />
+                <AtIcon :icon="Check" />
               </span>
               English
             </el-dropdown-item>
@@ -252,7 +252,7 @@ watch(loginDay, value => {
                         <option value="30">30</option>
                       </select>
                       {{ t("login.antaRemember") }}
-                      <IconifyIconOffline
+                      <AtIcon
                         v-tippy="{
                           content: t('login.antaRememberInfo'),
                           placement: 'top'
@@ -313,7 +313,7 @@ watch(loginDay, value => {
                   :key="index"
                   :title="t(item.title)"
                 >
-                  <IconifyIconOnline
+                  <AtIcon
                     :icon="`ri:${item.icon}-fill`"
                     width="20"
                     class="cursor-pointer text-gray-500 hover:text-blue-400"

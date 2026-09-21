@@ -110,7 +110,7 @@ const handleManageProduct = product => {
       >
         <template #suffix>
           <el-icon class="el-input__icon">
-            <IconifyIconOffline
+            <AtIcon
               v-show="searchValue.length === 0"
               icon="ri/search-line"
             />

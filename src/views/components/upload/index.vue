@@ -181,7 +181,7 @@ const onDownload = () => {
               class="hover:text-primary"
               @click="handlePictureCardPreview(file)"
             >
-              <IconifyIconOffline
+              <AtIcon
                 :icon="Eye"
                 class="hover:scale-125 duration-100"
               />
@@ -191,7 +191,7 @@ const onDownload = () => {
               @click="handleRemove(file)"
             >
               <span title="移除" class="hover:text-(--el-color-danger)">
-                <IconifyIconOffline
+                <AtIcon
                   :icon="Delete"
                   class="hover:scale-125 duration-100"
                 />

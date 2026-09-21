@@ -72,7 +72,7 @@ function reset() {
           <el-countdown format="DD天 HH时 mm分 ss秒" :value="value2">
             <template #title>
               <div style="display: inline-flex; align-items: center">
-                <IconifyIconOnline icon="ep:calendar" class="mr-2" />
+                <AtIcon icon="ep:calendar" class="mr-2" />
                 距离下个月还剩
               </div>
             </template>

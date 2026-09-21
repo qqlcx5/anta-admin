@@ -136,8 +136,8 @@ watch(
         >
           <template #reference>
             <div class="w-10 h-8 cursor-pointer flex-c">
-              <IconifyIconOffline v-if="!icon" :icon="Search" />
-              <IconifyIconOnline v-else :icon="inputValue" />
+              <AtIcon v-if="!icon" :icon="Search" />
+              <AtIcon v-else :icon="inputValue" />
             </div>
           </template>
 
@@ -165,7 +165,7 @@ watch(
                     :style="iconItemStyle(item)"
                     @click="onChangeIcon(item)"
                   >
-                    <IconifyIconOnline
+                    <AtIcon
                       :icon="currentActiveType + item"
                       width="20px"
                       height="20px"

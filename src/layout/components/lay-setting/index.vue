@@ -362,7 +362,7 @@ onUnmounted(() => removeMatchMedia);
             :size="20"
             :color="getThemeColor(item.themeColor)"
           >
-            <IconifyIconOffline :icon="Check" />
+            <AtIcon :icon="Check" />
           </el-icon>
         </li>
       </ul>
@@ -437,14 +437,14 @@ onUnmounted(() => removeMatchMedia);
             :class="[settings.stretch ? 'w-[24%]' : 'w-[50%]']"
             style="color: var(--el-color-primary)"
           >
-            <IconifyIconOffline
+            <AtIcon
               :icon="settings.stretch ? RightArrow : LeftArrow"
             />
             <div
               class="grow border-0 border-b border-dashed"
               style="border-color: var(--el-color-primary)"
             />
-            <IconifyIconOffline
+            <AtIcon
               :icon="settings.stretch ? LeftArrow : RightArrow"
             />
           </div>

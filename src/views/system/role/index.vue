@@ -265,7 +265,7 @@ onMounted(() => {
         <div class="flex justify-between w-full px-3 pt-5 pb-4">
           <div class="flex">
             <span :class="iconClass">
-              <IconifyIconOffline
+              <AtIcon
                 v-tippy="{
                   content: '关闭'
                 }"
@@ -277,7 +277,7 @@ onMounted(() => {
               />
             </span>
             <span :class="[iconClass, 'ml-2']">
-              <IconifyIconOffline
+              <AtIcon
                 v-tippy="{
                   content: '保存菜单权限'
                 }"
