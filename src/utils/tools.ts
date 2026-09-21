@@ -12,12 +12,14 @@ export { sum, omit, pick, intersection };
 
 /**
  * 防抖函数（复用 lodash-es，兼容 immediate: boolean）
+ * 兼容 @pureadmin/utils 行为：当 func 不是函数时静默返回 noop，而非报错
  */
 export const debounce = (
   func: (...args: any[]) => any,
   wait = 200,
   immediate: boolean | { leading?: boolean; trailing?: boolean } = false
 ) => {
+  if (typeof func !== "function") return () => {};
   const options =
     typeof immediate === "boolean"
       ? { leading: immediate, trailing: !immediate }
