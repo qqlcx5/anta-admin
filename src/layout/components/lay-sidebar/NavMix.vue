@@ -13,7 +13,6 @@ import LaySidebarExtraIcon from "../lay-sidebar/components/SidebarExtraIcon.vue"
 import LaySidebarFullScreen from "../lay-sidebar/components/SidebarFullScreen.vue";
 
 import GlobalizationIcon from "@/assets/svg/globalization.svg?component";
-import AccountSettingsIcon from "~icons/ri/user-settings-line";
 import LogoutCircleRLine from "~icons/ri/logout-circle-r-line";
 import Setting from "~icons/ri/settings-3-line";
 import Check from "~icons/ep/check";
@@ -32,7 +31,6 @@ const {
   userAvatar,
   getDivStyle,
   avatarsStyle,
-  toAccountSettings,
   getDropdownItemStyle,
   getDropdownItemClass
 } = useNav();
@@ -145,19 +143,9 @@ watch(
           <p v-if="username" class="dark:text-white">{{ username }}</p>
         </span>
         <template #dropdown>
-          <el-dropdown-item @click="toAccountSettings">
-            <AtIcon
-              :icon="AccountSettingsIcon"
-              style="margin: 5px"
-            />
-            {{ t("buttons.antaAccountSettings") }}
-          </el-dropdown-item>
           <el-dropdown-menu class="logout">
             <el-dropdown-item @click="logout">
-              <AtIcon
-                :icon="LogoutCircleRLine"
-                style="margin: 5px"
-              />
+              <AtIcon :icon="LogoutCircleRLine" style="margin: 5px" />
               {{ t("buttons.antaLoginOut") }}
             </el-dropdown-item>
           </el-dropdown-menu>

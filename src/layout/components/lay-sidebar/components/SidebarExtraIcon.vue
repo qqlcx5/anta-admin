@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <div v-if="extraIcon" class="flex items-center justify-center text-amber-500">
+  <div v-if="extraIcon" class="flex-c text-amber-500">
     <AtIcon :icon="toRaw(extraIcon)" class="size-3.5" />
   </div>
 </template>

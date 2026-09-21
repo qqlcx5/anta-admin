@@ -1,18 +1,5 @@
-import {
-  ref,
-  unref,
-  watch,
-  nextTick,
-  computed,
-  shallowRef,
-  onBeforeMount,
-  onBeforeUnmount,
-  getCurrentInstance,
-  type Ref
-} from "vue";
-import type { EChartsOption, ECharts } from "echarts";
+import { getCurrentInstance } from "vue";
 import { isClient } from "./is";
-import { delay } from "./tools";
 
 /**
  * 获取全局注入的属性（如 $storage, $config, $echarts 等）
@@ -30,7 +17,10 @@ import { useDark as _useDark } from "@vueuse/core";
 /**
  * 暗黑模式 Hook（复用 @vueuse/core，纯粹监听 HTML class，不写独立 localStorage 以免冲突）
  */
-export function useDark(options?: { selector?: "html" | "body"; className?: string }) {
+export function useDark(options?: {
+  selector?: "html" | "body";
+  className?: string;
+}) {
   const isDark = _useDark({
     selector: options?.selector || "html",
     attribute: "class",
@@ -43,132 +33,6 @@ export function useDark(options?: { selector?: "html" | "body"; className?: stri
     toggleDark: () => {
       isDark.value = !isDark.value;
     }
-  };
-}
-
-export interface UseEchartsOptions {
-  theme?: Ref<string> | string;
-  [key: string]: any;
-}
-
-/**
- * ECharts 管理 Hook
- */
-export function useECharts(
-  elRef: Ref<HTMLDivElement | null | undefined>,
-  options: UseEchartsOptions = {}
-) {
-  const global = useGlobal<any>();
-  const echartsInstance = global.$echarts;
-
-  const theme = computed(() => {
-    if (!options.theme) return "default";
-    return unref(options.theme);
-  });
-
-  let chartInstance: ECharts | null = null;
-  const chartOptions = ref<EChartsOption>({});
-
-  function initChart(currentTheme = theme.value) {
-    const el = unref(elRef);
-    if (!el || !echartsInstance) return;
-    chartInstance = echartsInstance.init(el, currentTheme, options);
-  }
-
-  function setOptions(opt: EChartsOption, ...params: any[]) {
-    chartOptions.value = opt;
-    const el = unref(elRef);
-    if (!el) return;
-
-    if (el.offsetHeight === 0) {
-      delay(30).then(() => setOptions(opt, ...params));
-      return;
-    }
-
-    nextTick(() => {
-      delay(30).then(() => {
-        if (!chartInstance) {
-          initChart(theme.value);
-        }
-        const hasClear = typeof params[0] === "boolean" ? params[0] : true;
-        if (hasClear) {
-          chartInstance?.clear();
-        }
-        chartInstance?.setOption(opt);
-        params.forEach(param => {
-          if (param && typeof param === "object" && param.name && typeof param.callback === "function") {
-            chartInstance?.on(param.name, param.query, param.callback);
-          }
-        });
-      });
-    });
-  }
-
-  function resize() {
-    chartInstance?.resize();
-  }
-
-  function getInstance(): ECharts | null {
-    if (!chartInstance) {
-      initChart(theme.value);
-    }
-    return chartInstance;
-  }
-
-  function showLoading(params?: any) {
-    chartInstance?.showLoading(params?.type ?? "default", params?.opts ?? {});
-  }
-
-  function hideLoading() {
-    chartInstance?.hideLoading();
-  }
-
-  function clear() {
-    chartInstance?.clear();
-  }
-
-  function getDom() {
-    return chartInstance?.getDom();
-  }
-
-  watch(
-    () => theme.value,
-    newTheme => {
-      if (chartInstance) {
-        chartInstance.dispose();
-        initChart(newTheme);
-        chartInstance?.setOption(chartOptions.value);
-      }
-    }
-  );
-
-  const handleResize = () => {
-    resize();
-  };
-
-  if (isClient) {
-    window.addEventListener("resize", handleResize);
-  }
-
-  onBeforeUnmount(() => {
-    if (isClient) {
-      window.removeEventListener("resize", handleResize);
-    }
-    if (chartInstance) {
-      chartInstance.dispose();
-      chartInstance = null;
-    }
-  });
-
-  return {
-    echarts: echartsInstance,
-    setOptions,
-    resize,
-    getInstance,
-    showLoading,
-    hideLoading,
-    clear,
-    getDom
   };
 }
 

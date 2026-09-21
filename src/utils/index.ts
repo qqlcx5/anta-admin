@@ -4,7 +4,6 @@ export * from "./dom";
 export * from "./color";
 export * from "./storage";
 export * from "./tools";
-export * from "./download";
 export * from "./hooks";
 
 // 项目中既有的其他工具导出

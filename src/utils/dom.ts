@@ -274,7 +274,7 @@ export function useWatermark(
     watermarkEl.value = div;
 
     if (options.forever && typeof MutationObserver !== "undefined") {
-      observer = new MutationObserver(mutations => {
+      observer = new MutationObserver(() => {
         const isRemoved = !parent.contains(div);
         if (isRemoved) {
           observer?.disconnect();

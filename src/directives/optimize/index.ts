@@ -1,10 +1,4 @@
-import {
-  isArray,
-  throttle,
-  debounce,
-  isObject,
-  isFunction
-} from "@/utils";
+import { isArray, throttle, debounce, isObject, isFunction } from "@/utils";
 import { useEventListener } from "@vueuse/core";
 import type { Directive, DirectiveBinding } from "vue";
 

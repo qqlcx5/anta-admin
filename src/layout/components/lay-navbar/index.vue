@@ -9,7 +9,6 @@ import LaySidebarBreadCrumb from "../lay-sidebar/components/SidebarBreadCrumb.vu
 import LaySidebarTopCollapse from "../lay-sidebar/components/SidebarTopCollapse.vue";
 
 import GlobalizationIcon from "@/assets/svg/globalization.svg?component";
-import AccountSettingsIcon from "~icons/ri/user-settings-line";
 import LogoutCircleRLine from "~icons/ri/logout-circle-r-line";
 import Setting from "~icons/ri/settings-3-line";
 import Check from "~icons/ep/check";
@@ -24,7 +23,6 @@ const {
   userAvatar,
   avatarsStyle,
   toggleSideBar,
-  toAccountSettings,
   getDropdownItemStyle,
   getDropdownItemClass
 } = useNav();
@@ -65,11 +63,7 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
               :class="['dark:text-white!', getDropdownItemClass(locale, 'zh')]"
               @click="translationCh"
             >
-              <AtIcon
-                v-show="locale === 'zh'"
-                class="check-zh"
-                :icon="Check"
-              />
+              <AtIcon v-show="locale === 'zh'" class="check-zh" :icon="Check" />
               简体中文
             </el-dropdown-item>
             <el-dropdown-item
@@ -97,18 +91,8 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
         </span>
         <template #dropdown>
           <el-dropdown-menu class="logout">
-            <el-dropdown-item @click="toAccountSettings">
-              <AtIcon
-                :icon="AccountSettingsIcon"
-                style="margin: 5px"
-              />
-              {{ t("buttons.antaAccountSettings") }}
-            </el-dropdown-item>
             <el-dropdown-item @click="logout">
-              <AtIcon
-                :icon="LogoutCircleRLine"
-                style="margin: 5px"
-              />
+              <AtIcon :icon="LogoutCircleRLine" style="margin: 5px" />
               {{ t("buttons.antaLoginOut") }}
             </el-dropdown-item>
           </el-dropdown-menu>

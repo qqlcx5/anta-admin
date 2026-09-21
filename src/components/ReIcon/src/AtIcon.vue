@@ -47,7 +47,8 @@ const iconStyle = computed<CSSProperties>(() => {
   }
 
   if (props.rotate !== undefined) {
-    const deg = typeof props.rotate === "number" ? `${props.rotate}deg` : props.rotate;
+    const deg =
+      typeof props.rotate === "number" ? `${props.rotate}deg` : props.rotate;
     style.transform = `rotate(${deg})`;
   }
 
@@ -61,7 +62,8 @@ const iconStyle = computed<CSSProperties>(() => {
 
 // 动态解析图标组件
 const iconComponent = computed<Component | null>(() => {
-  if (!props.icon || (typeof props.icon === "string" && !props.icon.trim())) return null;
+  if (!props.icon || (typeof props.icon === "string" && !props.icon.trim()))
+    return null;
   return useRenderIcon(props.icon);
 });
 </script>

@@ -32,10 +32,13 @@ export function is(val: unknown, type: string): boolean {
 }
 
 export const isWindow = (val: any): val is Window =>
-  typeof window !== "undefined" && Object.prototype.toString.call(val) === "[object Window]";
+  typeof window !== "undefined" &&
+  Object.prototype.toString.call(val) === "[object Window]";
 
-export const isDef = <T = unknown>(val?: T): val is NonNullable<T> => typeof val !== "undefined";
-export const isUnDef = (val: unknown): val is undefined => typeof val === "undefined";
+export const isDef = <T = unknown>(val?: T): val is NonNullable<T> =>
+  typeof val !== "undefined";
+export const isUnDef = (val: unknown): val is undefined =>
+  typeof val === "undefined";
 export const isNull = (val: unknown): val is null => val === null;
 export const isNullAndUnDef = (val: unknown): val is null | undefined =>
   val === null || typeof val === "undefined";
@@ -50,8 +53,10 @@ export const isElement = (val: unknown): val is Element =>
 export const hasOwnProp = (obj: any, key: string | symbol): boolean =>
   Object.prototype.hasOwnProperty.call(obj, key);
 
-export const isEqualArray = (arr1: any[], arr2: any[]): boolean => isEqual(arr1, arr2);
-export const isEqualObject = (obj1: any, obj2: any): boolean => isEqual(obj1, obj2);
+export const isEqualArray = (arr1: any[], arr2: any[]): boolean =>
+  isEqual(arr1, arr2);
+export const isEqualObject = (obj1: any, obj2: any): boolean =>
+  isEqual(obj1, obj2);
 
 export const isPhone = (val: unknown): boolean =>
   typeof val === "string" && /^1[3-9]\d{9}$/.test(val);
