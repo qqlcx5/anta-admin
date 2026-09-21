@@ -39,7 +39,7 @@ const {
   buttonLeft,
   translateX,
   isFixedTag,
-  pureSetting,
+  antaSetting,
   activeIndex,
   getTabStyle,
   isScrolling,
@@ -345,12 +345,12 @@ function onClickDrop(key, item, selectRoute?: RouteConfigs) {
       // 内容区全屏
       onContentFullScreen();
       setTimeout(() => {
-        if (pureSetting.hiddenSideBar) {
+        if (antaSetting.hiddenSideBar) {
           tagsViews[6].icon = ExitFullscreen;
-          tagsViews[6].text = $t("buttons.pureContentExitFullScreen");
+          tagsViews[6].text = $t("buttons.antaContentExitFullScreen");
         } else {
           tagsViews[6].icon = Fullscreen;
-          tagsViews[6].text = $t("buttons.pureContentFullScreen");
+          tagsViews[6].text = $t("buttons.antaContentFullScreen");
         }
       }, 100);
       break;

@@ -65,9 +65,15 @@ export function formatBytes(bytes: number, decimals = 2): string {
 /**
  * 获取对象数组中某一字段的所有值
  */
-export function getKeyList<T = any>(arr: any[], key: string, unique = true): T[] {
+export function getKeyList<T = any>(
+  arr: any[],
+  key: string,
+  unique = true
+): T[] {
   if (!Array.isArray(arr)) return [];
-  const list = arr.map(item => item?.[key]).filter(v => v !== undefined && v !== null);
+  const list = arr
+    .map(item => item?.[key])
+    .filter(v => v !== undefined && v !== null);
   return unique ? Array.from(new Set(list)) : list;
 }
 
@@ -92,23 +98,37 @@ export function extractFields<T = any>(list: any[], ...fields: string[]): T[] {
 export interface FormDataOptions {
   fileKey?: string;
   filter?: string[];
-  handleFile?: (data: { file: File | Blob; key: string; formData: FormData }) => void;
+  handleFile?: (data: {
+    file: File | Blob;
+    key: string;
+    formData: FormData;
+  }) => void;
 }
 
 /**
  * 对象转 FormData
  */
-export function createFormData(data: Record<string, any>, options: FormDataOptions = {}): FormData {
+export function createFormData(
+  data: Record<string, any>,
+  options: FormDataOptions = {}
+): FormData {
   const formData = new FormData();
   const fileKey = options.fileKey || "file";
   const filter = options.filter || [];
 
   const append = (key: string, value: any) => {
     if (filter.includes(key)) return;
-    if (options.handleFile && (value instanceof File || value instanceof Blob)) {
+    if (
+      options.handleFile &&
+      (value instanceof File || value instanceof Blob)
+    ) {
       options.handleFile({ file: value, key, formData });
     } else if (value instanceof File || value instanceof Blob) {
-      formData.append(fileKey, value, value instanceof File ? value.name : undefined);
+      formData.append(
+        fileKey,
+        value,
+        value instanceof File ? value.name : undefined
+      );
     } else if (Array.isArray(value)) {
       value.forEach((v, index) => {
         append(`${key}[${index}]`, v);
@@ -147,15 +167,31 @@ export function getQueryMap(url?: string): Record<string, string> {
 /**
  * 解析 SVG 字符串的基础信息
  */
-export function getSvgInfo(svgString: string): { width: number; height: number; body: string } {
+export function getSvgInfo(svgString: string): {
+  width: number;
+  height: number;
+  body: string;
+} {
   if (!isClient || !svgString) return { width: 0, height: 0, body: "" };
   try {
     const parser = new DOMParser();
     const doc = parser.parseFromString(svgString, "image/svg+xml");
     const svg = doc.querySelector("svg");
     if (!svg) return { width: 0, height: 0, body: "" };
-    const width = parseFloat(svg.getAttribute("width") || "0");
-    const height = parseFloat(svg.getAttribute("height") || "0");
+    // 优先从 viewBox 解析尺寸：unplugin-icons 的 ?raw 输出 width/height 为 "1em"，
+    // parseFloat("1em") 会得到 1，导致 addIcon 注册出 viewBox="0 0 1 1" 使图标不可见
+    let width = 0;
+    let height = 0;
+    const viewBox = svg.getAttribute("viewBox");
+    if (viewBox) {
+      const parts = viewBox.split(/[\s,]+/).map(Number.parseFloat);
+      if (parts.length === 4 && parts.every(n => !Number.isNaN(n))) {
+        width = parts[2];
+        height = parts[3];
+      }
+    }
+    if (!width) width = parseFloat(svg.getAttribute("width") || "0") || 0;
+    if (!height) height = parseFloat(svg.getAttribute("height") || "0") || 0;
     return { width, height, body: svg.innerHTML };
   } catch {
     return { width: 0, height: 0, body: "" };

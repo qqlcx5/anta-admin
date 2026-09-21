@@ -6,7 +6,7 @@ export default {
   redirect: "/able/watermark",
   meta: {
     icon: "ri/ubuntu-fill",
-    title: $t("menus.pureAble"),
+    title: $t("menus.antaAble"),
     rank: able
   },
   children: [
@@ -15,7 +15,7 @@ export default {
       name: "MqttClient",
       component: () => import("@/views/able/mqtt-client.vue"),
       meta: {
-        title: $t("menus.pureMqtt")
+        title: $t("menus.antaMqtt")
       }
     },
     {
@@ -23,7 +23,7 @@ export default {
       name: "Verify",
       component: () => import("@/views/able/verify.vue"),
       meta: {
-        title: $t("menus.pureVerify")
+        title: $t("menus.antaVerify")
       }
     },
     {
@@ -31,7 +31,7 @@ export default {
       name: "WaterMark",
       component: () => import("@/views/able/watermark.vue"),
       meta: {
-        title: $t("menus.pureWatermark")
+        title: $t("menus.antaWatermark")
       }
     },
     {
@@ -39,7 +39,7 @@ export default {
       name: "Print",
       component: () => import("@/views/able/print/index.vue"),
       meta: {
-        title: $t("menus.purePrint")
+        title: $t("menus.antaPrint")
       }
     },
     {
@@ -47,7 +47,7 @@ export default {
       name: "Download",
       component: () => import("@/views/able/download.vue"),
       meta: {
-        title: $t("menus.pureDownload")
+        title: $t("menus.antaDownload")
       }
     },
     {
@@ -55,7 +55,7 @@ export default {
       name: "Excel",
       component: () => import("@/views/able/excel.vue"),
       meta: {
-        title: $t("menus.pureExcel")
+        title: $t("menus.antaExcel")
       }
     },
     {
@@ -63,7 +63,7 @@ export default {
       name: "Ripple",
       component: () => import("@/views/able/ripple.vue"),
       meta: {
-        title: $t("menus.pureRipple")
+        title: $t("menus.antaRipple")
       }
     },
     {
@@ -71,7 +71,7 @@ export default {
       name: "Debounce",
       component: () => import("@/views/able/debounce.vue"),
       meta: {
-        title: $t("menus.pureDebounce")
+        title: $t("menus.antaDebounce")
       }
     },
     {
@@ -79,7 +79,7 @@ export default {
       name: "Directives",
       component: () => import("@/views/able/directives.vue"),
       meta: {
-        title: $t("menus.pureOptimize")
+        title: $t("menus.antaOptimize")
       }
     },
     {
@@ -87,7 +87,7 @@ export default {
       name: "Draggable",
       component: () => import("@/views/able/draggable.vue"),
       meta: {
-        title: $t("menus.pureDraggable"),
+        title: $t("menus.antaDraggable"),
         transition: {
           enterTransition: "animate__zoomIn",
           leaveTransition: "animate__zoomOut"
@@ -99,7 +99,7 @@ export default {
       name: "Pdf",
       component: () => import("@/views/able/pdf.vue"),
       meta: {
-        title: $t("menus.purePdf")
+        title: $t("menus.antaPdf")
       }
     },
     {
@@ -107,7 +107,7 @@ export default {
       name: "BarCode",
       component: () => import("@/views/able/barcode.vue"),
       meta: {
-        title: $t("menus.pureBarcode")
+        title: $t("menus.antaBarcode")
       }
     },
     {
@@ -115,7 +115,7 @@ export default {
       name: "QrCode",
       component: () => import("@/views/able/qrcode.vue"),
       meta: {
-        title: $t("menus.pureQrcode")
+        title: $t("menus.antaQrcode")
       }
     },
     {
@@ -123,7 +123,7 @@ export default {
       name: "MapPage",
       component: () => import("@/views/able/map.vue"),
       meta: {
-        title: $t("menus.pureMap"),
+        title: $t("menus.antaMap"),
         keepAlive: true,
         transition: {
           name: "fade"
@@ -135,7 +135,7 @@ export default {
       name: "Wavesurfer",
       component: () => import("@/views/able/wavesurfer/index.vue"),
       meta: {
-        title: $t("menus.pureWavesurfer")
+        title: $t("menus.antaWavesurfer")
       }
     },
     {
@@ -143,7 +143,7 @@ export default {
       name: "VideoPage",
       component: () => import("@/views/able/video.vue"),
       meta: {
-        title: $t("menus.pureVideo")
+        title: $t("menus.antaVideo")
       }
     },
     {
@@ -151,7 +151,7 @@ export default {
       name: "VideoFrame",
       component: () => import("@/views/able/video-frame/index.vue"),
       meta: {
-        title: $t("menus.pureVideoFrame")
+        title: $t("menus.antaVideoFrame")
       }
     },
     {
@@ -159,7 +159,7 @@ export default {
       name: "Danmaku",
       component: () => import("@/views/able/danmaku/index.vue"),
       meta: {
-        title: $t("menus.pureDanmaku")
+        title: $t("menus.antaDanmaku")
       }
     },
     {
@@ -167,7 +167,7 @@ export default {
       name: "InfiniteScroll",
       component: () => import("@/views/able/infinite-scroll.vue"),
       meta: {
-        title: $t("menus.pureInfiniteScroll")
+        title: $t("menus.antaInfiniteScroll")
       }
     },
     {
@@ -175,7 +175,7 @@ export default {
       name: "MenuTree",
       component: () => import("@/views/able/menu-tree.vue"),
       meta: {
-        title: $t("menus.pureMenuTree")
+        title: $t("menus.antaMenuTree")
       }
     },
     {
@@ -183,7 +183,7 @@ export default {
       name: "LineTree",
       component: () => import("@/views/able/line-tree.vue"),
       meta: {
-        title: $t("menus.pureLineTree")
+        title: $t("menus.antaLineTree")
       }
     },
     {
@@ -191,7 +191,7 @@ export default {
       name: "Typeit",
       component: () => import("@/views/able/typeit.vue"),
       meta: {
-        title: $t("menus.pureTypeit")
+        title: $t("menus.antaTypeit")
       }
     },
     {
@@ -199,7 +199,7 @@ export default {
       name: "Sensitive",
       component: () => import("@/views/able/sensitive.vue"),
       meta: {
-        title: $t("menus.pureSensitive")
+        title: $t("menus.antaSensitive")
       }
     },
     {
@@ -207,7 +207,7 @@ export default {
       name: "Pinyin",
       component: () => import("@/views/able/pinyin.vue"),
       meta: {
-        title: $t("menus.purePinyin")
+        title: $t("menus.antaPinyin")
       }
     }
   ]

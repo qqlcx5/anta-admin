@@ -5,7 +5,7 @@ export default {
   path: "/menuoverflow",
   redirect: "/menuoverflow/index",
   meta: {
-    title: $t("menus.pureMenuOverflow"),
+    title: $t("menus.antaMenuOverflow"),
     rank: menuoverflow
   },
   children: [
@@ -14,7 +14,7 @@ export default {
       name: "MenuOverflow",
       component: () => import("@/views/menuoverflow/index.vue"),
       meta: {
-        title: $t("menus.pureChildMenuOverflow"),
+        title: $t("menus.antaChildMenuOverflow"),
         showParent: true
       }
     }

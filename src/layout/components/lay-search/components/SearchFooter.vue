@@ -18,19 +18,19 @@ const { device } = useNav();
   <div class="search-footer text-[#333] dark:text-white">
     <span class="search-footer-item">
       <EnterOutlined class="icon" />
-      {{ t("buttons.pureConfirm") }}
+      {{ t("buttons.antaConfirm") }}
     </span>
     <span class="search-footer-item">
       <IconifyIconOffline :icon="ArrowUpLine" class="icon" />
       <IconifyIconOffline :icon="ArrowDownLine" class="icon" />
-      {{ t("buttons.pureSwitch") }}
+      {{ t("buttons.antaSwitch") }}
     </span>
     <span class="search-footer-item">
       <MdiKeyboardEsc class="icon" />
-      {{ t("buttons.pureClose") }}
+      {{ t("buttons.antaClose") }}
     </span>
     <p v-if="device !== 'mobile' && total > 0" class="search-footer-total">
-      {{ `${t("search.pureTotal")} ${total}` }}
+      {{ `${t("search.antaTotal")} ${total}` }}
     </p>
   </div>
 </template>

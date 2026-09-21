@@ -1,265 +1,265 @@
 buttons:
-  pureAccountSettings: Account
-  pureLoginOut: LoginOut
-  pureLogin: Login
-  pureOpenSystemSet: Open System Configs
-  pureReload: Reload
-  pureCloseCurrentTab: Close CurrentTab
-  pureCloseLeftTabs: Close LeftTabs
-  pureCloseRightTabs: Close RightTabs
-  pureCloseOtherTabs: Close OtherTabs
-  pureCloseAllTabs: Close AllTabs
-  pureContentFullScreen: Content FullScreen
-  pureContentExitFullScreen: Content ExitFullScreen
-  pureClickCollapse: Collapse
-  pureClickExpand: Expand
-  pureConfirm: Confirm
-  pureSwitch: Switch
-  pureClose: Close
-  pureBackTop: BackTop
-  pureOpenText: Open
-  pureCloseText: Close
-  pureWatchMore: Watch More
-  pureMarkAsRead: Mark As Read
+  antaAccountSettings: Account
+  antaLoginOut: LoginOut
+  antaLogin: Login
+  antaOpenSystemSet: Open System Configs
+  antaReload: Reload
+  antaCloseCurrentTab: Close CurrentTab
+  antaCloseLeftTabs: Close LeftTabs
+  antaCloseRightTabs: Close RightTabs
+  antaCloseOtherTabs: Close OtherTabs
+  antaCloseAllTabs: Close AllTabs
+  antaContentFullScreen: Content FullScreen
+  antaContentExitFullScreen: Content ExitFullScreen
+  antaClickCollapse: Collapse
+  antaClickExpand: Expand
+  antaConfirm: Confirm
+  antaSwitch: Switch
+  antaClose: Close
+  antaBackTop: BackTop
+  antaOpenText: Open
+  antaCloseText: Close
+  antaWatchMore: Watch More
+  antaMarkAsRead: Mark As Read
 search:
-  pureTotal: Total
-  pureHistory: History
-  pureCollect: Collect
-  pureDragSort: （Drag Sort）
-  pureEmpty: Empty
-  purePlaceholder: Search Menu
+  antaTotal: Total
+  antaHistory: History
+  antaCollect: Collect
+  antaDragSort: （Drag Sort）
+  antaEmpty: Empty
+  antaPlaceholder: Search Menu
 panel:
-  pureSystemSet: System Configs
-  pureCloseSystemSet: Close System Configs
-  pureClearCacheAndToLogin: Clear cache and return to login page
-  pureClearCache: Clear Cache
-  pureThemeMode: Theme Mode
-  pureThemeModeLight: Light
-  pureThemeModeLightTip: Set sail freshly and light up the comfortable work interface
-  pureThemeModeDark: Dark
-  pureThemeModeDarkTip: Moonlight Overture, indulge in the tranquility and elegance of the night
-  pureThemeModeSystem: Auto
-  pureThemeModeSystemTip: Synchronize time, the interface naturally responds to morning and dusk
-  pureThemeColor: Theme Color
-  pureMenuLayout: Menu Layout
-  pureVerticalTip: The menu on the left is familiar and friendly
-  pureHorizontalTip: Top menu, concise overview
-  pureMixTip: Mixed menu, flexible
-  pureStretch: Stretch Page
-  pureStretchFixed: Fixed
-  pureStretchFixedTip: Compact pages make it easy to find the information you need
-  pureStretchCustom: Custom
-  pureStretchCustomTip: Minimum 1280, maximum 1600
-  pureTagsStyle: Tags Style
-  pureTagsStyleSmart: Smart
-  pureTagsStyleSmartTip: Smart tags add fun and brilliance
-  pureTagsStyleCard: Card
-  pureTagsStyleCardTip: Card tags for efficient browsing
-  pureTagsStyleChrome: Chrome
-  pureTagsStyleChromeTip: Chrome style is classic and elegant
-  pureFullScreenWatermark: FullScreen Watermark
-  pureEnableWatermark: Watermark
-  pureWatermarkText: Text
-  pureWatermarkTextPlaceholder: Please enter text
-  pureInterfaceDisplay: Interface Display
-  pureGreyModel: Grey Model
-  pureWeakModel: Weak Model
-  pureHiddenTags: Hidden Tags
-  pureHiddenFooter: Hidden Footer
-  pureMultiTagsCache: MultiTags Cache
+  antaSystemSet: System Configs
+  antaCloseSystemSet: Close System Configs
+  antaClearCacheAndToLogin: Clear cache and return to login page
+  antaClearCache: Clear Cache
+  antaThemeMode: Theme Mode
+  antaThemeModeLight: Light
+  antaThemeModeLightTip: Set sail freshly and light up the comfortable work interface
+  antaThemeModeDark: Dark
+  antaThemeModeDarkTip: Moonlight Overture, indulge in the tranquility and elegance of the night
+  antaThemeModeSystem: Auto
+  antaThemeModeSystemTip: Synchronize time, the interface naturally responds to morning and dusk
+  antaThemeColor: Theme Color
+  antaMenuLayout: Menu Layout
+  antaVerticalTip: The menu on the left is familiar and friendly
+  antaHorizontalTip: Top menu, concise overview
+  antaMixTip: Mixed menu, flexible
+  antaStretch: Stretch Page
+  antaStretchFixed: Fixed
+  antaStretchFixedTip: Compact pages make it easy to find the information you need
+  antaStretchCustom: Custom
+  antaStretchCustomTip: Minimum 1280, maximum 1600
+  antaTagsStyle: Tags Style
+  antaTagsStyleSmart: Smart
+  antaTagsStyleSmartTip: Smart tags add fun and brilliance
+  antaTagsStyleCard: Card
+  antaTagsStyleCardTip: Card tags for efficient browsing
+  antaTagsStyleChrome: Chrome
+  antaTagsStyleChromeTip: Chrome style is classic and elegant
+  antaFullScreenWatermark: FullScreen Watermark
+  antaEnableWatermark: Watermark
+  antaWatermarkText: Text
+  antaWatermarkTextPlaceholder: Please enter text
+  antaInterfaceDisplay: Interface Display
+  antaGreyModel: Grey Model
+  antaWeakModel: Weak Model
+  antaHiddenTags: Hidden Tags
+  antaHiddenFooter: Hidden Footer
+  antaMultiTagsCache: MultiTags Cache
 menus:
-  pureHome: Home
-  pureLogin: Login
-  pureEmpty: Empty Page
-  pureTable: Table
-  pureSysManagement: System Manage
-  pureUser: User Manage
-  pureRole: Role Manage
-  pureSystemMenu: Menu Manage
-  pureDept: Dept Manage
-  pureSysMonitor: System Monitor
-  pureOnlineUser: Online User
-  pureLoginLog: Login Log
-  pureOperationLog: Operation Log
-  pureSystemLog: System Log
-  pureCodeMirror: CodeMirror
-  pureMarkdown: Markdown
-  pureEditor: Editor
-  pureAbnormal: Abnormal Page
-  purePageNotFound: "404"
-  pureAccessDenied: "403"
-  pureServerError: "500"
-  pureComponents: Components
-  pureDialog: Dialog
-  pureDrawer: Drawer
-  pureMessage: Message Tips
-  pureVideo: Video
-  pureSegmented: Segmented
-  pureWaterfall: Waterfall
-  pureMap: Map
-  pureDraggable: Draggable
-  pureSplitPane: Split Pane
-  pureText: Text Ellipsis
-  pureSlider: Slider
-  pureElButton: Button
-  pureButton: Button Animation
-  pureCheckButton: Check Button
-  pureCropping: Picture Cropping
-  pureAnimatecss: AnimateCss Selector
-  pureCountTo: Digital Animation
-  pureSelector: Scope Selector
-  pureFlowChart: Flow Chart
-  pureSeamless: Seamless Scroll
-  pureContextmenu: Context Menu
-  pureTypeit: Typeit
-  pureJsonEditor: JSON Editor
-  pureColorPicker: Color Picker
-  pureColorPickerPanel: Color PickerPanel
-  pureDatePicker: Date Picker
-  pureDateTimePicker: DateTimePicker
-  pureTimePicker: TimePicker
-  pureTag: Tag
-  pureStatistic: Statistic
-  pureCollapse: Collapse
-  pureGanttastic: Gantt Chart
-  pureProgress: Progress
-  pureUpload: File Upload
-  pureCheckCard: CheckCard
-  pureMenus: MultiLevel Menu
-  pureMenu1: Menu1
-  pureMenu1-1: Menu1-1
-  pureMenu1-2: Menu1-2
-  pureMenu1-2-1: Menu1-2-1
-  pureMenu1-2-2: Menu1-2-2
-  pureMenu1-3: Menu1-3
-  pureMenu2: Menu2
-  purePermission: Permission Manage
-  purePermissionPage: Page Permission
-  purePermissionButton: Button Permission
-  purePermissionButtonRouter: Route return button permission
-  purePermissionButtonLogin: Login interface return button permission
-  pureTabs: Tabs Operate
-  pureGuide: Guide
-  pureAble: Able
-  pureMenuTree: Menu Tree
-  pureVideoFrame: Video Frame Capture
-  pureWavesurfer: Audio Visualization
-  pureRipple: Ripple
-  pureMqtt: Mqtt Client
-  pureOptimize: Debounce、Throttle、Copy、Longpress Directives
-  pureVerify: Captcha
-  pureWatermark: Water Mark
-  purePrint: Print
-  pureDownload: Download
-  pureExternalPage: External Page
-  pureExternalDoc: Docs External
-  pureEmbeddedDoc: Docs Embedded
-  pureExternalLink: Anta-Admin
-  pureUtilsLink: Local-Utils-Docs
-  pureColorHuntDoc: ColorHunt
-  pureUiGradients: UiGradients
-  pureEpDoc: Element-Plus
-  pureTailwindcssDoc: Tailwindcss
-  pureVueDoc: Vue3
-  pureViteDoc: Vite
-  purePiniaDoc: Pinia
-  pureRouterDoc: Vue-Router
-  pureAbout: About
-  pureResult: Result Page
-  pureSuccess: Success Page
-  pureFail: Fail Page
-  pureIconSelect: Icon Select
-  pureTimeline: Time Line
-  pureLineTree: LineTree
-  pureList: List Page
-  pureCardList: Card List Page
-  pureDebounce: Debounce & Throttle
-  pureFormDesign: Form Design
-  pureBarcode: Barcode
-  pureQrcode: Qrcode
-  pureCascader: Area Cascader
-  pureSwiper: Swiper Plugin
-  pureVirtualList: Virtual List
-  purePdf: PDF Preview
-  pureExcel: Export Excel
-  pureInfiniteScroll: Table Infinite Scroll
-  pureSensitive: Sensitive Filter
-  purePinyin: PinYin
-  pureDanmaku: Danmaku
-  pureSchemaForm: Form
-  pureTableBase: Base Usage
-  pureTableHigh: High Usage
-  pureTableEdit: Edit Usage
-  pureVxeTable: Virtual Usage
-  pureBoard: Paint Board
-  pureMindMap: Mind Map
-  pureMenuOverflow: Menu Overflow Show Tooltip Text
-  pureChildMenuOverflow: Child Menu Overflow Show Tooltip Text
+  antaHome: Home
+  antaLogin: Login
+  antaEmpty: Empty Page
+  antaTable: Table
+  antaSysManagement: System Manage
+  antaUser: User Manage
+  antaRole: Role Manage
+  antaSystemMenu: Menu Manage
+  antaDept: Dept Manage
+  antaSysMonitor: System Monitor
+  antaOnlineUser: Online User
+  antaLoginLog: Login Log
+  antaOperationLog: Operation Log
+  antaSystemLog: System Log
+  antaCodeMirror: CodeMirror
+  antaMarkdown: Markdown
+  antaEditor: Editor
+  antaAbnormal: Abnormal Page
+  antaPageNotFound: "404"
+  antaAccessDenied: "403"
+  antaServerError: "500"
+  antaComponents: Components
+  antaDialog: Dialog
+  antaDrawer: Drawer
+  antaMessage: Message Tips
+  antaVideo: Video
+  antaSegmented: Segmented
+  antaWaterfall: Waterfall
+  antaMap: Map
+  antaDraggable: Draggable
+  antaSplitPane: Split Pane
+  antaText: Text Ellipsis
+  antaSlider: Slider
+  antaElButton: Button
+  antaButton: Button Animation
+  antaCheckButton: Check Button
+  antaCropping: Picture Cropping
+  antaAnimatecss: AnimateCss Selector
+  antaCountTo: Digital Animation
+  antaSelector: Scope Selector
+  antaFlowChart: Flow Chart
+  antaSeamless: Seamless Scroll
+  antaContextmenu: Context Menu
+  antaTypeit: Typeit
+  antaJsonEditor: JSON Editor
+  antaColorPicker: Color Picker
+  antaColorPickerPanel: Color PickerPanel
+  antaDatePicker: Date Picker
+  antaDateTimePicker: DateTimePicker
+  antaTimePicker: TimePicker
+  antaTag: Tag
+  antaStatistic: Statistic
+  antaCollapse: Collapse
+  antaGanttastic: Gantt Chart
+  antaProgress: Progress
+  antaUpload: File Upload
+  antaCheckCard: CheckCard
+  antaMenus: MultiLevel Menu
+  antaMenu1: Menu1
+  antaMenu1-1: Menu1-1
+  antaMenu1-2: Menu1-2
+  antaMenu1-2-1: Menu1-2-1
+  antaMenu1-2-2: Menu1-2-2
+  antaMenu1-3: Menu1-3
+  antaMenu2: Menu2
+  antaPermission: Permission Manage
+  antaPermissionPage: Page Permission
+  antaPermissionButton: Button Permission
+  antaPermissionButtonRouter: Route return button permission
+  antaPermissionButtonLogin: Login interface return button permission
+  antaTabs: Tabs Operate
+  antaGuide: Guide
+  antaAble: Able
+  antaMenuTree: Menu Tree
+  antaVideoFrame: Video Frame Capture
+  antaWavesurfer: Audio Visualization
+  antaRipple: Ripple
+  antaMqtt: Mqtt Client
+  antaOptimize: Debounce、Throttle、Copy、Longpress Directives
+  antaVerify: Captcha
+  antaWatermark: Water Mark
+  antaPrint: Print
+  antaDownload: Download
+  antaExternalPage: External Page
+  antaExternalDoc: Docs External
+  antaEmbeddedDoc: Docs Embedded
+  antaExternalLink: Anta-Admin
+  antaUtilsLink: Local-Utils-Docs
+  antaColorHuntDoc: ColorHunt
+  antaUiGradients: UiGradients
+  antaEpDoc: Element-Plus
+  antaTailwindcssDoc: Tailwindcss
+  antaVueDoc: Vue3
+  antaViteDoc: Vite
+  antaPiniaDoc: Pinia
+  antaRouterDoc: Vue-Router
+  antaAbout: About
+  antaResult: Result Page
+  antaSuccess: Success Page
+  antaFail: Fail Page
+  antaIconSelect: Icon Select
+  antaTimeline: Time Line
+  antaLineTree: LineTree
+  antaList: List Page
+  antaCardList: Card List Page
+  antaDebounce: Debounce & Throttle
+  antaFormDesign: Form Design
+  antaBarcode: Barcode
+  antaQrcode: Qrcode
+  antaCascader: Area Cascader
+  antaSwiper: Swiper Plugin
+  antaVirtualList: Virtual List
+  antaPdf: PDF Preview
+  antaExcel: Export Excel
+  antaInfiniteScroll: Table Infinite Scroll
+  antaSensitive: Sensitive Filter
+  antaPinyin: PinYin
+  antaDanmaku: Danmaku
+  antaSchemaForm: Form
+  antaTableBase: Base Usage
+  antaTableHigh: High Usage
+  antaTableEdit: Edit Usage
+  antaVxeTable: Virtual Usage
+  antaBoard: Paint Board
+  antaMindMap: Mind Map
+  antaMenuOverflow: Menu Overflow Show Tooltip Text
+  antaChildMenuOverflow: Child Menu Overflow Show Tooltip Text
 status:
-  pureLoad: Loading...
-  pureMessage: Message
-  pureNotify: Notify
-  pureTodo: Todo
-  pureNoMessage: No Message
-  pureNoNotify: No Notify
-  pureNoTodo: No Todo
+  antaLoad: Loading...
+  antaMessage: Message
+  antaNotify: Notify
+  antaTodo: Todo
+  antaNoMessage: No Message
+  antaNoNotify: No Notify
+  antaNoTodo: No Todo
 login:
-  pureUsername: Username
-  purePassword: Password
-  pureVerifyCode: VerifyCode
-  pureRemember: days no need to login
-  pureRememberInfo: After checking and logging in, will automatically log in to the system without entering your username and password within the specified number of days.
-  pureSure: Sure Password
-  pureForget: Forget Password?
-  pureLogin: Login
-  pureThirdLogin: Third Login
-  purePhoneLogin: Phone Login
-  pureQRCodeLogin: QRCode Login
-  pureRegister: Register
-  pureWeChatLogin: WeChat Login
-  pureAlipayLogin: Alipay Login
-  pureQQLogin: QQ Login
-  pureWeiBoLogin: Weibo Login
-  purePhone: Phone
-  pureSmsVerifyCode: SMS VerifyCode
-  pureBack: Back
-  pureTest: Mock Test
-  pureTip: After scanning the code, click "Confirm" to complete the login
-  pureDefinite: Definite
-  pureLoginSuccess: Login Success
-  pureLoginFail: Login Fail
-  pureRegisterSuccess: Regist Success
-  pureTickPrivacy: Please tick Privacy Policy
-  pureReadAccept: I have read it carefully and accept
-  purePrivacyPolicy: Privacy Policy
-  pureGetVerifyCode: Get VerifyCode
-  pureInfo: Seconds
-  pureUsernameReg: Please enter username
-  purePassWordReg: Please enter password
-  pureVerifyCodeReg: Please enter verify code
-  pureVerifyCodeCorrectReg: Please enter correct verify code
-  pureVerifyCodeSixReg: Please enter a 6-digit verify code
-  purePhoneReg: Please enter the phone
-  purePhoneCorrectReg: Please enter the correct phone number format
-  purePassWordRuleReg: The password format should be any combination of 8-18 digits
-  purePassWordSureReg: Please enter confirm password
-  purePassWordDifferentReg: The two passwords do not match!
-  purePassWordUpdateReg: Password has been updated
-  pureLoginExpired: Login expired, please login again
+  antaUsername: Username
+  antaPassword: Password
+  antaVerifyCode: VerifyCode
+  antaRemember: days no need to login
+  antaRememberInfo: After checking and logging in, will automatically log in to the system without entering your username and password within the specified number of days.
+  antaSure: Sure Password
+  antaForget: Forget Password?
+  antaLogin: Login
+  antaThirdLogin: Third Login
+  antaPhoneLogin: Phone Login
+  antaQRCodeLogin: QRCode Login
+  antaRegister: Register
+  antaWeChatLogin: WeChat Login
+  antaAlipayLogin: Alipay Login
+  antaQQLogin: QQ Login
+  antaWeiBoLogin: Weibo Login
+  antaPhone: Phone
+  antaSmsVerifyCode: SMS VerifyCode
+  antaBack: Back
+  antaTest: Mock Test
+  antaTip: After scanning the code, click "Confirm" to complete the login
+  antaDefinite: Definite
+  antaLoginSuccess: Login Success
+  antaLoginFail: Login Fail
+  antaRegisterSuccess: Regist Success
+  antaTickPrivacy: Please tick Privacy Policy
+  antaReadAccept: I have read it carefully and accept
+  antaPrivacyPolicy: Privacy Policy
+  antaGetVerifyCode: Get VerifyCode
+  antaInfo: Seconds
+  antaUsernameReg: Please enter username
+  antaPassWordReg: Please enter password
+  antaVerifyCodeReg: Please enter verify code
+  antaVerifyCodeCorrectReg: Please enter correct verify code
+  antaVerifyCodeSixReg: Please enter a 6-digit verify code
+  antaPhoneReg: Please enter the phone
+  antaPhoneCorrectReg: Please enter the correct phone number format
+  antaPassWordRuleReg: The password format should be any combination of 8-18 digits
+  antaPassWordSureReg: Please enter confirm password
+  antaPassWordDifferentReg: The two passwords do not match!
+  antaPassWordUpdateReg: Password has been updated
+  antaLoginExpired: Login expired, please login again
 tableBar:
-  pureList: List
-  pureLarge: Large
-  pureDefault: Default
-  pureSmall: Small
-  pureColumnSettings: ColumnSettings
-  pureCollapse: Collapse
-  pureExpand: Expand
-  pureRefresh: Refresh
-  pureDensity: Density
-  pureColumnDisplay: ColumnDisplay
-  pureReset: Reset
-  pureExitFullScreen: ExitFullScreen
-  pureFullScreen: FullScreen
-  purePinLeft: Pin Left
-  purePinRight: Pin Right
-  pureUnpin: Unpin
+  antaList: List
+  antaLarge: Large
+  antaDefault: Default
+  antaSmall: Small
+  antaColumnSettings: ColumnSettings
+  antaCollapse: Collapse
+  antaExpand: Expand
+  antaRefresh: Refresh
+  antaDensity: Density
+  antaColumnDisplay: ColumnDisplay
+  antaReset: Reset
+  antaExitFullScreen: ExitFullScreen
+  antaFullScreen: FullScreen
+  antaPinLeft: Pin Left
+  antaPinRight: Pin Right
+  antaUnpin: Unpin

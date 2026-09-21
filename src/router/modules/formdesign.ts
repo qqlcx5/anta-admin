@@ -7,7 +7,7 @@ export default {
   redirect: "/form-design/index",
   meta: {
     icon: "ri/terminal-window-line",
-    title: $t("menus.pureFormDesign"),
+    title: $t("menus.antaFormDesign"),
     rank: formdesign
   },
   children: [
@@ -16,7 +16,7 @@ export default {
       name: "FormDesign",
       component: IFrame,
       meta: {
-        title: $t("menus.pureFormDesign"),
+        title: $t("menus.antaFormDesign"),
         keepAlive: true,
         frameSrc:
           "https://haixin-fang.github.io/vue-form-design/playground/index.html",

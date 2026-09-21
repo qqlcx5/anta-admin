@@ -37,7 +37,7 @@ const appWrapperRef = ref();
 const { isDark } = useDark();
 const { layout } = useLayout();
 const isMobile = deviceDetection();
-const pureSetting = useSettingStoreHook();
+const antaSetting = useSettingStoreHook();
 const { $storage } = useGlobal<GlobalPropertiesApi>();
 
 const set: setType = reactive({
@@ -50,7 +50,7 @@ const set: setType = reactive({
   }),
 
   fixedHeader: computed(() => {
-    return pureSetting.fixedHeader;
+    return antaSetting.fixedHeader;
   }),
 
   classes: computed(() => {
@@ -143,11 +143,11 @@ const LayHeader = defineComponent({
       },
       {
         default: () => [
-          !pureSetting.hiddenSideBar &&
+          !antaSetting.hiddenSideBar &&
           (layout.value.includes("vertical") || layout.value.includes("mix"))
             ? h(LayNavbar)
             : null,
-          !pureSetting.hiddenSideBar && layout.value.includes("horizontal")
+          !antaSetting.hiddenSideBar && layout.value.includes("horizontal")
             ? h(NavHorizontal)
             : null,
           h(LayTag)
@@ -171,14 +171,14 @@ const LayHeader = defineComponent({
     />
     <NavVertical
       v-show="
-        !pureSetting.hiddenSideBar &&
+        !antaSetting.hiddenSideBar &&
         (layout.includes('vertical') || layout.includes('mix'))
       "
     />
     <div
       :class="[
         'main-container',
-        pureSetting.hiddenSideBar ? 'main-hidden' : ''
+        antaSetting.hiddenSideBar ? 'main-hidden' : ''
       ]"
     >
       <div v-if="set.fixedHeader">
@@ -188,7 +188,7 @@ const LayHeader = defineComponent({
       </div>
       <el-scrollbar v-else>
         <el-backtop
-          :title="t('buttons.pureBackTop')"
+          :title="t('buttons.antaBackTop')"
           target=".main-container .el-scrollbar__wrap"
         >
           <BackTopIcon />

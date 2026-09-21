@@ -144,7 +144,7 @@ defineExpose({ handleScroll });
   <div ref="historyRef" class="history">
     <template v-if="historyList.length">
       <div :style="titleStyle">
-        {{ t("search.pureHistory") }}
+        {{ t("search.antaHistory") }}
       </div>
       <div
         v-for="(item, index) in historyList"
@@ -165,7 +165,7 @@ defineExpose({ handleScroll });
     <template v-if="collectList.length">
       <div :style="titleStyle">
         {{
-          `${t("search.pureCollect")}${collectList.length > 1 ? t("search.pureDragSort") : ""}`
+          `${t("search.antaCollect")}${collectList.length > 1 ? t("search.antaDragSort") : ""}`
         }}
       </div>
       <div class="collect-container">

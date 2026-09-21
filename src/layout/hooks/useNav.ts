@@ -21,7 +21,7 @@ const errorInfo =
   "The current routing configuration is incorrect, please check the configuration";
 
 export function useNav() {
-  const pureApp = useAppStoreHook();
+  const antaApp = useAppStoreHook();
   const routers = useRouter().options.routes;
   const { isFullscreen, toggle } = useFullscreen();
   const { wholeMenus } = storeToRefs(usePermissionStoreHook());
@@ -73,11 +73,11 @@ export function useNav() {
   });
 
   const isCollapse = computed(() => {
-    return !pureApp.getSidebarStatus;
+    return !antaApp.getSidebarStatus;
   });
 
   const device = computed(() => {
-    return pureApp.getDevice;
+    return antaApp.getDevice;
   });
 
   const { $storage, $config } = useGlobal<GlobalPropertiesApi>();
@@ -114,7 +114,7 @@ export function useNav() {
   }
 
   function toggleSideBar() {
-    pureApp.toggleSideBar();
+    antaApp.toggleSideBar();
   }
 
   function handleResize(menuRef) {
@@ -168,7 +168,7 @@ export function useNav() {
     resolvePath,
     getLogo,
     isCollapse,
-    pureApp,
+    antaApp,
     username,
     userAvatar,
     avatarsStyle,

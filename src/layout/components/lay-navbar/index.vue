@@ -19,7 +19,7 @@ const {
   device,
   logout,
   onPanel,
-  pureApp,
+  antaApp,
   username,
   userAvatar,
   avatarsStyle,
@@ -37,7 +37,7 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
     <LaySidebarTopCollapse
       v-if="device === 'mobile'"
       class="hamburger-container"
-      :is-active="pureApp.sidebar.opened"
+      :is-active="antaApp.sidebar.opened"
       @toggleClick="toggleSideBar"
     />
 
@@ -102,21 +102,21 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
                 :icon="AccountSettingsIcon"
                 style="margin: 5px"
               />
-              {{ t("buttons.pureAccountSettings") }}
+              {{ t("buttons.antaAccountSettings") }}
             </el-dropdown-item>
             <el-dropdown-item @click="logout">
               <IconifyIconOffline
                 :icon="LogoutCircleRLine"
                 style="margin: 5px"
               />
-              {{ t("buttons.pureLoginOut") }}
+              {{ t("buttons.antaLoginOut") }}
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
       <span
         class="set-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
-        :title="t('buttons.pureOpenSystemSet')"
+        :title="t('buttons.antaOpenSystemSet')"
         @click="onPanel"
       >
         <IconifyIconOffline :icon="Setting" />

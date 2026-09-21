@@ -65,7 +65,7 @@ const onMarkAsRead = () => {
         >
           <el-empty
             v-if="notices.length === 0"
-            :description="t('status.pureNoMessage')"
+            :description="t('status.antaNoMessage')"
             :image-size="60"
           />
           <span v-else>
@@ -86,11 +86,11 @@ const onMarkAsRead = () => {
         >
           <div class="flex-bc m-1">
             <el-button type="primary" size="small" text @click="onWatchMore">
-              {{ t("buttons.pureWatchMore") }}
+              {{ t("buttons.antaWatchMore") }}
               <IconifyIconOffline :icon="ArrowRightIcon" />
             </el-button>
             <el-button type="primary" size="small" text @click="onMarkAsRead">
-              {{ t("buttons.pureMarkAsRead") }}
+              {{ t("buttons.antaMarkAsRead") }}
             </el-button>
           </div>
         </div>

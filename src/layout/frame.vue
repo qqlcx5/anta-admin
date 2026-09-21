@@ -90,7 +90,7 @@ onMounted(() => {
   <div
     v-loading="loading"
     class="frame"
-    :element-loading-text="t('status.pureLoad')"
+    :element-loading-text="t('status.antaLoad')"
   >
     <iframe ref="frameRef" :src="frameSrc" class="frame-iframe" />
   </div>

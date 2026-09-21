@@ -129,7 +129,7 @@ onMounted(() => {
               :icon="AccountSettingsIcon"
               style="margin: 5px"
             />
-            {{ t("buttons.pureAccountSettings") }}
+            {{ t("buttons.antaAccountSettings") }}
           </el-dropdown-item>
           <el-dropdown-menu class="logout">
             <el-dropdown-item @click="logout">
@@ -137,14 +137,14 @@ onMounted(() => {
                 :icon="LogoutCircleRLine"
                 style="margin: 5px"
               />
-              {{ t("buttons.pureLoginOut") }}
+              {{ t("buttons.antaLoginOut") }}
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
       <span
         class="set-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
-        :title="t('buttons.pureOpenSystemSet')"
+        :title="t('buttons.antaOpenSystemSet')"
         @click="onPanel"
       >
         <IconifyIconOffline :icon="Setting" />

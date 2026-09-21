@@ -6,7 +6,7 @@ export default {
   redirect: "/list/card",
   meta: {
     icon: "ri/list-check",
-    title: $t("menus.pureList"),
+    title: $t("menus.antaList"),
     rank: list
   },
   children: [
@@ -16,7 +16,7 @@ export default {
       component: () => import("@/views/list/card/index.vue"),
       meta: {
         icon: "ri/bank-card-line",
-        title: $t("menus.pureCardList"),
+        title: $t("menus.antaCardList"),
         showParent: true
       }
     }

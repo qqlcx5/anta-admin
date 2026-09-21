@@ -300,7 +300,7 @@ onKeyStroke("ArrowDown", handleDown);
       v-model="keyword"
       size="large"
       clearable
-      :placeholder="t('search.purePlaceholder')"
+      :placeholder="t('search.antaPlaceholder')"
       @input="handleSearch"
     >
       <template #prefix>
@@ -309,7 +309,7 @@ onKeyStroke("ArrowDown", handleDown);
     </el-input>
     <div class="search-content">
       <el-scrollbar ref="scrollbarRef" max-height="calc(90vh - 140px)">
-        <el-empty v-if="showEmpty" :description="t('search.pureEmpty')" />
+        <el-empty v-if="showEmpty" :description="t('search.antaEmpty')" />
         <SearchHistory
           v-if="showSearchHistory"
           ref="historyRef"

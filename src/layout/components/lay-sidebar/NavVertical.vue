@@ -22,7 +22,7 @@ const showLogo = ref(
 
 const {
   device,
-  pureApp,
+  antaApp,
   isCollapse,
   tooltipEffect,
   menuSelect,
@@ -32,13 +32,13 @@ const {
 const subMenuData = ref([]);
 
 const menuData = computed(() => {
-  return pureApp.layout === "mix" && device.value !== "mobile"
+  return antaApp.layout === "mix" && device.value !== "mobile"
     ? subMenuData.value
     : usePermissionStoreHook().wholeMenus;
 });
 
 const loading = computed(() =>
-  pureApp.layout === "mix" ? false : menuData.value.length === 0 ? true : false
+  antaApp.layout === "mix" ? false : menuData.value.length === 0 ? true : false
 );
 
 const defaultActive = computed(() =>
@@ -119,12 +119,12 @@ onBeforeUnmount(() => {
     </el-scrollbar>
     <LaySidebarCenterCollapse
       v-if="device !== 'mobile' && (isShow || isCollapse)"
-      :is-active="pureApp.sidebar.opened"
+      :is-active="antaApp.sidebar.opened"
       @toggleClick="toggleSideBar"
     />
     <LaySidebarLeftCollapse
       v-if="device !== 'mobile'"
-      :is-active="pureApp.sidebar.opened"
+      :is-active="antaApp.sidebar.opened"
       @toggleClick="toggleSideBar"
     />
   </div>

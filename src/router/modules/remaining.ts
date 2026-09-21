@@ -7,7 +7,7 @@ export default [
     name: "Login",
     component: () => import("@/views/login/index.vue"),
     meta: {
-      title: $t("menus.pureLogin"),
+      title: $t("menus.antaLogin"),
       showLink: false
     }
   },
@@ -17,7 +17,7 @@ export default [
     name: "AccessDenied",
     component: () => import("@/views/error/403.vue"),
     meta: {
-      title: $t("menus.pureAccessDenied"),
+      title: $t("menus.antaAccessDenied"),
       showLink: false
     }
   },
@@ -27,7 +27,7 @@ export default [
     name: "ServerError",
     component: () => import("@/views/error/500.vue"),
     meta: {
-      title: $t("menus.pureServerError"),
+      title: $t("menus.antaServerError"),
       showLink: false
     }
   },
@@ -35,7 +35,7 @@ export default [
     path: "/redirect",
     component: Layout,
     meta: {
-      title: $t("status.pureLoad"),
+      title: $t("status.antaLoad"),
       showLink: false
     },
     children: [
@@ -51,7 +51,7 @@ export default [
     name: "AccountSettings",
     component: () => import("@/views/account-settings/index.vue"),
     meta: {
-      title: $t("buttons.pureAccountSettings"),
+      title: $t("buttons.antaAccountSettings"),
       showLink: false
     }
   },
@@ -61,7 +61,7 @@ export default [
     name: "Empty",
     component: () => import("@/views/empty/index.vue"),
     meta: {
-      title: $t("menus.pureEmpty"),
+      title: $t("menus.antaEmpty"),
       showLink: false
     }
   }

@@ -33,7 +33,7 @@ const props = {
   /** 头部最左边的标题 */
   title: {
     type: String,
-    default: $t("tableBar.pureList")
+    default: $t("tableBar.antaList")
   },
   /** 对于树形表格，如果想启用展开和折叠功能，传入当前表格的ref即可 */
   tableRef: {
@@ -184,19 +184,19 @@ export default defineComponent({
             style={getDropdownItemStyle.value("large")}
             onClick={() => (size.value = "large")}
           >
-            {transformI18n($t("tableBar.pureLarge"))}
+            {transformI18n($t("tableBar.antaLarge"))}
           </el-dropdown-item>
           <el-dropdown-item
             style={getDropdownItemStyle.value("default")}
             onClick={() => (size.value = "default")}
           >
-            {transformI18n($t("tableBar.pureDefault"))}
+            {transformI18n($t("tableBar.antaDefault"))}
           </el-dropdown-item>
           <el-dropdown-item
             style={getDropdownItemStyle.value("small")}
             onClick={() => (size.value = "small")}
           >
-            {transformI18n($t("tableBar.pureSmall"))}
+            {transformI18n($t("tableBar.antaSmall"))}
           </el-dropdown-item>
         </el-dropdown-menu>
       )
@@ -263,7 +263,7 @@ export default defineComponent({
         <SettingIcon
           class={["w-4", iconClass.value]}
           v-tippy={rendTippyProps(
-            transformI18n($t("tableBar.pureColumnSettings"))
+            transformI18n($t("tableBar.antaColumnSettings"))
           )}
         />
       )
@@ -302,8 +302,8 @@ export default defineComponent({
                     }}
                     v-tippy={rendTippyProps(
                       isExpandAll.value
-                        ? transformI18n($t("tableBar.pureCollapse"))
-                        : transformI18n($t("tableBar.pureExpand"))
+                        ? transformI18n($t("tableBar.antaCollapse"))
+                        : transformI18n($t("tableBar.antaExpand"))
                     )}
                     onClick={() => onExpand()}
                   />
@@ -317,7 +317,7 @@ export default defineComponent({
                   loading.value ? "animate-spin" : ""
                 ]}
                 v-tippy={rendTippyProps(
-                  transformI18n($t("tableBar.pureRefresh"))
+                  transformI18n($t("tableBar.antaRefresh"))
                 )}
                 onClick={() => onReFresh()}
               />
@@ -326,7 +326,7 @@ export default defineComponent({
                 v-slots={dropdown}
                 trigger="click"
                 v-tippy={rendTippyProps(
-                  transformI18n($t("tableBar.pureDensity"))
+                  transformI18n($t("tableBar.antaDensity"))
                 )}
               >
                 <CollapseIcon class={["w-4", iconClass.value]} />
@@ -343,13 +343,13 @@ export default defineComponent({
                 <div class={[topClass.value]}>
                   <el-checkbox
                     class="-mr-1!"
-                    label={transformI18n($t("tableBar.pureColumnDisplay"))}
+                    label={transformI18n($t("tableBar.antaColumnDisplay"))}
                     v-model={checkAll.value}
                     indeterminate={isIndeterminate.value}
                     onChange={value => handleCheckAllChange(value)}
                   />
                   <el-button type="primary" link onClick={() => onReset()}>
-                    {transformI18n($t("tableBar.pureReset"))}
+                    {transformI18n($t("tableBar.antaReset"))}
                   </el-button>
                 </div>
 
@@ -404,8 +404,8 @@ export default defineComponent({
                                 icon={left ? PinAngleFill : PinAngle}
                                 v-tippy={
                                   left
-                                    ? transformI18n($t("tableBar.pureUnpin"))
-                                    : transformI18n($t("tableBar.purePinLeft"))
+                                    ? transformI18n($t("tableBar.antaUnpin"))
+                                    : transformI18n($t("tableBar.antaPinLeft"))
                                 }
                                 onClick={() =>
                                   handleToggleColumnFixed(
@@ -426,8 +426,8 @@ export default defineComponent({
                                 icon={right ? PinAngleFill : PinAngle}
                                 v-tippy={
                                   right
-                                    ? transformI18n($t("tableBar.pureUnpin"))
-                                    : transformI18n($t("tableBar.purePinRight"))
+                                    ? transformI18n($t("tableBar.antaUnpin"))
+                                    : transformI18n($t("tableBar.antaPinRight"))
                                 }
                                 onClick={() =>
                                   handleToggleColumnFixed(
@@ -451,8 +451,8 @@ export default defineComponent({
                 icon={isFullscreen.value ? ExitFullscreen : Fullscreen}
                 v-tippy={
                   isFullscreen.value
-                    ? transformI18n($t("tableBar.pureExitFullScreen"))
-                    : transformI18n($t("tableBar.pureFullScreen"))
+                    ? transformI18n($t("tableBar.antaExitFullScreen"))
+                    : transformI18n($t("tableBar.antaFullScreen"))
                 }
                 onClick={() => onFullscreen()}
               />

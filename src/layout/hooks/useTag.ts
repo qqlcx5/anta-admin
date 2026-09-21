@@ -33,7 +33,7 @@ export function useTags() {
   const route = useRoute();
   const router = useRouter();
   const instance = getCurrentInstance();
-  const pureSetting = useSettingStoreHook();
+  const antaSetting = useSettingStoreHook();
 
   const buttonTop = ref(0);
   const buttonLeft = ref(0);
@@ -64,49 +64,49 @@ export function useTags() {
   const tagsViews = reactive<Array<tagsViewsType>>([
     {
       icon: RefreshRight,
-      text: $t("buttons.pureReload"),
+      text: $t("buttons.antaReload"),
       divided: false,
       disabled: false,
       show: true
     },
     {
       icon: Close,
-      text: $t("buttons.pureCloseCurrentTab"),
+      text: $t("buttons.antaCloseCurrentTab"),
       divided: false,
       disabled: multiTags.value.length > 1 ? false : true,
       show: true
     },
     {
       icon: CloseLeftTags,
-      text: $t("buttons.pureCloseLeftTabs"),
+      text: $t("buttons.antaCloseLeftTabs"),
       divided: true,
       disabled: multiTags.value.length > 1 ? false : true,
       show: true
     },
     {
       icon: CloseRightTags,
-      text: $t("buttons.pureCloseRightTabs"),
+      text: $t("buttons.antaCloseRightTabs"),
       divided: false,
       disabled: multiTags.value.length > 1 ? false : true,
       show: true
     },
     {
       icon: CloseOtherTags,
-      text: $t("buttons.pureCloseOtherTabs"),
+      text: $t("buttons.antaCloseOtherTabs"),
       divided: true,
       disabled: multiTags.value.length > 2 ? false : true,
       show: true
     },
     {
       icon: CloseAllTags,
-      text: $t("buttons.pureCloseAllTabs"),
+      text: $t("buttons.antaCloseAllTabs"),
       divided: false,
       disabled: multiTags.value.length > 1 ? false : true,
       show: true
     },
     {
       icon: Fullscreen,
-      text: $t("buttons.pureContentFullScreen"),
+      text: $t("buttons.antaContentFullScreen"),
       divided: true,
       disabled: false,
       show: true
@@ -203,9 +203,9 @@ export function useTags() {
   }
 
   function onContentFullScreen() {
-    pureSetting.hiddenSideBar
-      ? pureSetting.changeSetting({ key: "hiddenSideBar", value: false })
-      : pureSetting.changeSetting({ key: "hiddenSideBar", value: true });
+    antaSetting.hiddenSideBar
+      ? antaSetting.changeSetting({ key: "hiddenSideBar", value: false })
+      : antaSetting.changeSetting({ key: "hiddenSideBar", value: true });
   }
 
   onMounted(() => {
@@ -235,7 +235,7 @@ export function useTags() {
     buttonLeft,
     translateX,
     isFixedTag,
-    pureSetting,
+    antaSetting,
     activeIndex,
     getTabStyle,
     isScrolling,

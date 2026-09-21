@@ -160,86 +160,86 @@ export default defineFakeRoute([
             parentId: 0,
             id: 100,
             menuType: 0, // 菜单类型（0代表菜单、1代表iframe、2代表外链、3代表按钮）
-            title: "menus.pureExternalPage"
+            title: "menus.antaExternalPage"
           },
           {
             parentId: 100,
             id: 101,
             menuType: 0,
-            title: "menus.pureExternalDoc"
+            title: "menus.antaExternalDoc"
           },
           {
             parentId: 101,
             id: 102,
             menuType: 2,
-            title: "menus.pureExternalLink"
+            title: "menus.antaExternalLink"
           },
           {
             parentId: 101,
             id: 103,
             menuType: 2,
-            title: "menus.pureUtilsLink"
+            title: "menus.antaUtilsLink"
           },
           {
             parentId: 100,
             id: 104,
             menuType: 1,
-            title: "menus.pureEmbeddedDoc"
+            title: "menus.antaEmbeddedDoc"
           },
           {
             parentId: 104,
             id: 105,
             menuType: 1,
-            title: "menus.pureEpDoc"
+            title: "menus.antaEpDoc"
           },
           {
             parentId: 104,
             id: 106,
             menuType: 1,
-            title: "menus.pureTailwindcssDoc"
+            title: "menus.antaTailwindcssDoc"
           },
           {
             parentId: 104,
             id: 107,
             menuType: 1,
-            title: "menus.pureVueDoc"
+            title: "menus.antaVueDoc"
           },
           {
             parentId: 104,
             id: 108,
             menuType: 1,
-            title: "menus.pureViteDoc"
+            title: "menus.antaViteDoc"
           },
           {
             parentId: 104,
             id: 109,
             menuType: 1,
-            title: "menus.purePiniaDoc"
+            title: "menus.antaPiniaDoc"
           },
           {
             parentId: 104,
             id: 110,
             menuType: 1,
-            title: "menus.pureRouterDoc"
+            title: "menus.antaRouterDoc"
           },
           // 权限管理
           {
             parentId: 0,
             id: 200,
             menuType: 0,
-            title: "menus.purePermission"
+            title: "menus.antaPermission"
           },
           {
             parentId: 200,
             id: 201,
             menuType: 0,
-            title: "menus.purePermissionPage"
+            title: "menus.antaPermissionPage"
           },
           {
             parentId: 200,
             id: 202,
             menuType: 0,
-            title: "menus.purePermissionButton"
+            title: "menus.antaPermissionButton"
           },
           {
             parentId: 202,
@@ -264,75 +264,75 @@ export default defineFakeRoute([
             parentId: 0,
             id: 300,
             menuType: 0,
-            title: "menus.pureSysManagement"
+            title: "menus.antaSysManagement"
           },
           {
             parentId: 300,
             id: 301,
             menuType: 0,
-            title: "menus.pureUser"
+            title: "menus.antaUser"
           },
           {
             parentId: 300,
             id: 302,
             menuType: 0,
-            title: "menus.pureRole"
+            title: "menus.antaRole"
           },
           {
             parentId: 300,
             id: 303,
             menuType: 0,
-            title: "menus.pureSystemMenu"
+            title: "menus.antaSystemMenu"
           },
           {
             parentId: 300,
             id: 304,
             menuType: 0,
-            title: "menus.pureDept"
+            title: "menus.antaDept"
           },
           // 系统监控
           {
             parentId: 0,
             id: 400,
             menuType: 0,
-            title: "menus.pureSysMonitor"
+            title: "menus.antaSysMonitor"
           },
           {
             parentId: 400,
             id: 401,
             menuType: 0,
-            title: "menus.pureOnlineUser"
+            title: "menus.antaOnlineUser"
           },
           {
             parentId: 400,
             id: 402,
             menuType: 0,
-            title: "menus.pureLoginLog"
+            title: "menus.antaLoginLog"
           },
           {
             parentId: 400,
             id: 403,
             menuType: 0,
-            title: "menus.pureOperationLog"
+            title: "menus.antaOperationLog"
           },
           {
             parentId: 400,
             id: 404,
             menuType: 0,
-            title: "menus.pureSystemLog"
+            title: "menus.antaSystemLog"
           },
           // 标签页操作
           {
             parentId: 0,
             id: 500,
             menuType: 0,
-            title: "menus.pureTabs"
+            title: "menus.antaTabs"
           },
           {
             parentId: 500,
             id: 501,
             menuType: 0,
-            title: "menus.pureTabs"
+            title: "menus.antaTabs"
           },
           {
             parentId: 500,
@@ -391,7 +391,7 @@ export default defineFakeRoute([
             parentId: 0,
             id: 100,
             menuType: 0, // 菜单类型（0代表菜单、1代表iframe、2代表外链、3代表按钮）
-            title: "menus.pureExternalPage",
+            title: "menus.antaExternalPage",
             name: "PureIframe",
             path: "/iframe",
             component: "",
@@ -415,7 +415,7 @@ export default defineFakeRoute([
             parentId: 100,
             id: 101,
             menuType: 0,
-            title: "menus.pureExternalDoc",
+            title: "menus.antaExternalDoc",
             name: "PureIframeExternal",
             path: "/iframe/external",
             component: "",
@@ -439,7 +439,7 @@ export default defineFakeRoute([
             parentId: 101,
             id: 102,
             menuType: 2,
-            title: "menus.pureExternalLink",
+            title: "menus.antaExternalLink",
             name: "https://pure-admin.cn/",
             path: "/external",
             component: "",
@@ -463,9 +463,9 @@ export default defineFakeRoute([
             parentId: 101,
             id: 103,
             menuType: 2,
-            title: "menus.pureUtilsLink",
+            title: "menus.antaUtilsLink",
             name: "https://pure-admin-utils.netlify.app/",
-            path: "/pureUtilsLink",
+            path: "/antaUtilsLink",
             component: "",
             rank: null,
             redirect: "",
@@ -487,7 +487,7 @@ export default defineFakeRoute([
             parentId: 100,
             id: 104,
             menuType: 1,
-            title: "menus.pureEmbeddedDoc",
+            title: "menus.antaEmbeddedDoc",
             name: "PureIframeEmbedded",
             path: "/iframe/embedded",
             component: "",
@@ -511,7 +511,7 @@ export default defineFakeRoute([
             parentId: 104,
             id: 105,
             menuType: 1,
-            title: "menus.pureEpDoc",
+            title: "menus.antaEpDoc",
             name: "FrameEp",
             path: "/iframe/ep",
             component: "",
@@ -535,7 +535,7 @@ export default defineFakeRoute([
             parentId: 104,
             id: 106,
             menuType: 1,
-            title: "menus.pureTailwindcssDoc",
+            title: "menus.antaTailwindcssDoc",
             name: "FrameTailwindcss",
             path: "/iframe/tailwindcss",
             component: "",
@@ -559,7 +559,7 @@ export default defineFakeRoute([
             parentId: 104,
             id: 107,
             menuType: 1,
-            title: "menus.pureVueDoc",
+            title: "menus.antaVueDoc",
             name: "FrameVue",
             path: "/iframe/vue3",
             component: "",
@@ -583,7 +583,7 @@ export default defineFakeRoute([
             parentId: 104,
             id: 108,
             menuType: 1,
-            title: "menus.pureViteDoc",
+            title: "menus.antaViteDoc",
             name: "FrameVite",
             path: "/iframe/vite",
             component: "",
@@ -607,7 +607,7 @@ export default defineFakeRoute([
             parentId: 104,
             id: 109,
             menuType: 1,
-            title: "menus.purePiniaDoc",
+            title: "menus.antaPiniaDoc",
             name: "FramePinia",
             path: "/iframe/pinia",
             component: "",
@@ -631,7 +631,7 @@ export default defineFakeRoute([
             parentId: 104,
             id: 110,
             menuType: 1,
-            title: "menus.pureRouterDoc",
+            title: "menus.antaRouterDoc",
             name: "FrameRouter",
             path: "/iframe/vue-router",
             component: "",
@@ -656,7 +656,7 @@ export default defineFakeRoute([
             parentId: 0,
             id: 200,
             menuType: 0,
-            title: "menus.purePermission",
+            title: "menus.antaPermission",
             name: "PurePermission",
             path: "/permission",
             component: "",
@@ -680,7 +680,7 @@ export default defineFakeRoute([
             parentId: 200,
             id: 201,
             menuType: 0,
-            title: "menus.purePermissionPage",
+            title: "menus.antaPermissionPage",
             name: "PermissionPage",
             path: "/permission/page/index",
             component: "",
@@ -704,7 +704,7 @@ export default defineFakeRoute([
             parentId: 200,
             id: 202,
             menuType: 0,
-            title: "menus.purePermissionButton",
+            title: "menus.antaPermissionButton",
             name: "PermissionButton",
             path: "/permission/button",
             component: "",
@@ -728,7 +728,7 @@ export default defineFakeRoute([
             parentId: 202,
             id: 203,
             menuType: 0,
-            title: "menus.purePermissionButtonRouter",
+            title: "menus.antaPermissionButtonRouter",
             name: "PermissionButtonRouter",
             path: "/permission/button/router",
             component: "permission/button/index",
@@ -824,7 +824,7 @@ export default defineFakeRoute([
             parentId: 202,
             id: 204,
             menuType: 0,
-            title: "menus.purePermissionButtonLogin",
+            title: "menus.antaPermissionButtonLogin",
             name: "PermissionButtonLogin",
             path: "/permission/button/login",
             component: "permission/button/perms",
@@ -921,7 +921,7 @@ export default defineFakeRoute([
             parentId: 0,
             id: 300,
             menuType: 0,
-            title: "menus.pureSysManagement",
+            title: "menus.antaSysManagement",
             name: "PureSystem",
             path: "/system",
             component: "",
@@ -945,7 +945,7 @@ export default defineFakeRoute([
             parentId: 300,
             id: 301,
             menuType: 0,
-            title: "menus.pureUser",
+            title: "menus.antaUser",
             name: "SystemUser",
             path: "/system/user/index",
             component: "",
@@ -969,7 +969,7 @@ export default defineFakeRoute([
             parentId: 300,
             id: 302,
             menuType: 0,
-            title: "menus.pureRole",
+            title: "menus.antaRole",
             name: "SystemRole",
             path: "/system/role/index",
             component: "",
@@ -993,7 +993,7 @@ export default defineFakeRoute([
             parentId: 300,
             id: 303,
             menuType: 0,
-            title: "menus.pureSystemMenu",
+            title: "menus.antaSystemMenu",
             name: "SystemMenu",
             path: "/system/menu/index",
             component: "",
@@ -1017,7 +1017,7 @@ export default defineFakeRoute([
             parentId: 300,
             id: 304,
             menuType: 0,
-            title: "menus.pureDept",
+            title: "menus.antaDept",
             name: "SystemDept",
             path: "/system/dept/index",
             component: "",
@@ -1042,7 +1042,7 @@ export default defineFakeRoute([
             parentId: 0,
             id: 400,
             menuType: 0,
-            title: "menus.pureSysMonitor",
+            title: "menus.antaSysMonitor",
             name: "PureMonitor",
             path: "/monitor",
             component: "",
@@ -1066,7 +1066,7 @@ export default defineFakeRoute([
             parentId: 400,
             id: 401,
             menuType: 0,
-            title: "menus.pureOnlineUser",
+            title: "menus.antaOnlineUser",
             name: "OnlineUser",
             path: "/monitor/online-user",
             component: "monitor/online/index",
@@ -1090,7 +1090,7 @@ export default defineFakeRoute([
             parentId: 400,
             id: 402,
             menuType: 0,
-            title: "menus.pureLoginLog",
+            title: "menus.antaLoginLog",
             name: "LoginLog",
             path: "/monitor/login-logs",
             component: "monitor/logs/login/index",
@@ -1114,7 +1114,7 @@ export default defineFakeRoute([
             parentId: 400,
             id: 403,
             menuType: 0,
-            title: "menus.pureOperationLog",
+            title: "menus.antaOperationLog",
             name: "OperationLog",
             path: "/monitor/operation-logs",
             component: "monitor/logs/operation/index",
@@ -1138,7 +1138,7 @@ export default defineFakeRoute([
             parentId: 400,
             id: 404,
             menuType: 0,
-            title: "menus.pureSystemLog",
+            title: "menus.antaSystemLog",
             name: "SystemLog",
             path: "/monitor/system-logs",
             component: "monitor/logs/system/index",
@@ -1163,7 +1163,7 @@ export default defineFakeRoute([
             parentId: 0,
             id: 500,
             menuType: 0,
-            title: "menus.pureTabs",
+            title: "menus.antaTabs",
             name: "PureTabs",
             path: "/tabs",
             component: "",
@@ -1187,7 +1187,7 @@ export default defineFakeRoute([
             parentId: 500,
             id: 501,
             menuType: 0,
-            title: "menus.pureTabs",
+            title: "menus.antaTabs",
             name: "Tabs",
             path: "/tabs/index",
             component: "",
@@ -1623,7 +1623,7 @@ export default defineFakeRoute([
                 parentId: 0,
                 id: 400,
                 menuType: 0,
-                title: "menus.pureSysMonitor",
+                title: "menus.antaSysMonitor",
                 name: "PureMonitor",
                 path: "/monitor",
                 component: "",
@@ -1647,7 +1647,7 @@ export default defineFakeRoute([
                 parentId: 400,
                 id: 401,
                 menuType: 0,
-                title: "menus.pureOnlineUser",
+                title: "menus.antaOnlineUser",
                 name: "OnlineUser",
                 path: "/monitor/online-user",
                 component: "monitor/online/index",
@@ -1671,7 +1671,7 @@ export default defineFakeRoute([
                 parentId: 400,
                 id: 402,
                 menuType: 0,
-                title: "menus.pureLoginLog",
+                title: "menus.antaLoginLog",
                 name: "LoginLog",
                 path: "/monitor/login-logs",
                 component: "monitor/logs/login/index",
@@ -1695,7 +1695,7 @@ export default defineFakeRoute([
                 parentId: 400,
                 id: 403,
                 menuType: 0,
-                title: "menus.pureOperationLog",
+                title: "menus.antaOperationLog",
                 name: "OperationLog",
                 path: "/monitor/operation-logs",
                 component: "monitor/logs/operation/index",
@@ -1719,7 +1719,7 @@ export default defineFakeRoute([
                 parentId: 400,
                 id: 404,
                 menuType: 0,
-                title: "menus.pureSystemLog",
+                title: "menus.antaSystemLog",
                 name: "SystemLog",
                 path: "/monitor/system-logs",
                 component: "monitor/logs/system/index",

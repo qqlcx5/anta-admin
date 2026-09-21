@@ -160,13 +160,13 @@ function setFalse(Doms): any {
 const stretchTypeOptions = computed<Array<OptionsType>>(() => {
   return [
     {
-      label: t("panel.pureStretchFixed"),
-      tip: t("panel.pureStretchFixedTip"),
+      label: t("panel.antaStretchFixed"),
+      tip: t("panel.antaStretchFixedTip"),
       value: "fixed"
     },
     {
-      label: t("panel.pureStretchCustom"),
-      tip: t("panel.pureStretchCustomTip"),
+      label: t("panel.antaStretchCustom"),
+      tip: t("panel.antaStretchCustomTip"),
       value: "custom"
     }
   ];
@@ -208,24 +208,24 @@ const pClass = computed(() => {
 const themeOptions = computed<Array<OptionsType>>(() => {
   return [
     {
-      label: t("panel.pureThemeModeLight"),
+      label: t("panel.antaThemeModeLight"),
       icon: DayIcon,
       theme: "light",
-      tip: t("panel.pureThemeModeLightTip"),
+      tip: t("panel.antaThemeModeLightTip"),
       iconAttrs: { fill: isDark.value ? "#fff" : "#000" }
     },
     {
-      label: t("panel.pureThemeModeDark"),
+      label: t("panel.antaThemeModeDark"),
       icon: DarkIcon,
       theme: "dark",
-      tip: t("panel.pureThemeModeDarkTip"),
+      tip: t("panel.antaThemeModeDarkTip"),
       iconAttrs: { fill: isDark.value ? "#fff" : "#000" }
     },
     {
-      label: t("panel.pureThemeModeSystem"),
+      label: t("panel.antaThemeModeSystem"),
       icon: SystemIcon,
       theme: "system",
-      tip: t("panel.pureThemeModeSystemTip"),
+      tip: t("panel.antaThemeModeSystemTip"),
       iconAttrs: { fill: isDark.value ? "#fff" : "#000" }
     }
   ];
@@ -234,18 +234,18 @@ const themeOptions = computed<Array<OptionsType>>(() => {
 const markOptions = computed<Array<OptionsType>>(() => {
   return [
     {
-      label: t("panel.pureTagsStyleSmart"),
-      tip: t("panel.pureTagsStyleSmartTip"),
+      label: t("panel.antaTagsStyleSmart"),
+      tip: t("panel.antaTagsStyleSmartTip"),
       value: "smart"
     },
     {
-      label: t("panel.pureTagsStyleCard"),
-      tip: t("panel.pureTagsStyleCardTip"),
+      label: t("panel.antaTagsStyleCard"),
+      tip: t("panel.antaTagsStyleCardTip"),
       value: "card"
     },
     {
-      label: t("panel.pureTagsStyleChrome"),
-      tip: t("panel.pureTagsStyleChromeTip"),
+      label: t("panel.antaTagsStyleChrome"),
+      tip: t("panel.antaTagsStyleChromeTip"),
       value: "chrome"
     }
   ];
@@ -330,7 +330,7 @@ onUnmounted(() => removeMatchMedia);
 <template>
   <LayPanel>
     <div class="p-5">
-      <p :class="pClass">{{ t("panel.pureThemeMode") }}</p>
+      <p :class="pClass">{{ t("panel.antaThemeMode") }}</p>
       <Segmented
         resize
         class="select-none"
@@ -348,7 +348,7 @@ onUnmounted(() => removeMatchMedia);
         "
       />
 
-      <p :class="['mt-5!', pClass]">{{ t("panel.pureThemeColor") }}</p>
+      <p :class="['mt-5!', pClass]">{{ t("panel.antaThemeColor") }}</p>
       <ul class="theme-color">
         <li
           v-for="(item, index) in themeColors"
@@ -367,12 +367,12 @@ onUnmounted(() => removeMatchMedia);
         </li>
       </ul>
 
-      <p :class="['mt-5!', pClass]">{{ t("panel.pureMenuLayout") }}</p>
+      <p :class="['mt-5!', pClass]">{{ t("panel.antaMenuLayout") }}</p>
       <ul class="anta-theme">
         <li
           ref="verticalRef"
           v-tippy="{
-            content: t('panel.pureVerticalTip'),
+            content: t('panel.antaVerticalTip'),
             zIndex: 41000
           }"
           :class="layoutTheme.layout === 'vertical' ? 'is-select' : ''"
@@ -385,7 +385,7 @@ onUnmounted(() => removeMatchMedia);
           v-if="device !== 'mobile'"
           ref="horizontalRef"
           v-tippy="{
-            content: t('panel.pureHorizontalTip'),
+            content: t('panel.antaHorizontalTip'),
             zIndex: 41000
           }"
           :class="layoutTheme.layout === 'horizontal' ? 'is-select' : ''"
@@ -398,7 +398,7 @@ onUnmounted(() => removeMatchMedia);
           v-if="device !== 'mobile'"
           ref="mixRef"
           v-tippy="{
-            content: t('panel.pureMixTip'),
+            content: t('panel.antaMixTip'),
             zIndex: 41000
           }"
           :class="layoutTheme.layout === 'mix' ? 'is-select' : ''"
@@ -410,7 +410,7 @@ onUnmounted(() => removeMatchMedia);
       </ul>
 
       <span v-if="useAppStoreHook().getViewportWidth > 1280">
-        <p :class="['mt-5!', pClass]">{{ t("panel.pureStretch") }}</p>
+        <p :class="['mt-5!', pClass]">{{ t("panel.antaStretch") }}</p>
         <Segmented
           resize
           class="mb-2 select-none"
@@ -451,7 +451,7 @@ onUnmounted(() => removeMatchMedia);
         </button>
       </span>
 
-      <p :class="['mt-5!', pClass]">{{ t("panel.pureTagsStyle") }}</p>
+      <p :class="['mt-5!', pClass]">{{ t("panel.antaTagsStyle") }}</p>
       <Segmented
         resize
         class="select-none"
@@ -463,68 +463,68 @@ onUnmounted(() => removeMatchMedia);
       />
 
       <p class="mt-5! font-medium text-sm dark:text-white">
-        {{ t("panel.pureFullScreenWatermark") }}
+        {{ t("panel.antaFullScreenWatermark") }}
       </p>
       <ul class="setting">
         <li>
           <span class="dark:text-white">
-            {{ t("panel.pureEnableWatermark") }}
+            {{ t("panel.antaEnableWatermark") }}
           </span>
           <el-switch
             v-model="watermarkConfigs.enable"
             inline-prompt
-            :active-text="t('buttons.pureOpenText')"
-            :inactive-text="t('buttons.pureCloseText')"
+            :active-text="t('buttons.antaOpenText')"
+            :inactive-text="t('buttons.antaCloseText')"
             @change="onWatermarkSwitchChange"
           />
         </li>
         <li v-if="watermarkConfigs.enable" v-motion-fade>
           <span class="dark:text-white">
-            {{ t("panel.pureWatermarkText") }}
+            {{ t("panel.antaWatermarkText") }}
           </span>
           <el-input
             v-model="watermarkConfigs.text"
             class="w-32!"
             clearable
-            :placeholder="t('panel.pureWatermarkTextPlaceholder')"
+            :placeholder="t('panel.antaWatermarkTextPlaceholder')"
             @input="onWatermarkInputChange"
           />
         </li>
       </ul>
 
       <p class="mt-3! font-medium text-sm dark:text-white">
-        {{ t("panel.pureInterfaceDisplay") }}
+        {{ t("panel.antaInterfaceDisplay") }}
       </p>
       <ul class="setting">
         <li>
-          <span class="dark:text-white">{{ t("panel.pureHiddenTags") }}</span>
+          <span class="dark:text-white">{{ t("panel.antaHiddenTags") }}</span>
           <el-switch
             v-model="settings.tabsVal"
             inline-prompt
-            :active-text="t('buttons.pureOpenText')"
-            :inactive-text="t('buttons.pureCloseText')"
+            :active-text="t('buttons.antaOpenText')"
+            :inactive-text="t('buttons.antaCloseText')"
             @change="tagsChange"
           />
         </li>
         <li>
-          <span class="dark:text-white">{{ t("panel.pureHiddenFooter") }}</span>
+          <span class="dark:text-white">{{ t("panel.antaHiddenFooter") }}</span>
           <el-switch
             v-model="settings.hideFooter"
             inline-prompt
-            :active-text="t('buttons.pureOpenText')"
-            :inactive-text="t('buttons.pureCloseText')"
+            :active-text="t('buttons.antaOpenText')"
+            :inactive-text="t('buttons.antaCloseText')"
             @change="hideFooterChange"
           />
         </li>
         <li>
           <span class="dark:text-white">
-            {{ t("panel.pureMultiTagsCache") }}
+            {{ t("panel.antaMultiTagsCache") }}
           </span>
           <el-switch
             v-model="settings.multiTagsCache"
             inline-prompt
-            :active-text="t('buttons.pureOpenText')"
-            :inactive-text="t('buttons.pureCloseText')"
+            :active-text="t('buttons.antaOpenText')"
+            :inactive-text="t('buttons.antaCloseText')"
             @change="multiTagsCacheChange"
           />
         </li>
@@ -535,28 +535,28 @@ onUnmounted(() => removeMatchMedia);
             inline-prompt
             :active-value="true"
             :inactive-value="false"
-            :active-text="t('buttons.pureOpenText')"
-            :inactive-text="t('buttons.pureCloseText')"
+            :active-text="t('buttons.antaOpenText')"
+            :inactive-text="t('buttons.antaCloseText')"
             @change="logoChange"
           />
         </li>
         <li>
-          <span class="dark:text-white">{{ t("panel.pureGreyModel") }}</span>
+          <span class="dark:text-white">{{ t("panel.antaGreyModel") }}</span>
           <el-switch
             v-model="settings.greyVal"
             inline-prompt
-            :active-text="t('buttons.pureOpenText')"
-            :inactive-text="t('buttons.pureCloseText')"
+            :active-text="t('buttons.antaOpenText')"
+            :inactive-text="t('buttons.antaCloseText')"
             @change="greyChange"
           />
         </li>
         <li>
-          <span class="dark:text-white">{{ t("panel.pureWeakModel") }}</span>
+          <span class="dark:text-white">{{ t("panel.antaWeakModel") }}</span>
           <el-switch
             v-model="settings.weakVal"
             inline-prompt
-            :active-text="t('buttons.pureOpenText')"
-            :inactive-text="t('buttons.pureCloseText')"
+            :active-text="t('buttons.antaOpenText')"
+            :inactive-text="t('buttons.antaCloseText')"
             @change="weekChange"
           />
         </li>

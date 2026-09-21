@@ -57,7 +57,7 @@ const onPrint = () => {
     <div
       v-loading="loading"
       class="h-[calc(100vh-295px)]"
-      :element-loading-text="t('status.pureLoad')"
+      :element-loading-text="t('status.antaLoad')"
     >
       <div class="flex-bc h-9">
         <div v-if="showAllPages" class="font-medium ml-1.25 text-xl">

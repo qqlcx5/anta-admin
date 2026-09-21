@@ -6,7 +6,7 @@ export default {
   redirect: "/flow-chart/index",
   meta: {
     icon: "ep/set-up",
-    title: $t("menus.pureFlowChart"),
+    title: $t("menus.antaFlowChart"),
     rank: flowchart
   },
   children: [
@@ -15,7 +15,7 @@ export default {
       name: "FlowChart",
       component: () => import("@/views/flow-chart/index.vue"),
       meta: {
-        title: $t("menus.pureFlowChart")
+        title: $t("menus.antaFlowChart")
       }
     }
   ]

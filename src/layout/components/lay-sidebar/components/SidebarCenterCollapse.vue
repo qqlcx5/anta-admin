@@ -37,8 +37,8 @@ const toggleClick = () => {
   <div
     v-tippy="{
       content: isActive
-        ? t('buttons.pureClickCollapse')
-        : t('buttons.pureClickExpand'),
+        ? t('buttons.antaClickCollapse')
+        : t('buttons.antaClickExpand'),
       theme: tooltipEffect,
       hideOnClick: 'toggle',
       placement: 'right'

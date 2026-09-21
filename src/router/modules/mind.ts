@@ -7,7 +7,7 @@ export default {
   redirect: "/mind-map/index",
   meta: {
     icon: "ri/mind-map",
-    title: $t("menus.pureMindMap"),
+    title: $t("menus.antaMindMap"),
     rank: mind
   },
   children: [
@@ -16,7 +16,7 @@ export default {
       name: "FrameMindMap",
       component: IFrame,
       meta: {
-        title: $t("menus.pureMindMap"),
+        title: $t("menus.antaMindMap"),
         keepAlive: true,
         frameSrc: "https://wanglin2.github.io/mind-map/#/"
       }

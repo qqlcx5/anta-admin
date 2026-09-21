@@ -78,11 +78,11 @@ const onLogin = async (formEl: FormInstance | undefined) => {
           await initRouter();
           disabled.value = true;
           router.push(getTopMenu(true).path).then(() => {
-            message(t("login.pureLoginSuccess"), { type: "success" });
+            message(t("login.antaLoginSuccess"), { type: "success" });
           });
         })
         .catch(_err => {
-          message(t("login.pureLoginFail"), { type: "error" });
+          message(t("login.antaLoginFail"), { type: "error" });
         })
         .finally(() => {
           disabled.value = false;
@@ -190,7 +190,7 @@ watch(loginDay, value => {
                 :rules="[
                   {
                     required: true,
-                    message: transformI18n($t('login.pureUsernameReg')),
+                    message: transformI18n($t('login.antaUsernameReg')),
                     trigger: 'blur'
                   }
                 ]"
@@ -199,7 +199,7 @@ watch(loginDay, value => {
                 <el-input
                   v-model="ruleForm.username"
                   clearable
-                  :placeholder="t('login.pureUsername')"
+                  :placeholder="t('login.antaUsername')"
                   :prefix-icon="useRenderIcon(User)"
                 />
               </el-form-item>
@@ -211,7 +211,7 @@ watch(loginDay, value => {
                   v-model="ruleForm.password"
                   clearable
                   show-password
-                  :placeholder="t('login.purePassword')"
+                  :placeholder="t('login.antaPassword')"
                   :prefix-icon="useRenderIcon(Lock)"
                 />
               </el-form-item>
@@ -222,7 +222,7 @@ watch(loginDay, value => {
                 <el-input
                   v-model="ruleForm.verifyCode"
                   clearable
-                  :placeholder="t('login.pureVerifyCode')"
+                  :placeholder="t('login.antaVerifyCode')"
                   :prefix-icon="useRenderIcon(Keyhole)"
                 >
                   <template v-slot:append>
@@ -251,10 +251,10 @@ watch(loginDay, value => {
                         <option value="7">7</option>
                         <option value="30">30</option>
                       </select>
-                      {{ t("login.pureRemember") }}
+                      {{ t("login.antaRemember") }}
                       <IconifyIconOffline
                         v-tippy="{
-                          content: t('login.pureRememberInfo'),
+                          content: t('login.antaRememberInfo'),
                           placement: 'top'
                         }"
                         :icon="Info"
@@ -267,7 +267,7 @@ watch(loginDay, value => {
                     type="primary"
                     @click="useUserStoreHook().SET_CURRENTPAGE(4)"
                   >
-                    {{ t("login.pureForget") }}
+                    {{ t("login.antaForget") }}
                   </el-button>
                 </div>
                 <el-button
@@ -278,7 +278,7 @@ watch(loginDay, value => {
                   :disabled="disabled"
                   @click="onLogin(ruleFormRef)"
                 >
-                  {{ t("login.pureLogin") }}
+                  {{ t("login.antaLogin") }}
                 </el-button>
               </el-form-item>
             </Motion>
@@ -304,7 +304,7 @@ watch(loginDay, value => {
             <el-form-item>
               <el-divider>
                 <p class="text-gray-500 text-xs">
-                  {{ t("login.pureThirdLogin") }}
+                  {{ t("login.antaThirdLogin") }}
                 </p>
               </el-divider>
               <div class="w-full flex justify-evenly">

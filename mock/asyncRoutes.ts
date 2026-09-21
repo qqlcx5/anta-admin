@@ -12,7 +12,7 @@ const systemManagementRouter = {
   path: "/system",
   meta: {
     icon: "ri:settings-3-line",
-    title: "menus.pureSysManagement",
+    title: "menus.antaSysManagement",
     rank: system
   },
   children: [
@@ -21,7 +21,7 @@ const systemManagementRouter = {
       name: "SystemUser",
       meta: {
         icon: "ri:admin-line",
-        title: "menus.pureUser",
+        title: "menus.antaUser",
         roles: ["admin"]
       }
     },
@@ -30,7 +30,7 @@ const systemManagementRouter = {
       name: "SystemRole",
       meta: {
         icon: "ri:admin-fill",
-        title: "menus.pureRole",
+        title: "menus.antaRole",
         roles: ["admin"]
       }
     },
@@ -39,7 +39,7 @@ const systemManagementRouter = {
       name: "SystemMenu",
       meta: {
         icon: "ep:menu",
-        title: "menus.pureSystemMenu",
+        title: "menus.antaSystemMenu",
         roles: ["admin"]
       }
     },
@@ -48,7 +48,7 @@ const systemManagementRouter = {
       name: "SystemDept",
       meta: {
         icon: "ri:git-branch-line",
-        title: "menus.pureDept",
+        title: "menus.antaDept",
         roles: ["admin"]
       }
     }
@@ -59,7 +59,7 @@ const systemMonitorRouter = {
   path: "/monitor",
   meta: {
     icon: "ep:monitor",
-    title: "menus.pureSysMonitor",
+    title: "menus.antaSysMonitor",
     rank: monitor
   },
   children: [
@@ -69,7 +69,7 @@ const systemMonitorRouter = {
       name: "OnlineUser",
       meta: {
         icon: "ri:user-voice-line",
-        title: "menus.pureOnlineUser",
+        title: "menus.antaOnlineUser",
         roles: ["admin"]
       }
     },
@@ -79,7 +79,7 @@ const systemMonitorRouter = {
       name: "LoginLog",
       meta: {
         icon: "ri:window-line",
-        title: "menus.pureLoginLog",
+        title: "menus.antaLoginLog",
         roles: ["admin"]
       }
     },
@@ -89,7 +89,7 @@ const systemMonitorRouter = {
       name: "OperationLog",
       meta: {
         icon: "ri:history-fill",
-        title: "menus.pureOperationLog",
+        title: "menus.antaOperationLog",
         roles: ["admin"]
       }
     },
@@ -99,7 +99,7 @@ const systemMonitorRouter = {
       name: "SystemLog",
       meta: {
         icon: "ri:file-search-line",
-        title: "menus.pureSystemLog",
+        title: "menus.antaSystemLog",
         roles: ["admin"]
       }
     }
@@ -109,7 +109,7 @@ const systemMonitorRouter = {
 const permissionRouter = {
   path: "/permission",
   meta: {
-    title: "menus.purePermission",
+    title: "menus.antaPermission",
     icon: "ep:lollipop",
     rank: permission
   },
@@ -118,14 +118,14 @@ const permissionRouter = {
       path: "/permission/page/index",
       name: "PermissionPage",
       meta: {
-        title: "menus.purePermissionPage",
+        title: "menus.antaPermissionPage",
         roles: ["admin", "common"]
       }
     },
     {
       path: "/permission/button",
       meta: {
-        title: "menus.purePermissionButton",
+        title: "menus.antaPermissionButton",
         roles: ["admin", "common"]
       },
       children: [
@@ -134,7 +134,7 @@ const permissionRouter = {
           component: "permission/button/index",
           name: "PermissionButtonRouter",
           meta: {
-            title: "menus.purePermissionButtonRouter",
+            title: "menus.antaPermissionButtonRouter",
             auths: [
               "permission:btn:add",
               "permission:btn:edit",
@@ -147,7 +147,7 @@ const permissionRouter = {
           component: "permission/button/perms",
           name: "PermissionButtonLogin",
           meta: {
-            title: "menus.purePermissionButtonLogin"
+            title: "menus.antaPermissionButtonLogin"
           }
         }
       ]
@@ -159,21 +159,21 @@ const frameRouter = {
   path: "/iframe",
   meta: {
     icon: "ri:links-fill",
-    title: "menus.pureExternalPage",
+    title: "menus.antaExternalPage",
     rank: frame
   },
   children: [
     {
       path: "/iframe/embedded",
       meta: {
-        title: "menus.pureEmbeddedDoc"
+        title: "menus.antaEmbeddedDoc"
       },
       children: [
         {
           path: "/iframe/colorhunt",
           name: "FrameColorHunt",
           meta: {
-            title: "menus.pureColorHuntDoc",
+            title: "menus.antaColorHuntDoc",
             frameSrc: "https://colorhunt.co/",
             keepAlive: true,
             roles: ["admin", "common"]
@@ -183,7 +183,7 @@ const frameRouter = {
           path: "/iframe/uigradients",
           name: "FrameUiGradients",
           meta: {
-            title: "menus.pureUiGradients",
+            title: "menus.antaUiGradients",
             frameSrc: "https://uigradients.com/",
             keepAlive: true,
             roles: ["admin", "common"]
@@ -193,7 +193,7 @@ const frameRouter = {
           path: "/iframe/ep",
           name: "FrameEp",
           meta: {
-            title: "menus.pureEpDoc",
+            title: "menus.antaEpDoc",
             frameSrc: "https://element-plus.org/zh-CN/",
             keepAlive: true,
             roles: ["admin", "common"]
@@ -203,7 +203,7 @@ const frameRouter = {
           path: "/iframe/tailwindcss",
           name: "FrameTailwindcss",
           meta: {
-            title: "menus.pureTailwindcssDoc",
+            title: "menus.antaTailwindcssDoc",
             frameSrc: "https://tailwindcss.com/docs/installation",
             keepAlive: true,
             roles: ["admin", "common"]
@@ -213,7 +213,7 @@ const frameRouter = {
           path: "/iframe/vue3",
           name: "FrameVue",
           meta: {
-            title: "menus.pureVueDoc",
+            title: "menus.antaVueDoc",
             frameSrc: "https://cn.vuejs.org/",
             keepAlive: true,
             roles: ["admin", "common"]
@@ -223,7 +223,7 @@ const frameRouter = {
           path: "/iframe/vite",
           name: "FrameVite",
           meta: {
-            title: "menus.pureViteDoc",
+            title: "menus.antaViteDoc",
             frameSrc: "https://cn.vitejs.dev/",
             keepAlive: true,
             roles: ["admin", "common"]
@@ -233,7 +233,7 @@ const frameRouter = {
           path: "/iframe/pinia",
           name: "FramePinia",
           meta: {
-            title: "menus.purePiniaDoc",
+            title: "menus.antaPiniaDoc",
             frameSrc: "https://pinia.vuejs.org/zh/index.html",
             keepAlive: true,
             roles: ["admin", "common"]
@@ -243,7 +243,7 @@ const frameRouter = {
           path: "/iframe/vue-router",
           name: "FrameRouter",
           meta: {
-            title: "menus.pureRouterDoc",
+            title: "menus.antaRouterDoc",
             frameSrc: "https://router.vuejs.org/zh/",
             keepAlive: true,
             roles: ["admin", "common"]
@@ -254,22 +254,22 @@ const frameRouter = {
     {
       path: "/iframe/external",
       meta: {
-        title: "menus.pureExternalDoc"
+        title: "menus.antaExternalDoc"
       },
       children: [
         {
           path: "/external",
           name: "https://pure-admin.cn/",
           meta: {
-            title: "menus.pureExternalLink",
+            title: "menus.antaExternalLink",
             roles: ["admin", "common"]
           }
         },
         {
-          path: "/pureUtilsLink",
+          path: "/antaUtilsLink",
           name: "https://pure-admin-utils.netlify.app/",
           meta: {
-            title: "menus.pureUtilsLink",
+            title: "menus.antaUtilsLink",
             roles: ["admin", "common"]
           }
         }
@@ -282,7 +282,7 @@ const tabsRouter = {
   path: "/tabs",
   meta: {
     icon: "ri:bookmark-2-line",
-    title: "menus.pureTabs",
+    title: "menus.antaTabs",
     rank: tabs
   },
   children: [
@@ -290,7 +290,7 @@ const tabsRouter = {
       path: "/tabs/index",
       name: "Tabs",
       meta: {
-        title: "menus.pureTabs",
+        title: "menus.antaTabs",
         roles: ["admin", "common"]
       }
     },

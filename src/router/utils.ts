@@ -149,7 +149,7 @@ function addPathMatch() {
     name: PAGE_NOT_FOUND_ROUTE_NAME,
     component: () => import("@/views/error/404.vue"),
     meta: {
-      title: "menus.purePageNotFound",
+      title: "menus.antaPageNotFound",
       showLink: false
     }
   });

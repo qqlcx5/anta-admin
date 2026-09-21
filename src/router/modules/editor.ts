@@ -6,7 +6,7 @@ export default {
   redirect: "/editor/index",
   meta: {
     icon: "ep/edit",
-    title: $t("menus.pureEditor"),
+    title: $t("menus.antaEditor"),
     rank: editor
   },
   children: [
@@ -15,7 +15,7 @@ export default {
       name: "Editor",
       component: () => import("@/views/editor/index.vue"),
       meta: {
-        title: $t("menus.pureEditor"),
+        title: $t("menus.antaEditor"),
         keepAlive: true
       }
     }

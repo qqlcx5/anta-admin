@@ -51,11 +51,11 @@ onBeforeUnmount(() => {
         class="flex-bc py-3 px-5 border-0 border-l border-solid border-(--anta-border-color)"
       >
         <h4 class="dark:text-white">
-          {{ t("panel.pureSystemSet") }}
+          {{ t("panel.antaSystemSet") }}
         </h4>
         <span
           v-tippy="{
-            content: t('panel.pureCloseSystemSet'),
+            content: t('panel.antaCloseSystemSet'),
             placement: 'bottom-start',
             zIndex: 41000
           }"
@@ -81,7 +81,7 @@ onBeforeUnmount(() => {
       >
         <el-button
           v-tippy="{
-            content: t('panel.pureClearCacheAndToLogin'),
+            content: t('panel.antaClearCacheAndToLogin'),
             placement: 'left-start',
             zIndex: 41000
           }"
@@ -90,7 +90,7 @@ onBeforeUnmount(() => {
           bg
           @click="onReset"
         >
-          {{ t("panel.pureClearCache") }}
+          {{ t("panel.antaClearCache") }}
         </el-button>
       </div>
     </div>

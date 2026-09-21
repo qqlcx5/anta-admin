@@ -20,13 +20,13 @@ export interface TabItem {
 export const noticesData: TabItem[] = [
   {
     key: "1",
-    name: $t("status.pureNotify"),
+    name: $t("status.antaNotify"),
     list: [],
-    emptyText: $t("status.pureNoNotify")
+    emptyText: $t("status.antaNoNotify")
   },
   {
     key: "2",
-    name: $t("status.pureMessage"),
+    name: $t("status.antaMessage"),
     list: [
       {
         avatar: "https://xiaoxian521.github.io/hyperlink/svg/smile1.svg",
@@ -51,11 +51,11 @@ export const noticesData: TabItem[] = [
         type: "2"
       }
     ],
-    emptyText: $t("status.pureNoMessage")
+    emptyText: $t("status.antaNoMessage")
   },
   {
     key: "3",
-    name: $t("status.pureTodo"),
+    name: $t("status.antaTodo"),
     list: [
       {
         avatar: "",
@@ -94,6 +94,6 @@ export const noticesData: TabItem[] = [
         type: "3"
       }
     ],
-    emptyText: $t("status.pureNoTodo")
+    emptyText: $t("status.antaNoTodo")
   }
 ];

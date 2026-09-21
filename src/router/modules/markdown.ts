@@ -6,7 +6,7 @@ export default {
   redirect: "/markdown/index",
   meta: {
     icon: "ri/markdown-line",
-    title: $t("menus.pureMarkdown"),
+    title: $t("menus.antaMarkdown"),
     rank: markdown
   },
   children: [
@@ -15,7 +15,7 @@ export default {
       name: "Markdown",
       component: () => import("@/views/markdown/index.vue"),
       meta: {
-        title: $t("menus.pureMarkdown"),
+        title: $t("menus.antaMarkdown"),
         extraIcon: "IF-anta-iconfont-new svg"
       }
     }

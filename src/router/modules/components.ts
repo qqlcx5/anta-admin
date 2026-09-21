@@ -6,7 +6,7 @@ export default {
   redirect: "/components/dialog",
   meta: {
     icon: "ep/menu",
-    title: $t("menus.pureComponents"),
+    title: $t("menus.antaComponents"),
     rank: components
   },
   children: [
@@ -15,7 +15,7 @@ export default {
       name: "DialogPage",
       component: () => import("@/views/components/dialog/index.vue"),
       meta: {
-        title: $t("menus.pureDialog")
+        title: $t("menus.antaDialog")
       }
     },
     {
@@ -23,7 +23,7 @@ export default {
       name: "DrawerPage",
       component: () => import("@/views/components/drawer/index.vue"),
       meta: {
-        title: $t("menus.pureDrawer")
+        title: $t("menus.antaDrawer")
       }
     },
     {
@@ -31,7 +31,7 @@ export default {
       name: "Message",
       component: () => import("@/views/components/message.vue"),
       meta: {
-        title: $t("menus.pureMessage")
+        title: $t("menus.antaMessage")
       }
     },
     {
@@ -39,7 +39,7 @@ export default {
       name: "PureUpload",
       component: () => import("@/views/components/upload/index.vue"),
       meta: {
-        title: $t("menus.pureUpload")
+        title: $t("menus.antaUpload")
       }
     },
     {
@@ -47,7 +47,7 @@ export default {
       name: "CheckCard",
       component: () => import("@/views/components/check-card.vue"),
       meta: {
-        title: $t("menus.pureCheckCard")
+        title: $t("menus.antaCheckCard")
       }
     },
     {
@@ -55,7 +55,7 @@ export default {
       name: "DatePicker",
       component: () => import("@/views/components/date-picker.vue"),
       meta: {
-        title: $t("menus.pureDatePicker")
+        title: $t("menus.antaDatePicker")
       }
     },
     {
@@ -63,7 +63,7 @@ export default {
       name: "DateTimePicker",
       component: () => import("@/views/components/datetime-picker.vue"),
       meta: {
-        title: $t("menus.pureDateTimePicker")
+        title: $t("menus.antaDateTimePicker")
       }
     },
     {
@@ -71,7 +71,7 @@ export default {
       name: "TimePicker",
       component: () => import("@/views/components/time-picker.vue"),
       meta: {
-        title: $t("menus.pureTimePicker")
+        title: $t("menus.antaTimePicker")
       }
     },
     {
@@ -79,7 +79,7 @@ export default {
       name: "IconSelect",
       component: () => import("@/views/components/icon-select.vue"),
       meta: {
-        title: $t("menus.pureIconSelect")
+        title: $t("menus.antaIconSelect")
       }
     },
     {
@@ -87,7 +87,7 @@ export default {
       name: "AnimateCss",
       component: () => import("@/views/components/animatecss.vue"),
       meta: {
-        title: $t("menus.pureAnimatecss")
+        title: $t("menus.antaAnimatecss")
       }
     },
     {
@@ -95,7 +95,7 @@ export default {
       name: "Cropping",
       component: () => import("@/views/components/cropping/index.vue"),
       meta: {
-        title: $t("menus.pureCropping")
+        title: $t("menus.antaCropping")
       }
     },
     {
@@ -103,7 +103,7 @@ export default {
       name: "Segmented",
       component: () => import("@/views/components/segmented.vue"),
       meta: {
-        title: $t("menus.pureSegmented")
+        title: $t("menus.antaSegmented")
       }
     },
     {
@@ -111,7 +111,7 @@ export default {
       name: "PureText",
       component: () => import("@/views/components/text.vue"),
       meta: {
-        title: $t("menus.pureText")
+        title: $t("menus.antaText")
       }
     },
     {
@@ -119,7 +119,7 @@ export default {
       name: "PureSlider",
       component: () => import("@/views/components/slider/index.vue"),
       meta: {
-        title: $t("menus.pureSlider")
+        title: $t("menus.antaSlider")
       }
     },
     {
@@ -127,7 +127,7 @@ export default {
       name: "PureButton",
       component: () => import("@/views/components/el-button.vue"),
       meta: {
-        title: $t("menus.pureElButton")
+        title: $t("menus.antaElButton")
       }
     },
     {
@@ -135,7 +135,7 @@ export default {
       name: "CheckButton",
       component: () => import("@/views/components/check-button.vue"),
       meta: {
-        title: $t("menus.pureCheckButton")
+        title: $t("menus.antaCheckButton")
       }
     },
     {
@@ -143,7 +143,7 @@ export default {
       name: "ButtonPage",
       component: () => import("@/views/components/button.vue"),
       meta: {
-        title: $t("menus.pureButton")
+        title: $t("menus.antaButton")
       }
     },
     {
@@ -151,7 +151,7 @@ export default {
       name: "PureProgress",
       component: () => import("@/views/components/progress.vue"),
       meta: {
-        title: $t("menus.pureProgress")
+        title: $t("menus.antaProgress")
       }
     },
     {
@@ -159,7 +159,7 @@ export default {
       name: "PureTag",
       component: () => import("@/views/components/tag.vue"),
       meta: {
-        title: $t("menus.pureTag")
+        title: $t("menus.antaTag")
       }
     },
     {
@@ -167,7 +167,7 @@ export default {
       name: "Statistic",
       component: () => import("@/views/components/statistic.vue"),
       meta: {
-        title: $t("menus.pureStatistic")
+        title: $t("menus.antaStatistic")
       }
     },
     {
@@ -175,7 +175,7 @@ export default {
       name: "Collapse",
       component: () => import("@/views/components/collapse.vue"),
       meta: {
-        title: $t("menus.pureCollapse")
+        title: $t("menus.antaCollapse")
       }
     },
     {
@@ -183,7 +183,7 @@ export default {
       name: "Cascader",
       component: () => import("@/views/components/cascader.vue"),
       meta: {
-        title: $t("menus.pureCascader")
+        title: $t("menus.antaCascader")
       }
     },
     {
@@ -191,7 +191,7 @@ export default {
       name: "ColorPicker",
       component: () => import("@/views/components/color-picker.vue"),
       meta: {
-        title: $t("menus.pureColorPicker")
+        title: $t("menus.antaColorPicker")
       }
     },
     {
@@ -199,7 +199,7 @@ export default {
       name: "ColorPickerPanel",
       component: () => import("@/views/components/color-picker-panel.vue"),
       meta: {
-        title: $t("menus.pureColorPickerPanel"),
+        title: $t("menus.antaColorPickerPanel"),
         extraIcon: "IF-anta-iconfont-new svg"
       }
     },
@@ -208,7 +208,7 @@ export default {
       name: "Selector",
       component: () => import("@/views/components/selector.vue"),
       meta: {
-        title: $t("menus.pureSelector")
+        title: $t("menus.antaSelector")
       }
     },
     {
@@ -216,7 +216,7 @@ export default {
       name: "Waterfall",
       component: () => import("@/views/components/waterfall/index.vue"),
       meta: {
-        title: $t("menus.pureWaterfall")
+        title: $t("menus.antaWaterfall")
       }
     },
     {
@@ -224,7 +224,7 @@ export default {
       name: "SplitPane",
       component: () => import("@/views/components/split-pane.vue"),
       meta: {
-        title: $t("menus.pureSplitPane")
+        title: $t("menus.antaSplitPane")
       }
     },
     {
@@ -232,7 +232,7 @@ export default {
       name: "Swiper",
       component: () => import("@/views/components/swiper.vue"),
       meta: {
-        title: $t("menus.pureSwiper")
+        title: $t("menus.antaSwiper")
       }
     },
     {
@@ -240,7 +240,7 @@ export default {
       name: "TimeLine",
       component: () => import("@/views/components/timeline.vue"),
       meta: {
-        title: $t("menus.pureTimeline")
+        title: $t("menus.antaTimeline")
       }
     },
     {
@@ -248,7 +248,7 @@ export default {
       name: "CountTo",
       component: () => import("@/views/components/count-to.vue"),
       meta: {
-        title: $t("menus.pureCountTo")
+        title: $t("menus.antaCountTo")
       }
     },
     {
@@ -256,7 +256,7 @@ export default {
       name: "ContextMenu",
       component: () => import("@/views/components/contextmenu/index.vue"),
       meta: {
-        title: $t("menus.pureContextmenu")
+        title: $t("menus.antaContextmenu")
       }
     },
     {
@@ -264,7 +264,7 @@ export default {
       name: "JsonEditor",
       component: () => import("@/views/components/json-editor.vue"),
       meta: {
-        title: $t("menus.pureJsonEditor")
+        title: $t("menus.antaJsonEditor")
       }
     },
     {
@@ -272,7 +272,7 @@ export default {
       name: "SeamlessScroll",
       component: () => import("@/views/components/seamless-scroll.vue"),
       meta: {
-        title: $t("menus.pureSeamless")
+        title: $t("menus.antaSeamless")
       }
     },
     {
@@ -280,7 +280,7 @@ export default {
       name: "VirtualList",
       component: () => import("@/views/components/virtual-list/index.vue"),
       meta: {
-        title: $t("menus.pureVirtualList")
+        title: $t("menus.antaVirtualList")
       }
     }
   ]
