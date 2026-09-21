@@ -106,7 +106,7 @@ export default defineComponent({
     }
 
     function handleResizeInit() {
-      useResizeObserver(".pure-segmented", () => {
+      useResizeObserver(".anta-segmented", () => {
         nextTick(() => {
           handleInit(curIndex.value);
         });
@@ -137,9 +137,9 @@ export default defineComponent({
           <label
             ref={`labelRef${index}`}
             class={[
-              "pure-segmented-item",
+              "anta-segmented-item",
               (props.disabled || option?.disabled) &&
-                "pure-segmented-item-disabled"
+                "anta-segmented-item-disabled"
             ]}
             style={{
               background:
@@ -159,7 +159,7 @@ export default defineComponent({
           >
             <input type="radio" name="segmented" />
             <div
-              class="pure-segmented-item-label"
+              class="anta-segmented-item-label"
               v-tippy={{
                 content: option?.tip,
                 zIndex: 41000
@@ -167,7 +167,7 @@ export default defineComponent({
             >
               {option.icon && !isFunction(option.label) ? (
                 <span
-                  class="pure-segmented-item-icon"
+                  class="anta-segmented-item-icon"
                   style={{ marginRight: option.label ? "6px" : 0 }}
                 >
                   {h(
@@ -193,15 +193,15 @@ export default defineComponent({
     return () => (
       <div
         class={{
-          "pure-segmented": true,
-          "pure-segmented-block": props.block,
-          "pure-segmented--large": props.size === "large",
-          "pure-segmented--small": props.size === "small"
+          "anta-segmented": true,
+          "anta-segmented-block": props.block,
+          "anta-segmented--large": props.size === "large",
+          "anta-segmented--small": props.size === "small"
         }}
       >
-        <div class="pure-segmented-group">
+        <div class="anta-segmented-group">
           <div
-            class="pure-segmented-item-selected"
+            class="anta-segmented-item-selected"
             style={{
               width: `${width.value}px`,
               transform: `translateX(${translateX.value}px)`,

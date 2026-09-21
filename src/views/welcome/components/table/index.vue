@@ -43,7 +43,7 @@ const { loading, columns, dataList, pagination, Empty, onCurrentChange } =
 </template>
 
 <style lang="scss">
-.pure-table-filter {
+.anta-table-filter {
   .el-table-filter__list {
     min-width: 80px;
     padding: 0;

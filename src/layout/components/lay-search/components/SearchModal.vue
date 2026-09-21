@@ -284,7 +284,7 @@ onKeyStroke("ArrowDown", handleDown);
   <el-dialog
     v-model="show"
     top="5vh"
-    class="pure-search-dialog"
+    class="anta-search-dialog"
     :show-close="false"
     :width="device === 'mobile' ? '80vw' : '40vw'"
     :before-close="handleClose"

@@ -32,7 +32,7 @@ Anta Admin 内置了一套**全能混合图标体系**，融合了 **Iconify 海
     <AtIcon icon="ep/menu" />
 
     <!-- iconfont 阿里矢量图标（前缀："IF-"） -->
-    <AtIcon icon="IF-pure-iconfont-wechat" />
+    <AtIcon icon="IF-anta-iconfont-wechat" />
 
     <!-- Element Plus 官方组件或本地 SVG 组件 -->
     <AtIcon :icon="Delete" />
@@ -134,7 +134,7 @@ import { useRenderIcon } from "@/components/ReIcon/src/hooks";
 - **使用方式**：直接导入图标组件对象并传入 `:icon`。
 
 ### 5. iconfont 阿里巴巴矢量库
-- **格式**：以 `IF-` 开头（例如 `IF-pure-iconfont-wechat`）。
+- **格式**：以 `IF-` 开头（例如 `IF-anta-iconfont-wechat`）。
 - **静态资源**：位于 `src/assets/iconfont/`（包含 `iconfont.js` 与 `iconfont.css`）。
 
 ---

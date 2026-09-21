@@ -80,7 +80,7 @@ function onMouseleave() {
     clearable
     filterable
     :placeholder="placeholder"
-    popper-class="pure-animate-popper"
+    popper-class="anta-animate-popper"
     :model-value="inputValue"
     :filter-method="filterMethod"
     @clear="onClear"
@@ -128,7 +128,7 @@ function onMouseleave() {
 </template>
 
 <style>
-.pure-animate-popper {
+.anta-animate-popper {
   min-width: 0 !important;
 }
 </style>

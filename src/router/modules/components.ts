@@ -200,7 +200,7 @@ export default {
       component: () => import("@/views/components/color-picker-panel.vue"),
       meta: {
         title: $t("menus.pureColorPickerPanel"),
-        extraIcon: "IF-pure-iconfont-new svg"
+        extraIcon: "IF-anta-iconfont-new svg"
       }
     },
     {

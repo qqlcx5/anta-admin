@@ -48,7 +48,7 @@ const message = (
   if (!params) {
     return ElMessage({
       message,
-      customClass: "pure-message"
+      customClass: "anta-message"
     });
   } else {
     const {
@@ -80,8 +80,8 @@ const message = (
       appendTo,
       grouping,
       repeatNum,
-      // 全局搜 pure-message 即可知道该类的样式位置
-      customClass: customClass === "antd" ? "pure-message" : "",
+      // 全局搜 anta-message 即可知道该类的样式位置
+      customClass: customClass === "antd" ? "anta-message" : "",
       onClose: () => (isFunction(onClose) ? onClose() : null)
     });
   }

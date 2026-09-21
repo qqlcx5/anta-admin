@@ -94,7 +94,7 @@ Object.keys(devDependencies).forEach(key => {
             :key="index"
             :label="item.label"
             :label-class-name="getMainLabel(item.label)"
-            class-name="pure-version"
+            class-name="anta-version"
             label-align="right"
           >
             <a
@@ -129,7 +129,7 @@ Object.keys(devDependencies).forEach(key => {
             :key="index"
             :label="item.label"
             :label-class-name="getMainLabel(item.label)"
-            class-name="pure-version"
+            class-name="anta-version"
             label-align="right"
           >
             <a
@@ -156,7 +156,7 @@ Object.keys(devDependencies).forEach(key => {
   color: var(--el-color-danger) !important;
 }
 
-:deep(.pure-version) {
+:deep(.anta-version) {
   font-size: 14px !important;
   font-weight: 600 !important;
   opacity: 0.6;

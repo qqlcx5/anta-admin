@@ -48,7 +48,7 @@ onBeforeUnmount(() => {
     <div class="right-panel-background" />
     <div ref="target" class="right-panel bg-bg_color">
       <div
-        class="flex-bc py-3 px-5 border-0 border-l border-solid border-(--pure-border-color)"
+        class="flex-bc py-3 px-5 border-0 border-l border-solid border-(--anta-border-color)"
       >
         <h4 class="dark:text-white">
           {{ t("panel.pureSystemSet") }}
@@ -71,13 +71,13 @@ onBeforeUnmount(() => {
         </span>
       </div>
       <el-scrollbar
-        class="border-y border-l border-r-0 border-solid border-(--pure-border-color) h-[calc(100vh-104px)]!"
+        class="border-y border-l border-r-0 border-solid border-(--anta-border-color) h-[calc(100vh-104px)]!"
       >
         <slot />
       </el-scrollbar>
 
       <div
-        class="flex justify-end p-3 border-0 border-l border-solid border-(--pure-border-color)"
+        class="flex justify-end p-3 border-0 border-l border-solid border-(--anta-border-color)"
       >
         <el-button
           v-tippy="{

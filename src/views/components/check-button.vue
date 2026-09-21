@@ -187,7 +187,7 @@ watch(size, val =>
     <div class="mb-2">多选（来点不一样的体验）</div>
     <el-checkbox-group
       v-model="checkboxGroupCustom"
-      class="pure-checkbox"
+      class="anta-checkbox"
       :size="dynamicSize"
       :disabled="size === 'disabled'"
     >
@@ -287,7 +287,7 @@ watch(size, val =>
   margin: 17px 0;
 }
 
-:deep(.pure-checkbox) {
+:deep(.anta-checkbox) {
   .el-checkbox-button {
     /* 选中时的自定义样式 */
     &.is-checked {

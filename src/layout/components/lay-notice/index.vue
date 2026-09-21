@@ -101,7 +101,7 @@ const onMarkAsRead = () => {
 
 <style lang="scss" scoped>
 /* ”铃铛“摇晃衰减动画 */
-@keyframes pure-bell-ring {
+@keyframes anta-bell-ring {
   0%,
   100% {
     transform-origin: top;
@@ -142,7 +142,7 @@ const onMarkAsRead = () => {
 
   &:hover {
     .header-notice-icon svg {
-      animation: pure-bell-ring 1s both;
+      animation: anta-bell-ring 1s both;
     }
   }
 }

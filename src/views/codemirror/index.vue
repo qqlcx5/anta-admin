@@ -91,6 +91,6 @@ watch(
 
 <style lang="scss" scoped>
 .codemirror-container.bordered {
-  border: 1px solid var(--pure-border-color);
+  border: 1px solid var(--anta-border-color);
 }
 </style>

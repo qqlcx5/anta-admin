@@ -127,7 +127,7 @@ watch(
         <el-popover
           :width="350"
           trigger="click"
-          popper-class="pure-popper"
+          popper-class="anta-popper"
           :popper-options="{
             placement: 'auto'
           }"

@@ -72,7 +72,7 @@ watch(
       ref="menuRef"
       router
       mode="horizontal"
-      popper-class="pure-scrollbar"
+      popper-class="anta-scrollbar"
       class="horizontal-header-menu"
       :default-active="defaultActive"
     >

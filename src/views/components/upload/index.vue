@@ -58,7 +58,7 @@ const handlePictureCardPreview = (file: UploadFile) => {
   dialogVisible.value = true;
 };
 
-const getUploadItem = () => document.querySelectorAll("#pure-upload-item");
+const getUploadItem = () => document.querySelectorAll("#anta-upload-item");
 
 /** 缩略图拖拽排序 */
 const imgDrop = uid => {
@@ -86,8 +86,8 @@ const onDownload = () => {
     { name: "巴旦木.jpeg", type: "img" },
     { name: "恭喜发财.png", type: "img" },
     { name: "可爱动物.gif", type: "gif" },
-    { name: "pure-upload.csv", type: "other" },
-    { name: "pure-upload.txt", type: "other" }
+    { name: "anta-upload.csv", type: "other" },
+    { name: "anta-upload.txt", type: "other" }
   ].forEach(img => {
     axios
       .get(`https://xiaoxian521.github.io/hyperlink/${img.type}/${img.name}`, {
@@ -140,7 +140,7 @@ const onDownload = () => {
       v-model:file-list="fileList"
       drag
       multiple
-      class="pure-upload"
+      class="anta-upload"
       list-type="picture-card"
       accept="image/jpeg,image/png,image/gif"
       action="https://pureadmin.free.beeceptor.com/images"
@@ -170,7 +170,7 @@ const onDownload = () => {
             :src="file.url"
           />
           <span
-            id="pure-upload-item"
+            id="anta-upload-item"
             :class="[
               'el-upload-list__item-actions',
               fileList.length > 1 && 'cursor-move!'
@@ -292,7 +292,7 @@ const onDownload = () => {
   }
 }
 
-:deep(.pure-upload) {
+:deep(.anta-upload) {
   .el-upload-dragger {
     background-color: transparent;
     border: none;

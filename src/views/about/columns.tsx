@@ -49,7 +49,7 @@ export function useColumns() {
     {
       label: "代码仓库地址",
       minWidth: 140,
-      className: "pure-version",
+      className: "anta-version",
       cellRenderer: () => {
         return (
           <a
@@ -64,7 +64,7 @@ export function useColumns() {
     {
       label: "Issue 反馈",
       minWidth: 140,
-      className: "pure-version",
+      className: "anta-version",
       cellRenderer: () => {
         return (
           <a

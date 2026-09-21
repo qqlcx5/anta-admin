@@ -89,7 +89,7 @@ const activities = [
           placement="bottom"
         >
           <div class="message">
-            vue-pure-admin 第{{ activities.length - index }}个版本发布啦
+            anta-admin 第{{ activities.length - index }}个版本发布啦
           </div>
         </el-timeline-item>
       </el-timeline>

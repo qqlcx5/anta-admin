@@ -20,7 +20,7 @@ export function useColumns() {
       label: "需求人数",
       prop: "requiredNumber",
       filterMultiple: false,
-      filterClassName: "pure-table-filter",
+      filterClassName: "anta-table-filter",
       filters: [
         { text: "≥16000", value: "more" },
         { text: "<16000", value: "less" }

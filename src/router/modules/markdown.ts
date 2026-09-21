@@ -16,7 +16,7 @@ export default {
       component: () => import("@/views/markdown/index.vue"),
       meta: {
         title: $t("menus.pureMarkdown"),
-        extraIcon: "IF-pure-iconfont-new svg"
+        extraIcon: "IF-anta-iconfont-new svg"
       }
     }
   ]

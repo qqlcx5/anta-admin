@@ -111,7 +111,7 @@ function handleClose(
     :key="index"
     v-bind="options"
     v-model="options.visible"
-    class="pure-dialog"
+    class="anta-dialog"
     :fullscreen="fullscreen ? true : options?.fullscreen ? true : false"
     @closed="handleClose(options, index)"
     @opened="eventsCallBack('open', options, index)"
@@ -141,7 +141,7 @@ function handleClose(
           "
         >
           <IconifyIconOffline
-            class="pure-dialog-svg"
+            class="anta-dialog-svg"
             :icon="
               options?.fullscreen
                 ? ExitFullscreen

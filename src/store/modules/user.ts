@@ -16,7 +16,7 @@ import {
 import { useMultiTagsStoreHook } from "./multiTags";
 import { type DataInfo, setToken, removeToken, userKey } from "@/utils/auth";
 
-export const useUserStore = defineStore("pure-user", {
+export const useUserStore = defineStore("anta-user", {
   state: (): userType => ({
     // 头像
     avatar: storageLocal().getItem<DataInfo<number>>(userKey)?.avatar ?? "",

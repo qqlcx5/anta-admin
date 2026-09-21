@@ -3,9 +3,9 @@ import { tableData } from "./data";
 
 const tableRowClassName = ({ rowIndex }: { rowIndex: number }) => {
   if (rowIndex === 1 || rowIndex === 5) {
-    return "pure-warning-row";
+    return "anta-warning-row";
   } else if (rowIndex === 3 || rowIndex === 7) {
-    return "pure-success-row";
+    return "anta-success-row";
   }
   return "";
 };
@@ -36,11 +36,11 @@ const columns: TableColumnList = [
 
 <style>
 /* 此处样式会在全局都生效，上面 tableRowClassName 函数返回的值也就是类名必须在全局中唯一，避免样式突出 */
-.pure-warning-row {
+.anta-warning-row {
   --el-table-tr-bg-color: var(--el-color-warning-light-9);
 }
 
-.pure-success-row {
+.anta-success-row {
   --el-table-tr-bg-color: var(--el-color-success-light-9);
 }
 </style>

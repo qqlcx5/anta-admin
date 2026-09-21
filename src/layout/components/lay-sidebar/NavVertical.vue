@@ -101,7 +101,7 @@ onBeforeUnmount(() => {
       <el-menu
         unique-opened
         mode="vertical"
-        popper-class="pure-scrollbar"
+        popper-class="anta-scrollbar"
         class="outer-most select-none"
         :collapse="isCollapse"
         :collapse-transition="false"

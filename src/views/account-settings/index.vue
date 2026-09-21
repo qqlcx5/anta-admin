@@ -73,12 +73,12 @@ onMounted(async () => {
   <el-container class="h-full">
     <el-aside
       v-if="isOpen"
-      class="pure-account-settings overflow-hidden px-2 dark:bg-(--el-bg-color)! border-r border-(--pure-border-color)"
+      class="anta-account-settings overflow-hidden px-2 dark:bg-(--el-bg-color)! border-r border-(--anta-border-color)"
       :width="deviceDetection() ? '180px' : '240px'"
     >
-      <el-menu :default-active="witchPane" class="pure-account-settings-menu">
+      <el-menu :default-active="witchPane" class="anta-account-settings-menu">
         <div
-          class="h-12.5! text-(--pure-theme-menu-text) cursor-pointer text-sm transition-all duration-300 ease-in-out hover:scale-105 will-change-transform transform-gpu origin-center hover:text-base! hover:text-(--pure-theme-menu-title-hover)!"
+          class="h-12.5! text-(--anta-theme-menu-text) cursor-pointer text-sm transition-all duration-300 ease-in-out hover:scale-105 will-change-transform transform-gpu origin-center hover:text-base! hover:text-(--anta-theme-menu-title-hover)!"
           @click="router.go(-1)"
         >
           <div
@@ -135,22 +135,22 @@ onMounted(async () => {
 </template>
 
 <style lang="scss">
-.pure-account-settings {
-  background: var(--pure-theme-menu-bg) !important;
+.anta-account-settings {
+  background: var(--anta-theme-menu-bg) !important;
 }
 
-.pure-account-settings-menu {
+.anta-account-settings-menu {
   background-color: transparent;
   border: none;
 
   .el-menu-item {
     height: 48px !important;
-    color: var(--pure-theme-menu-text);
+    color: var(--anta-theme-menu-text);
     background-color: transparent !important;
     transition: color 0.2s;
 
     &:hover {
-      color: var(--pure-theme-menu-title-hover) !important;
+      color: var(--anta-theme-menu-title-hover) !important;
     }
 
     &.is-active {

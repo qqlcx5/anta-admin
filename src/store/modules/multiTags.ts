@@ -14,7 +14,7 @@ import {
 } from "../utils";
 import { usePermissionStoreHook } from "./permission";
 
-export const useMultiTagsStore = defineStore("pure-multiTags", {
+export const useMultiTagsStore = defineStore("anta-multiTags", {
   state: () => ({
     // 存储标签页信息（路由信息）
     multiTags: storageLocal().getItem<StorageConfigs>(

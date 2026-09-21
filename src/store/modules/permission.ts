@@ -11,7 +11,7 @@ import {
 } from "../utils";
 import { useMultiTagsStoreHook } from "./multiTags";
 
-export const usePermissionStore = defineStore("pure-permission", {
+export const usePermissionStore = defineStore("anta-permission", {
   state: () => ({
     // 静态路由生成的菜单
     constantMenus,

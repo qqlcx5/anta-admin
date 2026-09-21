@@ -15,7 +15,7 @@ export default {
       component: () => import("@/views/chatai/index.vue"),
       meta: {
         title: "chat-ai",
-        extraIcon: "IF-pure-iconfont-new svg"
+        extraIcon: "IF-anta-iconfont-new svg"
       }
     }
   ]
