@@ -248,7 +248,8 @@ export function hideTextAtIndex(
 export function subBefore(str: string, separator: string): string {
   if (typeof separator !== "string" || typeof str !== "string") return "";
   const index = str.indexOf(separator);
-  return index === -1 ? str : str.slice(0, index);
+  // 与原版 @pureadmin/utils 一致：未找到分隔符时返回空字符串（而非原字符串）
+  return index === -1 ? "" : str.slice(0, index);
 }
 
 /**
@@ -256,6 +257,6 @@ export function subBefore(str: string, separator: string): string {
  */
 export function subAfter(str: string, separator: string): string {
   if (typeof separator !== "string" || typeof str !== "string") return "";
-  const index = str.indexOf(separator);
-  return index === -1 ? "" : str.slice(index + separator.length);
+  // 与原版 @pureadmin/utils 一致：基于“最后一次出现”的分隔符截取；未找到时返回原字符串
+  return str.substring(str.lastIndexOf(separator) + separator.length);
 }

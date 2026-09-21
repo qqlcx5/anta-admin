@@ -14,11 +14,7 @@ import {
 } from "vue";
 import { ElDescriptions, ElDescriptionsItem } from "element-plus";
 import { copyTextToClipboard } from "@/utils/dom";
-import type {
-  DescriptionsColumns,
-  Loading,
-  DescriptionsAlign
-} from "../types";
+import type { DescriptionsColumns, Loading, DescriptionsAlign } from "../types";
 
 const descriptionsProps = {
   data: {
@@ -101,63 +97,70 @@ export const PureDescriptions = defineComponent({
       const colList = unref(columns) || [];
       const dataList = unref(data) || [];
 
-      const children = colList.map((col: DescriptionsColumns, index: number) => {
-        if (typeof col?.hide === "function" && col.hide(attrs)) {
-          return null;
-        }
-
-        const valList = dataList.map(row => row?.[col?.prop || ""]);
-        const val = valList[0];
-
-        const itemDefault = () => {
-          if (col?.cellRenderer) {
-            return createVNode(Renderer, {
-              render: col.cellRenderer,
-              params: { props, attrs, index, value: val }
-            });
+      const children = colList.map(
+        (col: DescriptionsColumns, index: number) => {
+          // 支持布尔 hide: true 与函数 hide(attrs)，与类型声明保持一致
+          if (
+            col?.hide === true ||
+            (typeof col?.hide === "function" && col.hide(attrs))
+          ) {
+            return null;
           }
-          if (col?.slot && slots[col.slot]) {
-            return slots[col.slot]?.({ props, attrs, index, value: val });
-          }
-          const displayVal = col?.value !== undefined ? unref(col.value) : val;
 
-          return (
-            <span class="descriptions-cell-content">
-              {displayVal}
-              {col?.copy && (
-                <span
-                  class="cursor-pointer ml-1 text-primary text-xs"
-                  onClick={() => handleCopy(displayVal, index)}
-                >
-                  {activeCopyIndex.value === index && isCopied.value
-                    ? "✔ 已复制"
-                    : "📋 复制"}
-                </span>
-              )}
-            </span>
+          const valList = dataList.map(row => row?.[col?.prop || ""]);
+          const val = valList[0];
+
+          const itemDefault = () => {
+            if (col?.cellRenderer) {
+              return createVNode(Renderer, {
+                render: col.cellRenderer,
+                params: { props, attrs, index, value: val }
+              });
+            }
+            if (col?.slot && slots[col.slot]) {
+              return slots[col.slot]?.({ props, attrs, index, value: val });
+            }
+            const displayVal =
+              col?.value !== undefined ? unref(col.value) : val;
+
+            return (
+              <span class="descriptions-cell-content">
+                {displayVal}
+                {col?.copy && (
+                  <span
+                    class="cursor-pointer ml-1 text-primary text-xs"
+                    onClick={() => handleCopy(displayVal, index)}
+                  >
+                    {activeCopyIndex.value === index && isCopied.value
+                      ? "✔ 已复制"
+                      : "📋 复制"}
+                  </span>
+                )}
+              </span>
+            );
+          };
+
+          const itemSlots: any = { default: itemDefault };
+
+          if (col?.labelRenderer) {
+            itemSlots.label = () =>
+              createVNode(Renderer, {
+                render: col.labelRenderer!,
+                params: { props, attrs, index, value: val }
+              });
+          }
+
+          return createVNode(
+            ElDescriptionsItem,
+            mergeProps(col as any, {
+              key: index,
+              align: col.align || unref(align),
+              labelAlign: col.labelAlign || unref(labelAlign)
+            }),
+            itemSlots
           );
-        };
-
-        const itemSlots: any = { default: itemDefault };
-
-        if (col?.labelRenderer) {
-          itemSlots.label = () =>
-            createVNode(Renderer, {
-              render: col.labelRenderer!,
-              params: { props, attrs, index, value: val }
-            });
         }
-
-        return createVNode(
-          ElDescriptionsItem,
-          mergeProps(col as any, {
-            key: index,
-            align: col.align || unref(align),
-            labelAlign: col.labelAlign || unref(labelAlign)
-          }),
-          itemSlots
-        );
-      });
+      );
 
       const loadingDirective = resolveDirective("loading");
       const currentLoading = unref(loading);

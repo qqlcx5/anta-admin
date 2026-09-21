@@ -1,5 +1,9 @@
 import { shallowRef, unref, onBeforeUnmount, type Ref } from "vue";
-import { isClient, useResizeObserver as _useResizeObserver, type UseResizeObserverOptions } from "@vueuse/core";
+import {
+  isClient,
+  useResizeObserver as _useResizeObserver,
+  type UseResizeObserverOptions
+} from "@vueuse/core";
 
 /**
  * 监听 DOM 尺寸变化（复用 @vueuse/core，支持 ElementRef、DOM 元素或选择器字符串）
@@ -9,16 +13,23 @@ export function useResizeObserver(
   callback: ResizeObserverCallback,
   options?: UseResizeObserverOptions
 ) {
-  const el = typeof target === "string"
-    ? () => (isClient ? (document.querySelector(target) as HTMLElement | null) : null)
-    : target;
+  const el =
+    typeof target === "string"
+      ? () =>
+          isClient
+            ? (document.querySelector(target) as HTMLElement | null)
+            : null
+      : target;
   return _useResizeObserver(el, callback, options);
 }
 
 /**
  * 原生 classList 操作：判断元素是否存在指定类名
  */
-export function hasClass(element: HTMLElement | Element, name: string): boolean {
+export function hasClass(
+  element: HTMLElement | Element,
+  name: string
+): boolean {
   if (!element || !name) return false;
   return element.classList ? element.classList.contains(name) : false;
 }
@@ -33,9 +44,15 @@ export function addClass(
 ): void {
   if (!element || !name) return;
   if (element.classList) {
-    name.split(" ").filter(Boolean).forEach(cls => element.classList.add(cls));
+    name
+      .split(" ")
+      .filter(Boolean)
+      .forEach(cls => element.classList.add(cls));
     if (extraName) {
-      extraName.split(" ").filter(Boolean).forEach(cls => element.classList.add(cls));
+      extraName
+        .split(" ")
+        .filter(Boolean)
+        .forEach(cls => element.classList.add(cls));
     }
   }
 }
@@ -50,9 +67,15 @@ export function removeClass(
 ): void {
   if (!element || !name) return;
   if (element.classList) {
-    name.split(" ").filter(Boolean).forEach(cls => element.classList.remove(cls));
+    name
+      .split(" ")
+      .filter(Boolean)
+      .forEach(cls => element.classList.remove(cls));
     if (extraName) {
-      extraName.split(" ").filter(Boolean).forEach(cls => element.classList.remove(cls));
+      extraName
+        .split(" ")
+        .filter(Boolean)
+        .forEach(cls => element.classList.remove(cls));
     }
   }
 }
@@ -96,14 +119,9 @@ export function openLink(href: string, target = "_blank") {
 }
 
 /**
- * 文本复制到剪贴板
+ * execCommand 兜底复制（用于非安全上下文或 Clipboard API 写入失败时）
  */
-export function copyTextToClipboard(text: string): boolean {
-  if (!isClient) return false;
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(text);
-    return true;
-  }
+function execCommandCopy(text: string): boolean {
   const textArea = document.createElement("textarea");
   textArea.value = text;
   textArea.style.position = "fixed";
@@ -116,6 +134,21 @@ export function copyTextToClipboard(text: string): boolean {
   } catch {}
   textArea.remove();
   return success;
+}
+
+/**
+ * 文本复制到剪贴板
+ */
+export function copyTextToClipboard(text: string): boolean {
+  if (!isClient) return false;
+  if (navigator.clipboard && window.isSecureContext) {
+    // 异步写入失败时回退到 execCommand，同时避免未处理的 Promise 拒绝
+    navigator.clipboard.writeText(text).catch(() => {
+      execCommandCopy(text);
+    });
+    return true;
+  }
+  return execCommandCopy(text);
 }
 
 export function useCopyToClipboard(initial = "") {
@@ -191,7 +224,10 @@ export function useWatermark(
     const parent = unref(appendEl) || document.body;
     if (!parent) return;
 
-    if (parent !== document.body && getComputedStyle(parent).position === "static") {
+    if (
+      parent !== document.body &&
+      getComputedStyle(parent).position === "static"
+    ) {
       parent.style.position = "relative";
     }
 
