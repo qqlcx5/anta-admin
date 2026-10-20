@@ -146,18 +146,12 @@ watch(
         </span>
         <template #dropdown>
           <el-dropdown-item @click="toAccountSettings">
-            <AtIcon
-              :icon="AccountSettingsIcon"
-              style="margin: 5px"
-            />
+            <AtIcon :icon="AccountSettingsIcon" style="margin: 5px" />
             {{ t("buttons.antaAccountSettings") }}
           </el-dropdown-item>
           <el-dropdown-menu class="logout">
             <el-dropdown-item @click="logout">
-              <AtIcon
-                :icon="LogoutCircleRLine"
-                style="margin: 5px"
-              />
+              <AtIcon :icon="LogoutCircleRLine" style="margin: 5px" />
               {{ t("buttons.antaLoginOut") }}
             </el-dropdown-item>
           </el-dropdown-menu>

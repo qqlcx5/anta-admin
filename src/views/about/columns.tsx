@@ -52,10 +52,7 @@ export function useColumns() {
       className: "anta-version",
       cellRenderer: () => {
         return (
-          <a
-            href="https://github.com/qqlcx5/anta-admin"
-            target="_blank"
-          >
+          <a href="https://github.com/qqlcx5/anta-admin" target="_blank">
             <span style="color: var(--el-color-primary)">Anta Admin 仓库</span>
           </a>
         );
@@ -67,10 +64,7 @@ export function useColumns() {
       className: "anta-version",
       cellRenderer: () => {
         return (
-          <a
-            href="https://github.com/qqlcx5/anta-admin/issues"
-            target="_blank"
-          >
+          <a href="https://github.com/qqlcx5/anta-admin/issues" target="_blank">
             <span style="color: var(--el-color-primary)">问题反馈与建议</span>
           </a>
         );

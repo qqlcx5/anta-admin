@@ -65,11 +65,7 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
               :class="['dark:text-white!', getDropdownItemClass(locale, 'zh')]"
               @click="translationCh"
             >
-              <AtIcon
-                v-show="locale === 'zh'"
-                class="check-zh"
-                :icon="Check"
-              />
+              <AtIcon v-show="locale === 'zh'" class="check-zh" :icon="Check" />
               简体中文
             </el-dropdown-item>
             <el-dropdown-item
@@ -98,17 +94,11 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
         <template #dropdown>
           <el-dropdown-menu class="logout">
             <el-dropdown-item @click="toAccountSettings">
-              <AtIcon
-                :icon="AccountSettingsIcon"
-                style="margin: 5px"
-              />
+              <AtIcon :icon="AccountSettingsIcon" style="margin: 5px" />
               {{ t("buttons.antaAccountSettings") }}
             </el-dropdown-item>
             <el-dropdown-item @click="logout">
-              <AtIcon
-                :icon="LogoutCircleRLine"
-                style="margin: 5px"
-              />
+              <AtIcon :icon="LogoutCircleRLine" style="margin: 5px" />
               {{ t("buttons.antaLoginOut") }}
             </el-dropdown-item>
           </el-dropdown-menu>

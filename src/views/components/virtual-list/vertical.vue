@@ -55,10 +55,7 @@ const filteredItems = computed(() => {
           class="message"
         >
           <div class="flex items-center">
-            <AtIcon
-              icon="openmoji:beaming-face-with-smiling-eyes"
-              width="40"
-            />
+            <AtIcon icon="openmoji:beaming-face-with-smiling-eyes" width="40" />
             <span>{{ item.id }}</span>
           </div>
         </DynamicScrollerItem>

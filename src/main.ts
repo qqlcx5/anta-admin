@@ -10,7 +10,7 @@ import { useVxeTable } from "@/plugins/vxeTable";
 import { useElementPlus } from "@/plugins/elementPlus";
 import { injectResponsiveStorage } from "@/utils/responsive";
 
-import Table from "@pureadmin/table";
+import { PureTable } from "@/components/RePureTable";
 import PureDescriptions from "@/components/ReDescriptions";
 import { AtIcon } from "@/components/ReIcon";
 
@@ -51,11 +51,11 @@ getPlatformConfig(app).then(async config => {
     .use(MotionPlugin)
     .use(useI18n)
     .use(useElementPlus)
-    .use(Table)
+    .use(PureTable)
     .use(useVxeTable)
     .use(useEcharts)
     .component("PureDescriptions", PureDescriptions)
     .component("AntaDescriptions", PureDescriptions)
-    .component("AtIcon", AtIcon)
+    .component("AtIcon", AtIcon);
   app.mount("#app");
 });

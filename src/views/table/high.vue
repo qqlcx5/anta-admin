@@ -20,11 +20,11 @@ function tabClick({ index }) {
         <span class="font-medium">
           高级用法全部采用 TSX 语法，充分发挥
           <el-link
-            href="https://github.com/pure-admin/pure-admin-table"
+            href="https://github.com/qqlcx5/anta-admin/tree/main/src/components/RePureTable"
             target="_blank"
             style="margin: 0 4px 5px; font-size: 16px"
           >
-            @pureadmin/table
+            PureTable 组件
           </el-link>
           的灵活性，维护整体表格只需操作 columns 配置即可
         </span>

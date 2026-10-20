@@ -1,7 +1,11 @@
 import { tableData } from "../data";
 import { clone, delay } from "@/utils";
 import { ref, onMounted, reactive, watchEffect } from "vue";
-import type { PaginationProps, LoadingConfig, Align } from "@pureadmin/table";
+import type {
+  PaginationProps,
+  LoadingConfig,
+  Align
+} from "@/components/RePureTable";
 
 export function useColumns() {
   const dataList = ref([]);

@@ -12,12 +12,7 @@ import { useSettingStoreHook } from "@/store/modules/settings";
 import { useMultiTagsStoreHook } from "@/store/modules/multiTags";
 import { usePermissionStoreHook } from "@/store/modules/permission";
 import { ref, watch, unref, toRaw, nextTick, onBeforeUnmount } from "vue";
-import {
-  delay,
-  isEqual,
-  isAllEmpty,
-  useResizeObserver
-} from "@/utils";
+import { delay, isEqual, isAllEmpty, useResizeObserver } from "@/utils";
 
 import ExitFullscreen from "~icons/ri/fullscreen-exit-fill";
 import Fullscreen from "~icons/ri/fullscreen-fill";

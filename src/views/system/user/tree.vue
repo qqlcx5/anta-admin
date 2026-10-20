@@ -109,10 +109,7 @@ defineExpose({ onTreeReset });
       >
         <template #suffix>
           <el-icon class="el-input__icon">
-            <AtIcon
-              v-show="searchValue.length === 0"
-              icon="ri/search-line"
-            />
+            <AtIcon v-show="searchValue.length === 0" icon="ri/search-line" />
           </el-icon>
         </template>
       </el-input>

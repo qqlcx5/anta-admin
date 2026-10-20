@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import Detail from "./detail.vue";
 import { message } from "@/utils/message";
 import { addDialog } from "@/components/ReDialog";
-import type { PaginationProps } from "@pureadmin/table";
+import type { PaginationProps } from "@/components/RePureTable";
 import { type Ref, reactive, ref, onMounted, toRaw } from "vue";
 import { getKeyList, useCopyToClipboard } from "@/utils";
 import { getSystemLogsList, getSystemLogsDetail } from "@/api/system";

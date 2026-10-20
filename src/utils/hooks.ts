@@ -4,8 +4,6 @@ import {
   watch,
   nextTick,
   computed,
-  shallowRef,
-  onBeforeMount,
   onBeforeUnmount,
   getCurrentInstance,
   type Ref
@@ -30,7 +28,10 @@ import { useDark as _useDark } from "@vueuse/core";
 /**
  * 暗黑模式 Hook（复用 @vueuse/core，纯粹监听 HTML class，不写独立 localStorage 以免冲突）
  */
-export function useDark(options?: { selector?: "html" | "body"; className?: string }) {
+export function useDark(options?: {
+  selector?: "html" | "body";
+  className?: string;
+}) {
   const isDark = _useDark({
     selector: options?.selector || "html",
     attribute: "class",
@@ -96,7 +97,12 @@ export function useECharts(
         }
         chartInstance?.setOption(opt);
         params.forEach(param => {
-          if (param && typeof param === "object" && param.name && typeof param.callback === "function") {
+          if (
+            param &&
+            typeof param === "object" &&
+            param.name &&
+            typeof param.callback === "function"
+          ) {
             chartInstance?.on(param.name, param.query, param.callback);
           }
         });

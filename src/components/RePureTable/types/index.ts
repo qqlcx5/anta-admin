@@ -1,4 +1,4 @@
-import {
+import type {
   TableColumnFilterPlacement,
   TableColumnSortOrders,
   TableColumnSortable,
@@ -9,10 +9,10 @@ import {
   TableColumns,
   TableColumn
 } from "./table-column";
-import { TableProps, PureTableProps, AdaptiveConfig } from "./table-props";
-import { TranslatePair, DefaultLanguage, Language } from "./locale";
-import { LoadingConfig } from "./loading-config";
-import { PaginationProps } from "./pagination";
+import type { TableProps, PureTableProps, AdaptiveConfig } from "./table-props";
+import type { TranslatePair, DefaultLanguage, Language } from "./locale";
+import type { LoadingConfig } from "./loading-config";
+import type { PaginationProps } from "./pagination";
 import type { I18n } from "vue-i18n";
 
 type Size = "large" | "default" | "small";

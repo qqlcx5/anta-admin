@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { getMineLogs } from "@/api/user";
 import { reactive, ref, onMounted } from "vue";
 import { deviceDetection } from "@/utils";
-import type { PaginationProps } from "@pureadmin/table";
+import type { PaginationProps } from "@/components/RePureTable";
 
 defineOptions({
   name: "SecurityLog"

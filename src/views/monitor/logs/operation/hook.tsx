@@ -3,7 +3,7 @@ import { message } from "@/utils/message";
 import { getKeyList } from "@/utils";
 import { getOperationLogsList } from "@/api/system";
 import { usePublicHooks } from "@/views/system/hooks";
-import type { PaginationProps } from "@pureadmin/table";
+import type { PaginationProps } from "@/components/RePureTable";
 import { type Ref, reactive, ref, onMounted, toRaw } from "vue";
 
 export function useRole(tableRef: Ref) {

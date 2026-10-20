@@ -2,14 +2,14 @@
 
 Anta Admin 是一款开箱即用的通用企业级中后台管理系统脚手架模版。完全采用 `ECMAScript` 模块（`ESM`）规范编写和组织代码，基于最新的 **`Vue 3`、`Vite`、`Element-Plus`、`TypeScript`、`Pinia`、`Tailwindcss v4`** 构建。
 
-本项目已**完全解耦外部特定工具库依赖（彻底去除了 `@pureadmin/descriptions` 与 `@pureadmin/utils`）**，内置完备的**本地通用工具函数库与高阶组件**，结构清晰、依赖极简、零厂商锁定，可直接作为各类中后台系统的项目脚手架与基础底座。
+本项目已**完全解耦外部特定工具库依赖（彻底去除了 `@pureadmin/table`、`@pureadmin/descriptions` 与 `@pureadmin/utils`）**，内置完备的**本地通用工具函数库与高阶组件**，结构清晰、依赖极简、零厂商锁定，可直接作为各类中后台系统的项目脚手架与基础底座。
 
 ---
 
 ## 🌟 特性亮点
 
 - **最新现代技术栈**：Vue 3.5+、Vite 8+、Element-Plus、TypeScript 6+、Pinia、Tailwindcss v4
-- **零外部私有工具库锁定**：彻底去除 `@pureadmin/utils` 与 `@pureadmin/descriptions`，全部工具函数与描述列表组件本地化至 `src/utils` 和 `src/components/ReDescriptions`，可自由根据企业规范扩展
+- **零外部私有工具库锁定**：彻底去除 `@pureadmin/table`、`@pureadmin/descriptions` 与 `@pureadmin/utils`，全部高阶表格、描述列表与通用工具函数完全本地化至 `src/components/RePureTable`、`src/components/ReDescriptions` 和 `src/utils`，可自由根据企业规范扩展
 - **极简彻底净化**：全面清理历史组件库侵入式的 `withInstall` 包装层，所有组件入口均为原生 Vue 组件纯净直接导出
 - **全能混合图标体系**：内置全局免 import 图标组件 `<AtIcon />`，融合 Iconify 20万+在线图标、编译期离线提取、本地 SVG、Element Plus 图标与阿里 iconfont
 - **Tailwind CSS v4 深度整合**：原生集成 `@tailwindcss/vite`，CSS-first 零配置文件，原子类变量与 Element Plus 主题色及暗黑模式无缝联动
@@ -30,6 +30,7 @@ Anta Admin 是一款开箱即用的通用企业级中后台管理系统脚手架
 │   ├── api/               # 业务接口定义
 │   ├── assets/            # 静态资源（SVG、图标、图片等）
 │   ├── components/        # 全局通用组件
+│   │   ├── RePureTable/   # 本地高阶表格组件 (替代 @pureadmin/table)
 │   │   ├── ReDescriptions/# 本地描述列表组件 (替代 @pureadmin/descriptions)
 │   │   ├── ReIcon/        # 全能图标系统 (包含全局组件 AtIcon 与 useRenderIcon)
 │   │   └── ...            # 其它高阶组件

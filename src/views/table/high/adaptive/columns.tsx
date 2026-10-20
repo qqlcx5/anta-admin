@@ -2,7 +2,7 @@ import type {
   LoadingConfig,
   AdaptiveConfig,
   PaginationProps
-} from "@pureadmin/table";
+} from "@/components/RePureTable";
 import { tableData } from "../data";
 import { ref, onMounted, reactive } from "vue";
 import { clone, delay } from "@/utils";

@@ -11,13 +11,7 @@ import {
   defineComponent,
   getCurrentInstance
 } from "vue";
-import {
-  delay,
-  cloneDeep,
-  isBoolean,
-  isFunction,
-  getKeyList
-} from "@/utils";
+import { delay, cloneDeep, isBoolean, isFunction, getKeyList } from "@/utils";
 
 import PinAngle from "~icons/bi/pin-angle";
 import Fullscreen from "~icons/ri/fullscreen-fill";

@@ -1,6 +1,6 @@
 import { message } from "@/utils/message";
 import { tableDataEdit } from "../../data";
-import type { PaginationProps } from "@pureadmin/table";
+import type { PaginationProps } from "@/components/RePureTable";
 import { cloneDeep, isAllEmpty } from "@/utils";
 import { type Ref, ref, reactive, watch, nextTick } from "vue";
 

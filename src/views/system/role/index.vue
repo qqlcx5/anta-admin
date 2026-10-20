@@ -3,12 +3,7 @@ import { useRole } from "./utils/hook";
 import { ref, computed, nextTick, onMounted } from "vue";
 import { PureTableBar } from "@/components/RePureTableBar";
 import { useRenderIcon } from "@/components/ReIcon/src/hooks";
-import {
-  delay,
-  subBefore,
-  deviceDetection,
-  useResizeObserver
-} from "@/utils";
+import { delay, subBefore, deviceDetection, useResizeObserver } from "@/utils";
 
 // import Database from "~icons/ri/database-2-line";
 // import More from "~icons/ep/more-filled";

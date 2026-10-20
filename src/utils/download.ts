@@ -69,7 +69,12 @@ export function downloadByOnlineUrl(
   fetch(url)
     .then(res => res.blob())
     .then(blob => {
-      downloadByData(blob, filename || url.substring(url.lastIndexOf("/") + 1), mime, bom);
+      downloadByData(
+        blob,
+        filename || url.substring(url.lastIndexOf("/") + 1),
+        mime,
+        bom
+      );
     });
 }
 
@@ -101,15 +106,18 @@ export function downloadByUrl(
   }
 
   if (!url) return false;
-  const isChrome = window.navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
-  const isSafari = window.navigator.userAgent.toLowerCase().indexOf("safari") > -1;
+  const isChrome =
+    window.navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
+  const isSafari =
+    window.navigator.userAgent.toLowerCase().indexOf("safari") > -1;
 
   if (isChrome || isSafari) {
     const link = document.createElement("a");
     link.href = url;
     link.target = finalTarget;
     if (link.download !== undefined) {
-      link.download = finalFileName || url.substring(url.lastIndexOf("/") + 1, url.length);
+      link.download =
+        finalFileName || url.substring(url.lastIndexOf("/") + 1, url.length);
     }
     document.body.appendChild(link);
     link.click();

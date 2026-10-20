@@ -167,6 +167,45 @@ export function getQueryMap(url?: string): Record<string, string> {
 }
 
 /**
+ * 净化 SVG 元素，防范 XSS 攻击（过滤 <script>、<foreignObject>、内联 on* 事件及 javascript: 伪协议）
+ */
+export function sanitizeSvg(svgElement: SVGElement | Element): void {
+  if (!svgElement) return;
+  svgElement.querySelectorAll("script, foreignObject").forEach(el => el.remove());
+  const sanitizeNode = (el: Element) => {
+    const attrs = Array.from(el.attributes);
+    for (const attr of attrs) {
+      const name = attr.name.toLowerCase();
+      const val = attr.value.trim().toLowerCase();
+      if (name.startsWith("on") || val.startsWith("javascript:")) {
+        el.removeAttribute(attr.name);
+      }
+    }
+    for (const child of Array.from(el.children)) {
+      sanitizeNode(child);
+    }
+  };
+  sanitizeNode(svgElement);
+}
+
+/**
+ * 净化 SVG 字符串
+ */
+export function sanitizeSvgString(svgString: string): string {
+  if (!isClient || !svgString) return "";
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgString, "image/svg+xml");
+    const svg = doc.querySelector("svg");
+    if (!svg) return "";
+    sanitizeSvg(svg);
+    return svg.outerHTML || "";
+  } catch {
+    return "";
+  }
+}
+
+/**
  * 解析 SVG 字符串的基础信息
  */
 export function getSvgInfo(svgString: string): {
@@ -180,6 +219,10 @@ export function getSvgInfo(svgString: string): {
     const doc = parser.parseFromString(svgString, "image/svg+xml");
     const svg = doc.querySelector("svg");
     if (!svg) return { width: 0, height: 0, body: "" };
+
+    // 安全防线：深度过滤 SVG 恶意节点与属性
+    sanitizeSvg(svg);
+
     // 优先从 viewBox 解析尺寸：unplugin-icons 的 ?raw 输出 width/height 为 "1em"，
     // parseFloat("1em") 会得到 1，导致 addIcon 注册出 viewBox="0 0 1 1" 使图标不可见
     let width = 0;

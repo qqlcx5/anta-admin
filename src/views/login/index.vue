@@ -142,11 +142,7 @@ watch(loginDay, value => {
               :class="['dark:text-white!', getDropdownItemClass(locale, 'zh')]"
               @click="translationCh"
             >
-              <AtIcon
-                v-show="locale === 'zh'"
-                class="check-zh"
-                :icon="Check"
-              />
+              <AtIcon v-show="locale === 'zh'" class="check-zh" :icon="Check" />
               简体中文
             </el-dropdown-item>
             <el-dropdown-item

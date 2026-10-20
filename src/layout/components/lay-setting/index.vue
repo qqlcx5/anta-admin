@@ -437,16 +437,12 @@ onUnmounted(() => removeMatchMedia);
             :class="[settings.stretch ? 'w-[24%]' : 'w-[50%]']"
             style="color: var(--el-color-primary)"
           >
-            <AtIcon
-              :icon="settings.stretch ? RightArrow : LeftArrow"
-            />
+            <AtIcon :icon="settings.stretch ? RightArrow : LeftArrow" />
             <div
               class="grow border-0 border-b border-dashed"
               style="border-color: var(--el-color-primary)"
             />
-            <AtIcon
-              :icon="settings.stretch ? LeftArrow : RightArrow"
-            />
+            <AtIcon :icon="settings.stretch ? LeftArrow : RightArrow" />
           </div>
         </button>
       </span>

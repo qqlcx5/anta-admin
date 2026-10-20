@@ -199,19 +199,13 @@ watch(size, val =>
       </el-checkbox-button>
       <el-checkbox-button value="watermelon">
         <span class="flex">
-          <AtIcon
-            icon="streamline-emojis:watermelon-1"
-            class="mr-1"
-          />
+          <AtIcon icon="streamline-emojis:watermelon-1" class="mr-1" />
           西瓜
         </span>
       </el-checkbox-button>
       <el-checkbox-button value="strawberry">
         <span class="flex">
-          <AtIcon
-            icon="streamline-emojis:strawberry-1"
-            class="mr-1"
-          />
+          <AtIcon icon="streamline-emojis:strawberry-1" class="mr-1" />
           草莓
         </span>
       </el-checkbox-button>

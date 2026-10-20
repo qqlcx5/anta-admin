@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { message } from "@/utils/message";
 import { getOnlineLogsList } from "@/api/system";
 import { reactive, ref, onMounted, toRaw } from "vue";
-import type { PaginationProps } from "@pureadmin/table";
+import type { PaginationProps } from "@/components/RePureTable";
 
 export function useRole() {
   const form = reactive({

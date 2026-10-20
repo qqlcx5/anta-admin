@@ -11,28 +11,33 @@ const componentCache = new Map<string, Component>();
  * 针对原始 SVG 字符串的深度 XSS 安全过滤
  */
 function sanitizeSvg(rawSvg: string): string {
-  return rawSvg
-    // 移除 <script> 标签及内部脚本
-    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-    // 移除 <foreignObject>（常用于在 SVG 中嵌入 HTML/JS 执行 XSS）
-    .replace(
-      /<foreignObject\b[^<]*(?:(?!<\/foreignObject>)<[^<]*)*<\/foreignObject>/gi,
-      ""
-    )
-    // 移除 <iframe>、<object>、<embed>
-    .replace(
-      /<(?:iframe|object|embed)\b[^<]*(?:(?!<\/(?:iframe|object|embed)>)<[^<]*)*<\/(?:iframe|object|embed)>/gi,
-      ""
-    )
-    // 移除所有内联 on* 事件监听器（如 onload, onerror, onclick）
-    .replace(/\bon[a-z]+\s*=\s*(?:'[^']*'|"[^"]*"|[^\s>]+)/gi, "")
-    // 移除 javascript: 伪协议
-    .replace(
-      /href\s*=\s*(?:'javascript:[^']*'|"javascript:[^"]*"|javascript:[^\s>]+)/gi,
-      ""
-    )
-    // 移除宽高属性，由外层容器或样式统一控制
-    .replace(/<svg([^>]*)>/i, (_, attrs) => `<svg${attrs.replace(/\s*(width|height)="[^"]*"/gi, "")}>`);
+  return (
+    rawSvg
+      // 移除 <script> 标签及内部脚本
+      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+      // 移除 <foreignObject>（常用于在 SVG 中嵌入 HTML/JS 执行 XSS）
+      .replace(
+        /<foreignObject\b[^<]*(?:(?!<\/foreignObject>)<[^<]*)*<\/foreignObject>/gi,
+        ""
+      )
+      // 移除 <iframe>、<object>、<embed>
+      .replace(
+        /<(?:iframe|object|embed)\b[^<]*(?:(?!<\/(?:iframe|object|embed)>)<[^<]*)*<\/(?:iframe|object|embed)>/gi,
+        ""
+      )
+      // 移除所有内联 on* 事件监听器（如 onload, onerror, onclick）
+      .replace(/\bon[a-z]+\s*=\s*(?:'[^']*'|"[^"]*"|[^\s>]+)/gi, "")
+      // 移除 javascript: 伪协议
+      .replace(
+        /href\s*=\s*(?:'javascript:[^']*'|"javascript:[^"]*"|javascript:[^\s>]+)/gi,
+        ""
+      )
+      // 移除宽高属性，由外层容器或样式统一控制
+      .replace(
+        /<svg([^>]*)>/i,
+        (_, attrs) => `<svg${attrs.replace(/\s*(width|height)="[^"]*"/gi, "")}>`
+      )
+  );
 }
 
 /**
@@ -163,4 +168,3 @@ export function useRenderIcon(icon: any, attrs?: iconType): Component {
 
   return defineComponent({ render: () => null });
 }
-

@@ -1,7 +1,7 @@
 import { message } from "@/utils/message";
 import { tableDataEdit } from "../../data";
 import { ref, reactive, type Ref } from "vue";
-import type { PaginationProps } from "@pureadmin/table";
+import type { PaginationProps } from "@/components/RePureTable";
 
 export function useColumns(selectRef: Ref) {
   const selectValue = ref("");

@@ -1,5 +1,5 @@
 import type { TableColumnCtx } from "element-plus";
-import { PureTableProps, Align } from "./index";
+import type { PureTableProps, Align } from "./index";
 import type { VNode } from "vue";
 
 export type TableColumnSortOrders = "ascending" | "descending" | null;
@@ -20,7 +20,11 @@ export type TableColumnFilterPlacement =
   | "right-end"
   | "right";
 
-type FilterMethods = (value: any, row: any, column: TableColumnCtx<any>) => void;
+type FilterMethods = (
+  value: any,
+  row: any,
+  column: TableColumnCtx<any>
+) => void;
 
 type RH = { column: TableColumnCtx<any>; $index: number };
 

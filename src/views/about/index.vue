@@ -20,7 +20,6 @@ const devSchema: schemaItem[] = [];
 const { columns } = useColumns();
 
 const words = [
-  "@pureadmin/table",
   "@vueuse/core",
   "axios",
   "dayjs",
